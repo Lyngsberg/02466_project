@@ -14,33 +14,5 @@ class NN_model1(nn.Module):
         x = torch.sigmoid(self.output(x))  # Sigmoid activation for output
         return x
 
-# Training function
-def train_model(model, x_train, y_train, epochs=1000, lr=0.1):
-    criterion = nn.MSELoss()
-    optimizer = optim.SGD(model.parameters(), lr=lr)
-    
-    for epoch in range(epochs):
-        optimizer.zero_grad()  # Reset gradients
-        output = model(x_train)  # Forward pass
-        loss = criterion(output, y_train)  # Compute loss
-        loss.backward()  # Backpropagation
-        optimizer.step()  # Update weights
-        
-        if epoch % 100 == 0:
-            print(f'Epoch {epoch}, Loss: {loss.item()}')
 
-if __name__=="__main__":
-    # Create the model
-    model = NN_model1()
 
-    # Training data (X: inputs, y: labels)
-    x_train = torch.tensor([[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]])
-    y_train = torch.tensor([[0.0], [1.0], [1.0], [0.0]])  # Example XOR problem
-
-    # Train the model
-    train_model(model, x_train, y_train)
-
-    # Example input (batch size of 1, 2 features)
-    example_input = torch.tensor([[0.5, -0.3]])
-    output = model(example_input)
-    print("Output:", output.item())
