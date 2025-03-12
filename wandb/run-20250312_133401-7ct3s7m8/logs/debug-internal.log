@@ -1,0 +1,15 @@
+{"time":"2025-03-12T13:34:01.944796162+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/lyngsberg/fagproject/02466_project/wandb/run-20250312_133401-7ct3s7m8/logs/debug-core.log"}
+{"time":"2025-03-12T13:34:03.374133254+01:00","level":"INFO","msg":"created new stream","id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:03.37418946+01:00","level":"INFO","msg":"stream: started","id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:03.374261783+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:03.374366842+01:00","level":"INFO","msg":"sender: started","stream_id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:03.374408845+01:00","level":"INFO","msg":"handler: started","stream_id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:03.750447879+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-12T13:34:14.814997414+01:00","level":"INFO","msg":"stream: closing","id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:14.815038354+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-12T13:34:14.816082164+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-12T13:34:16.259105295+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-12T13:34:16.568127396+01:00","level":"INFO","msg":"handler: closed","stream_id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:16.568188136+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:16.568205667+01:00","level":"INFO","msg":"sender: closed","stream_id":"7ct3s7m8"}
+{"time":"2025-03-12T13:34:16.568394485+01:00","level":"INFO","msg":"stream: closed","id":"7ct3s7m8"}

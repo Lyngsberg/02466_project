@@ -1,0 +1,17 @@
+{"time":"2025-03-12T13:22:11.055971044+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/lyngsberg/fagproject/02466_project/wandb/run-20250312_132211-9uaib1zp/logs/debug-core.log"}
+{"time":"2025-03-12T13:22:12.410888853+01:00","level":"INFO","msg":"created new stream","id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:12.410958448+01:00","level":"INFO","msg":"stream: started","id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:12.411021494+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:12.411080343+01:00","level":"INFO","msg":"handler: started","stream_id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:12.411023029+01:00","level":"INFO","msg":"sender: started","stream_id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:12.629819962+01:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-03-12T13:22:12.630301401+01:00","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: returned error 404: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"entity Danmarks Tekniske Universitet - DTU not found during upsertBucket\",\"path\":[\"upsertBucket\"]}]}"}
+{"time":"2025-03-12T13:22:13.633855757+01:00","level":"INFO","msg":"stream: closing","id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:13.634596951+01:00","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2025-03-12T13:22:13.831850942+01:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-03-12T13:22:13.832341182+01:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404: {\"data\":{\"createRunFiles\":null},\"errors\":[{\"message\":\"entity Danmarks Tekniske Universitet - DTU not found during createRunFiles\",\"path\":[\"createRunFiles\"]}]}"}
+{"time":"2025-03-12T13:22:13.833639142+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-12T13:22:13.833922438+01:00","level":"INFO","msg":"handler: closed","stream_id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:13.833995718+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:13.834119353+01:00","level":"INFO","msg":"sender: closed","stream_id":"9uaib1zp"}
+{"time":"2025-03-12T13:22:13.834179225+01:00","level":"INFO","msg":"stream: closed","id":"9uaib1zp"}

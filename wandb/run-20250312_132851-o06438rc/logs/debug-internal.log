@@ -1,0 +1,15 @@
+{"time":"2025-03-12T13:28:51.541600202+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/lyngsberg/fagproject/02466_project/wandb/run-20250312_132851-o06438rc/logs/debug-core.log"}
+{"time":"2025-03-12T13:28:52.886283934+01:00","level":"INFO","msg":"created new stream","id":"o06438rc"}
+{"time":"2025-03-12T13:28:52.886350948+01:00","level":"INFO","msg":"stream: started","id":"o06438rc"}
+{"time":"2025-03-12T13:28:52.886434946+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"o06438rc"}
+{"time":"2025-03-12T13:28:52.886479963+01:00","level":"INFO","msg":"handler: started","stream_id":"o06438rc"}
+{"time":"2025-03-12T13:28:52.88654268+01:00","level":"INFO","msg":"sender: started","stream_id":"o06438rc"}
+{"time":"2025-03-12T13:28:53.304213473+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-12T13:28:58.434485957+01:00","level":"INFO","msg":"stream: closing","id":"o06438rc"}
+{"time":"2025-03-12T13:28:58.434615483+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-12T13:28:58.435341282+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-12T13:29:01.068826805+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-12T13:29:01.351444727+01:00","level":"INFO","msg":"handler: closed","stream_id":"o06438rc"}
+{"time":"2025-03-12T13:29:01.351646843+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"o06438rc"}
+{"time":"2025-03-12T13:29:01.351754233+01:00","level":"INFO","msg":"sender: closed","stream_id":"o06438rc"}
+{"time":"2025-03-12T13:29:01.351862756+01:00","level":"INFO","msg":"stream: closed","id":"o06438rc"}
