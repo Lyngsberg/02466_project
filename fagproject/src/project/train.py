@@ -1,4 +1,8 @@
-# Training function
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+
 def train_NN_model(model, x_train, y_train, epochs=1000, lr=0.1):
     criterion = nn.MSELoss()
     optimizer = optim.SGD(model.parameters(), lr=lr)

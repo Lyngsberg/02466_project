@@ -5,7 +5,7 @@ import torch.optim as optim
 # Define the Feedforward Neural Network
 class NN_model1(nn.Module):
     def __init__(self):
-        super(FFNN, self).__init__()
+        super(NN_model1, self).__init__()
         self.hidden = nn.Linear(2, 2)  # 2 input neurons -> 2 hidden neurons
         self.output = nn.Linear(2, 1)  # 2 hidden neurons -> 1 output neuron
 
