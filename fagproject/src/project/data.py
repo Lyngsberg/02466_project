@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 from torch.utils.data import DataLoader, TensorDataset
+import pickle
 
 def quadratic_polynomial(x,y):
     return 3*x**2 + 2*y**2 + 1
@@ -41,27 +42,59 @@ X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 0.
 X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 0.1)
 
 # Convert to tensors
-X_train_q = torch.tensor(X_q, dtype=torch.float32).unsqueeze(1)
-Y_train_q = torch.tensor(Y_q, dtype=torch.float32).unsqueeze(1)
+X_train_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
 Z_train_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
 
-X_test_q = torch.tensor(X_q, dtype=torch.float32).unsqueeze(1)
-Y_test_q = torch.tensor(Y_q, dtype=torch.float32).unsqueeze(1)
+X_test_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
 Z_test_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
 
-train_loader_q = DataLoader(TensorDataset(X_train_q, Y_train_q, Z_train_q), batch_size=32, shuffle=True)
-test_loader_q = DataLoader(TensorDataset(X_test_q, Y_test_q, Z_test_q), batch_size=32, shuffle=False)
+train_loader_q = DataLoader(TensorDataset(X_train_q, Z_train_q), batch_size=32, shuffle=True)
+test_loader_q = DataLoader(TensorDataset(X_test_q, Z_test_q), batch_size=32, shuffle=False)
 
-X_train_q_n = torch.tensor(X_q_n, dtype=torch.float32).unsqueeze(1)
-Y_train_q_n = torch.tensor(Y_q_n, dtype=torch.float32).unsqueeze(1)
+X_train_q_n = torch.tensor(np.vstack((X_q_n, Y_q_n)).T, dtype=torch.float32)
 Z_train_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
 
-X_test_q_n = torch.tensor(X_q_n, dtype=torch.float32).unsqueeze(1)
-Y_test_q_n = torch.tensor(Y_q_n, dtype=torch.float32).unsqueeze(1)
+X_test_q_n = torch.tensor(np.vstack((X_q_n, Y_q_n)).T, dtype=torch.float32)
 Z_test_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
 
-train_loader_q_n = DataLoader(TensorDataset(X_train_q_n, Y_train_q_n, Z_train_q_n), batch_size=32, shuffle=True)
-test_loader_q_n = DataLoader(TensorDataset(X_test_q_n, Y_test_q_n, Z_test_q_n), batch_size=32, shuffle=False)
+train_loader_q_n = DataLoader(TensorDataset(X_train_q_n, Z_train_q_n), batch_size=32, shuffle=True)
+test_loader_q_n = DataLoader(TensorDataset(X_test_q_n, Z_test_q_n), batch_size=32, shuffle=False)
+
+X_train_c = torch.tensor(np.vstack((X_c, Y_c)).T, dtype=torch.float32)
+Z_train_c = torch.tensor(Z_c, dtype=torch.float32).unsqueeze(1)
+
+X_test_c = torch.tensor(np.vstack((X_c, Y_c)).T, dtype=torch.float32)
+Z_test_c = torch.tensor(Z_c, dtype=torch.float32).unsqueeze(1)
+
+train_loader_c = DataLoader(TensorDataset(X_train_c, Z_train_c), batch_size=32, shuffle=True)
+test_loader_c = DataLoader(TensorDataset(X_test_c, Z_test_c), batch_size=32, shuffle=False)
+
+X_train_c_n = torch.tensor(np.vstack((X_c_n, Y_c_n)).T, dtype=torch.float32)
+Z_train_c_n = torch.tensor(Z_c_n, dtype=torch.float32).unsqueeze(1)
+
+X_test_c_n = torch.tensor(np.vstack((X_c_n, Y_c_n)).T, dtype=torch.float32)
+Z_test_c_n = torch.tensor(Z_c_n, dtype=torch.float32).unsqueeze(1)
+
+train_loader_c_n = DataLoader(TensorDataset(X_train_c_n, Z_train_c_n), batch_size=32, shuffle=True)
+test_loader_c_n = DataLoader(TensorDataset(X_test_c_n, Z_test_c_n), batch_size=32, shuffle=False)
+
+X_train_s = torch.tensor(np.vstack((X_s, Y_s)).T, dtype=torch.float32)
+Z_train_s = torch.tensor(Z_s, dtype=torch.float32).unsqueeze(1)
+
+X_test_s = torch.tensor(np.vstack((X_s, Y_s)).T, dtype=torch.float32)
+Z_test_s = torch.tensor(Z_s, dtype=torch.float32).unsqueeze(1)
+
+train_loader_s = DataLoader(TensorDataset(X_train_s, Z_train_s), batch_size=32, shuffle=True)
+test_loader_s = DataLoader(TensorDataset(X_test_s, Z_test_s), batch_size=32, shuffle=False)
+
+X_train_s_n = torch.tensor(np.vstack((X_s_n, Y_s_n)).T, dtype=torch.float32)
+Z_train_s_n = torch.tensor(Z_s_n, dtype=torch.float32).unsqueeze(1)
+
+X_test_s_n = torch.tensor(np.vstack((X_s_n, Y_s_n)).T, dtype=torch.float32)
+Z_test_s_n = torch.tensor(Z_s_n, dtype=torch.float32).unsqueeze(1)
+
+train_loader_s_n = DataLoader(TensorDataset(X_train_s_n, Z_train_s_n), batch_size=32, shuffle=True)
+test_loader_s_n = DataLoader(TensorDataset(X_test_s_n, Z_test_s_n), batch_size=32, shuffle=False)
 
 
 # Make 6 sub-3d plots for each of the functions
