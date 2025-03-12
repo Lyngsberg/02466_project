@@ -4,6 +4,7 @@ import torch
 from torch.utils.data import DataLoader, TensorDataset
 import pickle
 import argparse
+import random
 
 def quadratic_polynomial(x,y):
     return 3*x**2 + 2*y**2 + 1
@@ -42,7 +43,11 @@ def process_and_save_data(X, Y, Z, filename):
     Z_data = torch.tensor(Z, dtype=torch.float32).unsqueeze(1)
     save_data(filename, X_data, Z_data)
 
-def main(num_samples: int, x_low: int, x_high: int, y_low:int, y_high: int):
+def main(num_samples: int, seed: int, x_low: int, x_high: int, y_low:int, y_high: int):
+
+    random.seed(seed)
+    torch.manual_seed(seed)
+    np.random.seed(seed)
 
     X_q, Y_q, Z_q = generate_data(num_samples, quadratic_polynomial, x_low, x_high, y_low, y_high)
     X_c, Y_c, Z_c = generate_data(num_samples, cubic_polynomial, x_low, x_high, y_low, y_high)
@@ -99,6 +104,7 @@ if __name__=="__main__":
     parser.add_argument("--x_high", type=int, default=1)
     parser.add_argument("--y_low", type=int, default=-1)
     parser.add_argument("--y_high", type=int, default=1)
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
-    main(args.num_samples, args.x_low, args.x_high, args.y_low, args.y_high)
+    main(args.num_samples, args.seed, args.x_low, args.x_high, args.y_low, args.y_high)
