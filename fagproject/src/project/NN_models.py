@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 # Define the Feedforward Neural Network
-class FFNN(nn.Module):
+class NN_model1(nn.Module):
     def __init__(self):
         super(FFNN, self).__init__()
         self.hidden = nn.Linear(2, 2)  # 2 input neurons -> 2 hidden neurons
@@ -31,7 +31,7 @@ def train_model(model, x_train, y_train, epochs=1000, lr=0.1):
 
 if __name__=="__main__":
     # Create the model
-    model = FFNN()
+    model = NN_model1()
 
     # Training data (X: inputs, y: labels)
     x_train = torch.tensor([[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]])
