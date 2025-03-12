@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 import pickle
+random_seed = 42
+np.random.seed(random_seed)
+torch.manual_seed(random_seed)
 
 def quadratic_polynomial(x,y):
     return 3*x**2 + 2*y**2 + 1
