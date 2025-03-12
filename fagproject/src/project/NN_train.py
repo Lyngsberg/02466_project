@@ -11,8 +11,9 @@ from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, TensorDataset
 import os
 import importlib    
+import shutil
 
-def train_model(data_type: str, model_name: str, batch_size: int, learning_rate: float, epochs: int, seed: int):
+def train_model(data_type: str, model_name: str, modul_name: str, batch_size: int, learning_rate: float, epochs: int, seed: int):
     """
     Train our Feed forward neural networks
     """
@@ -21,6 +22,23 @@ def train_model(data_type: str, model_name: str, batch_size: int, learning_rate:
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
+
+
+    # Cleaning the wandb folder
+    if os.path.exists("wandb"):
+        # List all files and directories in wandb/
+        entries = os.listdir("wandb")
+
+    # Keep log files and 'latest-run'
+    keep_files = {"latest-run"}
+    keep_files.update([f for f in entries if f.endswith(".log")])
+
+    # Delete all other run directories
+    for entry in entries:
+        entry_path = os.path.join("wandb", entry)
+        if entry not in keep_files and entry.startswith("run-"):
+            shutil.rmtree(entry_path)
+            print(f"Deleted old run: {entry_path}")
 
     run = wandb.init(
         entity= "lyngsberg-danmarks-tekniske-universitet-dtu",
@@ -53,9 +71,10 @@ def train_model(data_type: str, model_name: str, batch_size: int, learning_rate:
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
     # Initialize the model
-    NN_models = importlib.import_module('NN_models')
-    model_class = getattr(NN_models, model_name)
+    models_modul = importlib.import_module(modul_name)
+    model_class = getattr(models_modul, model_name)
     model = model_class().to(device)
+
     criterion = nn.MSELoss().to(device)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -98,19 +117,32 @@ def train_model(data_type: str, model_name: str, batch_size: int, learning_rate:
             f"Val MSE: {val_mse:.4f}, "
   
         )
+    if modul_name == "NN_models":
+        model_path = os.path.join("fagproject/models/NN_models/", f"{model_name}{data_type}.pth")
+        torch.save(model.state_dict(), model_path)
+        print(f"Model saved locally to {model_path}")
 
-    model_path = os.path.join("fagproject/models/NN_models/", f"{model_name}{datetime.now()}.pth")
-    torch.save(model.state_dict(), model_path)
-    print(f"Model saved locally to {model_path}")
+
+        artifact = wandb.Artifact(
+            name="Neural_Network",
+            type="model",
+            description="A trained model",
+            metadata={"Val loss": val_mse,  
+                    "Date": datetime.now()},
+        )
+    else:
+        model_path = os.path.join("fagproject/models/PN_models/", f"{model_name}{data_type}.pth")
+        torch.save(model.state_dict(), model_path)
+        print(f"Model saved locally to {model_path}")
 
 
-    artifact = wandb.Artifact(
-        name="Neural_Network",
-        type="model",
-        description="A trained model",
-        metadata={"Val loss": val_mse,
-                  "Date": datetime.now()},
-    )
+        artifact = wandb.Artifact(
+            name="Polynomial_Network",
+            type="model",
+            description="A trained model",
+            metadata={"Val loss": val_mse,
+                    "Date": datetime.now()},
+        )
     artifact.add_file(model_path)
     run.log_artifact(artifact)
 
@@ -123,6 +155,7 @@ if __name__ == "__main__":
     parser.add_argument("--learning-rate", type=float, default=0.001)
     parser.add_argument("--epochs", type=int, default=3)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--modul_name", type=str, default="NN_models")
     args = parser.parse_args()
 
-    train_model(args.data_type, args.model_name, args.batch_size, args.learning_rate, args.epochs, args.seed)
+    train_model(args.data_type, args.model_name, args.modul_name, args.batch_size, args.learning_rate, args.epochs, args.seed)
