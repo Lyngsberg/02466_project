@@ -16,7 +16,7 @@ class FFNN(nn.Module):
 
 # Training function
 def train_model(model, x_train, y_train, epochs=1000, lr=0.1):
-    criterion = nn.BCELoss()  # Binary Cross Entropy for classification
+    criterion = nn.MSELoss()
     optimizer = optim.SGD(model.parameters(), lr=lr)
     
     for epoch in range(epochs):
@@ -28,7 +28,6 @@ def train_model(model, x_train, y_train, epochs=1000, lr=0.1):
         
         if epoch % 100 == 0:
             print(f'Epoch {epoch}, Loss: {loss.item()}')
-
 
 if __name__=="__main__":
     # Create the model
