@@ -41,31 +41,32 @@ X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 0.
 X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 0.1)
 
 # Convert to tensors
-X_train_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
-Y_train_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
-X_test_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
-Y_test_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
+X_train_q = torch.tensor(X_q, dtype=torch.float32).unsqueeze(1)
+Y_train_q = torch.tensor(Y_q, dtype=torch.float32).unsqueeze(1)
+Z_train_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
 
+X_test_q = torch.tensor(X_q, dtype=torch.float32).unsqueeze(1)
+Y_test_q = torch.tensor(Y_q, dtype=torch.float32).unsqueeze(1)
+Z_test_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
 
-train_loader_q = DataLoader(TensorDataset(X_train_q, Y_train_q), batch_size=32, shuffle=True)
-test_loader_q = DataLoader(TensorDataset(X_test_q, Y_test_q), batch_size=32, shuffle=False)
+train_loader_q = DataLoader(TensorDataset(X_train_q, Y_train_q, Z_train_q), batch_size=32, shuffle=True)
+test_loader_q = DataLoader(TensorDataset(X_test_q, Y_test_q, Z_test_q), batch_size=32, shuffle=False)
 
-X_train_q_n = torch.tensor(np.vstack((X_q_n, Y_q_n)).T, dtype=torch.float32)
-Y_train_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
-X_test_q_n = torch.tensor(np.vstack((X_q_n, Y_q_n)).T, dtype=torch.float32)
-Y_test_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
+X_train_q_n = torch.tensor(X_q_n, dtype=torch.float32).unsqueeze(1)
+Y_train_q_n = torch.tensor(Y_q_n, dtype=torch.float32).unsqueeze(1)
+Z_train_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
 
-X_train_c_n = torch.tensor(np.vstack((X_c_n, Y_c_n)).T, dtype=torch.float32)
-Y_train_c_n = torch.tensor(Z_c_n, dtype=torch.float32).unsqueeze(1)
-X_test_c_n = torch.tensor(np.vstack((X_c_n, Y_c_n)).T, dtype=torch.float32)
-Y_test_c_n = torch.tensor(Z_c_n, dtype=torch.float32).unsqueeze(1)
+X_test_q_n = torch.tensor(X_q_n, dtype=torch.float32).unsqueeze(1)
+Y_test_q_n = torch.tensor(Y_q_n, dtype=torch.float32).unsqueeze(1)
+Z_test_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
 
-train_loader_q_n = DataLoader(TensorDataset(X_train_q_n, Y_train_q_n), batch_size=32, shuffle=True)
-test_loader_q_n = DataLoader(TensorDataset(X_test_q_n, Y_test_q_n), batch_size=32, shuffle=False)
+train_loader_q_n = DataLoader(TensorDataset(X_train_q_n, Y_train_q_n, Z_train_q_n), batch_size=32, shuffle=True)
+test_loader_q_n = DataLoader(TensorDataset(X_test_q_n, Y_test_q_n, Z_test_q_n), batch_size=32, shuffle=False)
 
 
 # Make 6 sub-3d plots for each of the functions
 fig = plt.figure(figsize=(15, 10))
+
 ax1 = fig.add_subplot(231, projection='3d')
 ax1.scatter(X_q, Y_q, Z_q)
 ax1.set_title('Quadratic Polynomial')
