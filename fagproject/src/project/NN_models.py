@@ -1,6 +1,13 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import numpy as np
+from torch.utils.data import DataLoader, TensorDataset
+import matplotlib.pyplot as plt
+import sympy as sp
+random_seed = 42
+np.random.seed(random_seed)
+torch.manual_seed(random_seed)
 
 # Define the Feedforward Neural Network
 class NN_model1(nn.Module):
@@ -13,6 +20,5 @@ class NN_model1(nn.Module):
         x = torch.relu(self.hidden(x))  # Activation function for hidden layer
         x = torch.sigmoid(self.output(x))  # Sigmoid activation for output
         return x
-
 
 
