@@ -38,9 +38,9 @@ X_q, Y_q, Z_q = generate_data(num_samples, quadratic_polynomial)
 X_c, Y_c, Z_c = generate_data(num_samples, cubic_polynomial)
 X_s, Y_s, Z_s = generate_data(num_samples, smooth_function)
 
-X_q_n, Y_q_n, Z_q_n = generate_data_with_noise(num_samples, quadratic_polynomial, 0.1)
-X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 0.1)
-X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 0.1)
+X_q_n, Y_q_n, Z_q_n = generate_data_with_noise(num_samples, quadratic_polynomial, 1)
+X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 1)
+X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 1)
 
 # Convert to tensors
 X_train_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
