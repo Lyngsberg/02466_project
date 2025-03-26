@@ -91,12 +91,12 @@ def train_model():
 
                 outputs = model(x_batch)
                 loss = criterion(outputs, y_batch)
-                val_mse += loss.item()
+                val_mse /= loss.item()
 
         wandb.log({
             "epoch": epoch + 1,
             "train_loss": epoch_loss,
-            "val_loss": val_mse,
+            "validation_MSE": val_mse,
         })
 
         print(
