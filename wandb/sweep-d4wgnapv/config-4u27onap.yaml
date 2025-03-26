@@ -1,0 +1,16 @@
+wandb_version: 1
+
+batch_size:
+  value: 128
+data_type:
+  value: train_q_1.pkl
+epochs:
+  value: 10
+learning_rate:
+  value: 0.006707549848069714
+model_modul_name:
+  value:
+  - NN_models
+  - NN_model1
+seed:
+  value: 123

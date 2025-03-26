@@ -1,0 +1,649 @@
+2025-03-26 11:53:26 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:53:45 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:57:32 ERROR 400 response executing GraphQL.
+2025-03-26 11:57:32 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2025-03-26 11:57:32 ERROR Traceback (most recent call last):
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 1129, in sweep
+    response = self.gql(
+        query,
+    ...<5 lines>...
+        },
+    )
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/cli/cli.py", line 1676, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/wandb_agent.py", line 567, in agent
+    return run_agent(
+        sweep_id,
+    ...<4 lines>...
+        count=count,
+    )
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/wandb_agent.py", line 526, in run_agent
+    agent.run()
+    ~~~~~~~~~^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/wandb_agent.py", line 193, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/apis/internal.py", line 134, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/apis/normalize.py", line 42, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 400: name required for project query
+
+2025-03-26 11:57:33 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:59:58 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:00:12 ERROR 400 response executing GraphQL.
+2025-03-26 12:00:12 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2025-03-26 12:00:12 ERROR Traceback (most recent call last):
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 1129, in sweep
+    response = self.gql(
+        query,
+    ...<5 lines>...
+        },
+    )
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/cli/cli.py", line 1676, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/wandb_agent.py", line 567, in agent
+    return run_agent(
+        sweep_id,
+    ...<4 lines>...
+        count=count,
+    )
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/wandb_agent.py", line 526, in run_agent
+    agent.run()
+    ~~~~~~~~~^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/wandb_agent.py", line 193, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/apis/internal.py", line 134, in sweep
+    return self.api.sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/thousig/miniconda3/envs/fagproject/lib/python3.13/site-packages/wandb/apis/normalize.py", line 42, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 400: name required for project query
+
+2025-03-26 12:00:13 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:01:12 INFO Running runs: []
+2025-03-26 12:01:12 INFO Agent received command: run
+2025-03-26 12:01:12 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.003474717350152392
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 12:01:12 INFO About to run command: /usr/bin/env python sweep_train --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.003474717350152392 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 12:01:17 INFO Running runs: ['9nt0qsej']
+2025-03-26 12:01:17 INFO Cleaning up finished run: 9nt0qsej
+2025-03-26 12:01:17 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:01:17 INFO Agent received command: run
+2025-03-26 12:01:17 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.009322542920711451
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-03-26 12:01:17 INFO About to run command: /usr/bin/env python sweep_train --batch_size=64 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.009322542920711451 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-03-26 12:01:22 INFO Running runs: ['wvlknxwn']
+2025-03-26 12:01:22 INFO Cleaning up finished run: wvlknxwn
+2025-03-26 12:01:23 INFO Agent received command: run
+2025-03-26 12:01:23 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.0023180691625652914
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:01:23 INFO About to run command: /usr/bin/env python sweep_train --batch_size=32 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.0023180691625652914 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:01:28 INFO Running runs: ['5xf6dw24']
+2025-03-26 12:01:28 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 12:01:28 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 12:03:01 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:03:06 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:03:25 INFO Running runs: []
+2025-03-26 12:03:25 INFO Agent received command: run
+2025-03-26 12:03:25 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.008180007664624409
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:03:25 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.008180007664624409 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:03:30 INFO Running runs: ['9y7fc01e']
+2025-03-26 12:03:30 INFO Cleaning up finished run: 9y7fc01e
+2025-03-26 12:03:30 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:03:31 INFO Agent received command: run
+2025-03-26 12:03:31 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.008391039307686997
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:03:31 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train --batch_size=32 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.008391039307686997 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:03:36 INFO Running runs: ['7lgi682y']
+2025-03-26 12:03:36 INFO Cleaning up finished run: 7lgi682y
+2025-03-26 12:03:36 INFO Agent received command: run
+2025-03-26 12:03:36 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0020401131326906945
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:03:36 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0020401131326906945 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:03:41 INFO Running runs: ['cgmx8ypx']
+2025-03-26 12:03:41 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 12:03:41 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 12:03:57 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:04:08 INFO Running runs: []
+2025-03-26 12:04:08 INFO Agent received command: run
+2025-03-26 12:04:08 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.0014351217713986467
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-03-26 12:04:08 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.0014351217713986467 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-03-26 12:04:13 INFO Running runs: ['uz29oiq4']
+2025-03-26 12:04:13 INFO Cleaning up finished run: uz29oiq4
+2025-03-26 12:04:13 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:04:13 INFO Agent received command: run
+2025-03-26 12:04:13 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.009700221678200944
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 12:04:13 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.009700221678200944 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 12:04:18 INFO Running runs: ['30d8jsw2']
+2025-03-26 12:04:18 INFO Cleaning up finished run: 30d8jsw2
+2025-03-26 12:04:19 INFO Agent received command: run
+2025-03-26 12:04:19 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.005108820718900578
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:04:19 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.005108820718900578 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:04:24 INFO Running runs: ['4pgvyaxu']
+2025-03-26 12:04:24 INFO Cleaning up finished run: 4pgvyaxu
+2025-03-26 12:04:24 INFO Agent received command: run
+2025-03-26 12:04:24 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0055685384977608035
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:04:24 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0055685384977608035 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:04:29 INFO Running runs: ['vwsnvbrf']
+2025-03-26 12:04:29 INFO Cleaning up finished run: vwsnvbrf
+2025-03-26 12:04:30 INFO Agent received command: run
+2025-03-26 12:04:30 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.00351505771496517
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:04:30 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.00351505771496517 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:04:35 INFO Running runs: ['0x2a4c0m']
+2025-03-26 12:04:35 INFO Cleaning up finished run: 0x2a4c0m
+2025-03-26 12:04:35 INFO Agent received command: run
+2025-03-26 12:04:35 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.003927133733074911
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-03-26 12:04:35 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.003927133733074911 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-03-26 12:04:40 INFO Running runs: ['wi3de4ec']
+2025-03-26 12:04:40 INFO Cleaning up finished run: wi3de4ec
+2025-03-26 12:04:40 INFO Agent received command: run
+2025-03-26 12:04:40 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.003177385771138608
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:04:40 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.003177385771138608 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:04:45 INFO Running runs: ['mgdhfbgh']
+2025-03-26 12:04:45 INFO Cleaning up finished run: mgdhfbgh
+2025-03-26 12:04:46 INFO Agent received command: run
+2025-03-26 12:04:46 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.006707549848069714
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-03-26 12:04:46 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.006707549848069714 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-03-26 12:04:51 INFO Running runs: ['4u27onap']
+2025-03-26 12:04:51 INFO Cleaning up finished run: 4u27onap
+2025-03-26 12:04:51 INFO Agent received command: run
+2025-03-26 12:04:51 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.009144985731219926
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:04:51 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.009144985731219926 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:04:56 INFO Running runs: ['s3oigc9c']
+2025-03-26 12:04:56 INFO Cleaning up finished run: s3oigc9c
+2025-03-26 12:04:56 INFO Agent received command: run
+2025-03-26 12:04:56 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.009356655136892407
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:04:56 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.009356655136892407 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:05:01 INFO Running runs: ['qp97aegs']
+2025-03-26 12:05:01 INFO Cleaning up finished run: qp97aegs
+2025-03-26 12:05:02 INFO Agent received command: run
+2025-03-26 12:05:02 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0020186829962366244
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:05:02 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0020186829962366244 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:05:07 INFO Running runs: ['fxp7iatp']
+2025-03-26 12:05:07 INFO Cleaning up finished run: fxp7iatp
+2025-03-26 12:05:07 INFO Agent received command: run
+2025-03-26 12:05:07 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.00582553573827821
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:05:07 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.00582553573827821 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:05:12 INFO Running runs: ['kr88lsap']
+2025-03-26 12:05:12 INFO Cleaning up finished run: kr88lsap
+2025-03-26 12:05:13 INFO Agent received command: run
+2025-03-26 12:05:13 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.0008356640746305104
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:05:13 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.0008356640746305104 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:05:18 INFO Running runs: ['4g4ftvq9']
+2025-03-26 12:05:18 INFO Cleaning up finished run: 4g4ftvq9
+2025-03-26 12:05:18 INFO Agent received command: run
+2025-03-26 12:05:18 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.009439554241651058
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:05:18 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.009439554241651058 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:05:23 INFO Running runs: ['so4p3ds2']
+2025-03-26 12:05:23 INFO Cleaning up finished run: so4p3ds2
+2025-03-26 12:05:23 INFO Agent received command: run
+2025-03-26 12:05:23 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0045373225205618695
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-03-26 12:05:23 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0045373225205618695 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-03-26 12:05:28 INFO Running runs: ['zlyg48f0']
+2025-03-26 12:05:28 INFO Cleaning up finished run: zlyg48f0
+2025-03-26 12:05:29 INFO Agent received command: run
+2025-03-26 12:05:29 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.005915187374888684
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 12:05:29 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.005915187374888684 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 12:05:34 INFO Running runs: ['piysrdc2']
+2025-03-26 12:05:34 INFO Cleaning up finished run: piysrdc2
+2025-03-26 12:05:34 INFO Agent received command: run
+2025-03-26 12:05:34 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.004275283590254818
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:05:34 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.004275283590254818 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:05:39 INFO Running runs: ['x7itmmh0']
+2025-03-26 12:05:39 INFO Cleaning up finished run: x7itmmh0
+2025-03-26 12:05:40 INFO Agent received command: run
+2025-03-26 12:05:40 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.008674139991368504
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:05:40 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.008674139991368504 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:05:45 INFO Running runs: ['k1cb9dwk']
+2025-03-26 12:05:45 INFO Cleaning up finished run: k1cb9dwk
+2025-03-26 12:05:45 INFO Agent received command: run
+2025-03-26 12:05:45 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.009985530794750636
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:05:45 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.009985530794750636 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:05:50 INFO Running runs: ['dwb2sucy']
+2025-03-26 12:05:50 INFO Cleaning up finished run: dwb2sucy
+2025-03-26 12:05:50 INFO Agent received command: run
+2025-03-26 12:05:50 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 10
+	learning_rate: 0.0027178654358950183
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 12:05:50 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=10 --learning_rate=0.0027178654358950183 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 12:05:55 INFO Running runs: ['oisif4hl']
+2025-03-26 12:05:55 INFO Cleaning up finished run: oisif4hl
+2025-03-26 12:05:55 INFO Agent received command: exit
+2025-03-26 12:05:55 INFO Received exit command. Killing runs and quitting.
+2025-03-26 12:13:39 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:13:51 INFO Running runs: []
+2025-03-26 12:13:52 INFO Agent received command: run
+2025-03-26 12:13:52 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.008692432237635063
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:13:52 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.008692432237635063 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:13:57 INFO Running runs: ['9qz27nxu']
+2025-03-26 12:13:57 INFO Cleaning up finished run: 9qz27nxu
+2025-03-26 12:13:57 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 12:13:57 INFO Agent received command: run
+2025-03-26 12:13:57 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.008376853662830605
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:13:57 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.008376853662830605 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:14:02 INFO Running runs: ['wttxkz0j']
+2025-03-26 12:14:02 INFO Cleaning up finished run: wttxkz0j
+2025-03-26 12:14:03 INFO Agent received command: run
+2025-03-26 12:14:03 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.002790697242607951
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:14:03 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.002790697242607951 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:14:08 INFO Running runs: ['31j5di8s']
+2025-03-26 12:14:08 INFO Cleaning up finished run: 31j5di8s
+2025-03-26 12:14:08 INFO Agent received command: run
+2025-03-26 12:14:08 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.005611074490429312
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:14:08 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.005611074490429312 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:14:13 INFO Running runs: ['v7i9zy2s']
+2025-03-26 12:14:13 INFO Cleaning up finished run: v7i9zy2s
+2025-03-26 12:14:13 INFO Agent received command: run
+2025-03-26 12:14:13 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.00765510021311531
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:14:13 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.00765510021311531 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:14:18 INFO Running runs: ['594jj1zu']
+2025-03-26 12:14:18 INFO Cleaning up finished run: 594jj1zu
+2025-03-26 12:14:19 INFO Agent received command: run
+2025-03-26 12:14:19 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.0068254600811255665
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:14:19 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.0068254600811255665 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:14:24 INFO Running runs: ['6ngvyvs6']
+2025-03-26 12:14:24 INFO Cleaning up finished run: 6ngvyvs6
+2025-03-26 12:14:24 INFO Agent received command: run
+2025-03-26 12:14:24 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.005762263368782278
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:14:24 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.005762263368782278 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:14:29 INFO Running runs: ['9nwgfpug']
+2025-03-26 12:14:29 INFO Cleaning up finished run: 9nwgfpug
+2025-03-26 12:14:29 INFO Agent received command: run
+2025-03-26 12:14:29 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.004546643243524948
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-03-26 12:14:29 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.004546643243524948 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-03-26 12:14:34 INFO Running runs: ['41gqzhul']
+2025-03-26 12:14:34 INFO Cleaning up finished run: 41gqzhul
+2025-03-26 12:14:35 INFO Agent received command: run
+2025-03-26 12:14:35 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.003105928333249352
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:14:35 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.003105928333249352 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:14:40 INFO Running runs: ['trxjt9nh']
+2025-03-26 12:14:40 INFO Cleaning up finished run: trxjt9nh
+2025-03-26 12:14:40 INFO Agent received command: run
+2025-03-26 12:14:40 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 10
+	learning_rate: 0.0012000181084352115
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:14:40 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=10 --learning_rate=0.0012000181084352115 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:14:45 INFO Running runs: ['jyj1m8dc']
+2025-03-26 12:14:45 INFO Cleaning up finished run: jyj1m8dc
+2025-03-26 12:14:45 INFO Agent received command: run
+2025-03-26 12:14:45 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0018964056872370911
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:14:45 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0018964056872370911 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:14:50 INFO Running runs: ['0wykxp63']
+2025-03-26 12:14:50 INFO Cleaning up finished run: 0wykxp63
+2025-03-26 12:14:50 INFO Agent received command: run
+2025-03-26 12:14:50 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0085070134821653
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:14:50 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0085070134821653 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:14:55 INFO Running runs: ['uauvzibd']
+2025-03-26 12:14:55 INFO Cleaning up finished run: uauvzibd
+2025-03-26 12:14:56 INFO Agent received command: run
+2025-03-26 12:14:56 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.007892093501742537
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:14:56 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.007892093501742537 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:15:01 INFO Running runs: ['5g6nn7yf']
+2025-03-26 12:15:01 INFO Cleaning up finished run: 5g6nn7yf
+2025-03-26 12:15:01 INFO Agent received command: run
+2025-03-26 12:15:01 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0023525968706927637
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:15:01 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0023525968706927637 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:15:06 INFO Running runs: ['7sdy3ovw']
+2025-03-26 12:15:06 INFO Cleaning up finished run: 7sdy3ovw
+2025-03-26 12:15:06 INFO Agent received command: run
+2025-03-26 12:15:06 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.004017592554408626
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 12:15:06 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.004017592554408626 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 12:15:11 INFO Running runs: ['xpbf71e3']
+2025-03-26 12:15:11 INFO Cleaning up finished run: xpbf71e3
+2025-03-26 12:15:12 INFO Agent received command: run
+2025-03-26 12:15:12 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0025262525742261277
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:15:12 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0025262525742261277 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:15:17 INFO Running runs: ['kpoze8at']
+2025-03-26 12:15:17 INFO Cleaning up finished run: kpoze8at
+2025-03-26 12:15:17 INFO Agent received command: run
+2025-03-26 12:15:17 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.008877063056150826
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-03-26 12:15:17 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.008877063056150826 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-03-26 12:15:22 INFO Running runs: ['6q9lw3t5']
+2025-03-26 12:15:22 INFO Cleaning up finished run: 6q9lw3t5
+2025-03-26 12:15:22 INFO Agent received command: run
+2025-03-26 12:15:22 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0017032654546611692
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-03-26 12:15:22 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0017032654546611692 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-03-26 12:15:27 INFO Running runs: ['48w67jet']
+2025-03-26 12:15:27 INFO Cleaning up finished run: 48w67jet
+2025-03-26 12:15:28 INFO Agent received command: run
+2025-03-26 12:15:28 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0007190916952151947
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 12:15:28 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0007190916952151947 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 12:15:33 INFO Running runs: ['l5t3bbp7']
+2025-03-26 12:15:33 INFO Cleaning up finished run: l5t3bbp7
+2025-03-26 12:15:33 INFO Agent received command: run
+2025-03-26 12:15:33 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.004299365962951331
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 12:15:33 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.004299365962951331 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 12:15:38 INFO Running runs: ['b7xgx6yl']
+2025-03-26 12:15:38 INFO Cleaning up finished run: b7xgx6yl
+2025-03-26 12:15:38 INFO Agent received command: exit
+2025-03-26 12:15:38 INFO Received exit command. Killing runs and quitting.

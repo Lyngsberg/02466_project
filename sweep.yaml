@@ -1,4 +1,7 @@
-program: sweep_train
+entity: 'lyngsberg-danmarks-tekniske-universitet-dtu'  # Your username
+project: 'Fagprojekt'  # Your project name
+
+program: fagproject/src/project/sweep_train.py
 
 method: random  # You can also use 'grid' if you want to test all combinations of hyperparameters
 name: sweep_test  # Name of the sweep

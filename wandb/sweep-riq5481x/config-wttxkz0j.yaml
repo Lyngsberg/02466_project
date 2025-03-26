@@ -1,0 +1,16 @@
+wandb_version: 1
+
+batch_size:
+  value: 32
+data_type:
+  value: train_q_1.pkl
+epochs:
+  value: 3
+learning_rate:
+  value: 0.008376853662830605
+model_modul_name:
+  value:
+  - PN_model2
+  - Polynomial_Network
+seed:
+  value: 42
