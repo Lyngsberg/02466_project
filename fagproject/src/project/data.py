@@ -70,7 +70,37 @@ def main(num_samples: int, seed: int, x_low: int, x_high: int, y_low:int, y_high
         process_and_save_data(X_s, Y_s, Z_s, f'fagproject/data/train_s_{i}.pkl')
         process_and_save_data(X_s_n, Y_s_n,Z_s_n, f'fagproject/data/train_s_n_{i}.pkl')
 
+    # Make 6 sub-3d plots for each of the functions
+    # fig = plt.figure(figsize=(15, 10))
 
+    # ax1 = fig.add_subplot(231, projection='3d')
+    # ax1.scatter(X_q, Y_q, Z_q)
+    # ax1.set_title('Quadratic Polynomial')
+
+    # ax2 = fig.add_subplot(232, projection='3d')
+    # ax2.scatter(X_c, Y_c, Z_c)
+    # ax2.set_title('Cubic Polynomial')
+
+    # ax3 = fig.add_subplot(233, projection='3d')
+    # ax3.scatter(X_s, Y_s, Z_s)
+    # ax3.set_title('Smooth Function')
+
+    # ax4 = fig.add_subplot(234, projection='3d')
+    # ax4.scatter(X_q_n, Y_q_n, Z_q_n)
+    # ax4.set_title('Quadratic Polynomial with Noise')
+
+    # ax5 = fig.add_subplot(235, projection='3d')
+    # ax5.scatter(X_c_n, Y_c_n, Z_c_n)
+    # ax5.set_title('Cubic Polynomial with Noise')
+
+    # ax6 = fig.add_subplot(236, projection='3d')
+    # ax6.scatter(X_s_n, Y_s_n, Z_s_n)
+    # ax6.set_title('Smooth Function with Noise')
+
+    # plt.show()
+
+
+    plt.show()
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_samples", type=int, default=1000)

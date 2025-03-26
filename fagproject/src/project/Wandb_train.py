@@ -5,6 +5,9 @@ import argparse
 import wandb
 import random
 import NN_models
+import PN_models
+from NN_models import NN_model1
+from PN_models import PolynomialNet, Polynomial_Network, PN_Neuron
 import numpy as np
 from datetime import datetime
 from sklearn.model_selection import train_test_split
