@@ -1,0 +1,10 @@
+wandb_version: 1
+
+BATCH_SIZE:
+  value: 72
+EPOCHS:
+  value: 217
+LEARNING_RATE:
+  value: 0.0005001715622260174
+SEED:
+  value: 40

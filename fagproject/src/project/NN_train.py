@@ -151,7 +151,7 @@ def train_model(data_type: str, model_name: str, modul_name: str, batch_size: in
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data-type", type=str, default="train_q.pkl")
+    parser.add_argument("--data-type", type=str, default="train_q_1.pkl")
     parser.add_argument("--model-name", type=str, default="NN_model1")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--learning-rate", type=float, default=0.001)

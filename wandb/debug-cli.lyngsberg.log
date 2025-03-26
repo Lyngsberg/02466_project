@@ -1,3 +1,1548 @@
-2025-03-12 13:19:53 INFO Closing mailbox, abandoning 0 handles.
-2025-03-12 13:20:26 INFO Closing mailbox, abandoning 0 handles.
-2025-03-12 13:21:09 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:33:02 ERROR 403 response executing GraphQL.
+2025-03-25 21:33:02 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 21:33:02 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 21:33:02 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:33:46 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:37:30 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:37:35 ERROR 403 response executing GraphQL.
+2025-03-25 21:37:35 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 21:37:35 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 21:37:35 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:40:28 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:43:30 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:43:36 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:43:44 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:44:07 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:44:19 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:50:11 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 21:50:20 ERROR 403 response executing GraphQL.
+2025-03-25 21:50:20 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 21:50:20 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 21:50:20 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:14:39 ERROR 403 response executing GraphQL.
+2025-03-25 22:14:39 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:14:39 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:14:40 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:16:04 ERROR 403 response executing GraphQL.
+2025-03-25 22:16:04 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:16:04 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:16:05 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:16:14 ERROR 403 response executing GraphQL.
+2025-03-25 22:16:14 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:16:14 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:16:14 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:16:36 ERROR 403 response executing GraphQL.
+2025-03-25 22:16:36 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:16:36 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:16:37 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:16:57 ERROR 403 response executing GraphQL.
+2025-03-25 22:16:57 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:16:57 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:16:57 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:18:25 ERROR 403 response executing GraphQL.
+2025-03-25 22:18:25 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:18:25 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:18:26 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:19:49 ERROR 403 response executing GraphQL.
+2025-03-25 22:19:49 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:19:49 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:19:50 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:20:03 ERROR 403 response executing GraphQL.
+2025-03-25 22:20:03 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:20:03 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:20:04 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:22:17 ERROR 403 response executing GraphQL.
+2025-03-25 22:22:17 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:22:17 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:22:17 INFO Closing mailbox, abandoning 0 handles.
+2025-03-25 22:24:41 ERROR 403 response executing GraphQL.
+2025-03-25 22:24:41 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-25 22:24:41 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-25 22:24:41 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:49:56 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:50:07 ERROR 403 response executing GraphQL.
+2025-03-26 09:50:07 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-26 09:50:07 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-26 09:50:08 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:50:16 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:54:56 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:55:01 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:55:08 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:55:16 ERROR 400 response executing GraphQL.
+2025-03-26 09:55:16 ERROR {"errors":[{"message":"Sweep user not valid","path":["upsertSweep"]}],"data":{"upsertSweep":null}}
+2025-03-26 09:55:16 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: Sweep user not valid
+
+2025-03-26 09:55:17 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:55:22 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 09:55:26 ERROR 403 response executing GraphQL.
+2025-03-26 09:55:26 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-26 09:55:26 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-26 09:55:27 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 10:07:05 INFO Running runs: []
+2025-03-26 10:07:05 INFO Agent received command: run
+2025-03-26 10:07:05 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	log_metrics: False
+	model_name: NN_model1
+	seed: 456
+2025-03-26 10:07:05 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 --log_metrics=False --model_name=NN_model1 --seed=456
+2025-03-26 10:07:10 INFO Running runs: ['q9ksmrze']
+2025-03-26 10:07:11 INFO Cleaning up finished run: q9ksmrze
+2025-03-26 10:07:11 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 10:07:11 INFO Agent received command: run
+2025-03-26 10:07:11 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.009090317563433816
+	log_metrics: False
+	model_name: NN_model1
+	seed: 456
+2025-03-26 10:07:11 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.009090317563433816 --log_metrics=False --model_name=NN_model1 --seed=456
+2025-03-26 10:07:16 INFO Running runs: ['446fik2c']
+2025-03-26 10:07:16 INFO Cleaning up finished run: 446fik2c
+2025-03-26 10:07:17 INFO Agent received command: run
+2025-03-26 10:07:17 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.009829576212772766
+	log_metrics: False
+	model_name: NN_model2
+	seed: 42
+2025-03-26 10:07:17 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=64 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.009829576212772766 --log_metrics=False --model_name=NN_model2 --seed=42
+2025-03-26 10:07:22 INFO Running runs: ['xbrynqny']
+2025-03-26 10:07:22 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 10:07:22 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 10:21:55 INFO Running runs: []
+2025-03-26 10:21:55 INFO Agent received command: run
+2025-03-26 10:21:55 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 10:21:55 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 10:22:00 INFO Running runs: ['p84p3x3j']
+2025-03-26 10:22:00 INFO Cleaning up finished run: p84p3x3j
+2025-03-26 10:22:01 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 10:22:01 INFO Agent received command: run
+2025-03-26 10:22:01 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 10:22:01 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 10:22:06 INFO Running runs: ['lfc91sql']
+2025-03-26 10:22:06 INFO Cleaning up finished run: lfc91sql
+2025-03-26 10:22:07 INFO Agent received command: run
+2025-03-26 10:22:07 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 10:22:07 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 10:22:12 INFO Running runs: ['dpnplv2v']
+2025-03-26 10:22:12 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 10:22:12 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 10:45:11 INFO Running runs: []
+2025-03-26 10:45:11 INFO Agent received command: run
+2025-03-26 10:45:11 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 10:45:11 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 10:45:14 INFO Running runs: ['pi7ha1hn']
+2025-03-26 10:45:14 INFO Cleaning up finished run: pi7ha1hn
+2025-03-26 10:45:14 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 10:45:15 INFO Agent received command: run
+2025-03-26 10:45:15 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 10:45:15 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 10:45:20 INFO Running runs: ['x5i9bey3']
+2025-03-26 10:45:20 INFO Cleaning up finished run: x5i9bey3
+2025-03-26 10:45:20 INFO Agent received command: run
+2025-03-26 10:45:20 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 10:45:20 INFO About to run command: /usr/bin/env python sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 10:45:25 INFO Running runs: ['sib2ci5p']
+2025-03-26 10:45:25 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 10:45:25 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 10:49:42 INFO Running runs: []
+2025-03-26 10:49:42 INFO Agent received command: run
+2025-03-26 10:49:42 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 10:49:42 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 10:49:45 INFO Running runs: ['m5dvj975']
+2025-03-26 10:49:45 INFO Cleaning up finished run: m5dvj975
+2025-03-26 10:49:46 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 10:49:46 INFO Agent received command: run
+2025-03-26 10:49:46 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 10:49:46 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 10:49:51 INFO Running runs: ['pt2rgn1b']
+2025-03-26 10:49:51 INFO Cleaning up finished run: pt2rgn1b
+2025-03-26 10:49:52 INFO Agent received command: run
+2025-03-26 10:49:52 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 10:49:52 INFO About to run command: /usr/bin/env python  --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 10:49:57 INFO Running runs: ['30zu2x2k']
+2025-03-26 10:49:57 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 10:49:57 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:03:59 INFO Running runs: []
+2025-03-26 11:03:59 INFO Agent received command: run
+2025-03-26 11:03:59 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:03:59 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:04:05 INFO Running runs: ['1a8z910e']
+2025-03-26 11:04:05 INFO Cleaning up finished run: 1a8z910e
+2025-03-26 11:04:05 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:04:06 INFO Agent received command: run
+2025-03-26 11:04:06 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:04:06 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:04:11 INFO Running runs: ['0qek0tyg']
+2025-03-26 11:04:11 INFO Cleaning up finished run: 0qek0tyg
+2025-03-26 11:04:11 INFO Agent received command: run
+2025-03-26 11:04:11 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:04:11 INFO About to run command: /usr/bin/env python  --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:04:14 INFO Running runs: ['qgiqeln5']
+2025-03-26 11:04:14 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:04:14 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:06:24 INFO Running runs: []
+2025-03-26 11:06:24 INFO Agent received command: run
+2025-03-26 11:06:24 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:06:24 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:06:29 INFO Running runs: ['8cw73r1n']
+2025-03-26 11:06:29 INFO Cleaning up finished run: 8cw73r1n
+2025-03-26 11:06:29 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:06:30 INFO Agent received command: run
+2025-03-26 11:06:30 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:06:30 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:06:35 INFO Running runs: ['y4krek6h']
+2025-03-26 11:06:35 INFO Cleaning up finished run: y4krek6h
+2025-03-26 11:06:35 INFO Agent received command: run
+2025-03-26 11:06:35 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:06:35 INFO About to run command: /usr/bin/env python  --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:06:40 INFO Running runs: ['0yq8tt11']
+2025-03-26 11:06:40 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:06:40 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:07:09 INFO Running runs: []
+2025-03-26 11:07:09 INFO Agent received command: run
+2025-03-26 11:07:09 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.007325334307775274
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:07:09 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.007325334307775274 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:07:12 INFO Running runs: ['f905zsqu']
+2025-03-26 11:07:12 INFO Cleaning up finished run: f905zsqu
+2025-03-26 11:07:12 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:07:13 INFO Agent received command: run
+2025-03-26 11:07:13 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.006147781037093637
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:07:13 INFO About to run command: /usr/bin/env python  --batch_size=64 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.006147781037093637 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:07:18 INFO Running runs: ['bmj4y956']
+2025-03-26 11:07:18 INFO Cleaning up finished run: bmj4y956
+2025-03-26 11:07:18 INFO Agent received command: run
+2025-03-26 11:07:18 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.008069775487428921
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 11:07:18 INFO About to run command: /usr/bin/env python  --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.008069775487428921 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 11:07:23 INFO Running runs: ['2gvddzfs']
+2025-03-26 11:07:23 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:07:23 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:10:11 INFO Running runs: []
+2025-03-26 11:10:09 INFO Agent received command: run
+2025-03-26 11:10:09 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:10:09 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:10:14 INFO Running runs: ['zidf2knr']
+2025-03-26 11:10:14 INFO Cleaning up finished run: zidf2knr
+2025-03-26 11:10:15 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:10:15 INFO Agent received command: run
+2025-03-26 11:10:15 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:10:15 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:10:20 INFO Running runs: ['2w0r1xlu']
+2025-03-26 11:10:20 INFO Cleaning up finished run: 2w0r1xlu
+2025-03-26 11:10:20 INFO Agent received command: run
+2025-03-26 11:10:20 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:10:20 INFO About to run command: /usr/bin/env python  --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:10:25 INFO Running runs: ['505k6i3z']
+2025-03-26 11:10:25 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:10:25 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:12:35 INFO Running runs: []
+2025-03-26 11:12:36 INFO Agent received command: run
+2025-03-26 11:12:36 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:12:36 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:12:41 INFO Running runs: ['bn1jj9cj']
+2025-03-26 11:12:41 INFO Cleaning up finished run: bn1jj9cj
+2025-03-26 11:12:41 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:12:39 INFO Agent received command: run
+2025-03-26 11:12:39 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:12:39 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:12:44 INFO Running runs: ['7dredn49']
+2025-03-26 11:12:44 INFO Cleaning up finished run: 7dredn49
+2025-03-26 11:12:44 INFO Agent received command: run
+2025-03-26 11:12:44 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:12:44 INFO About to run command: /usr/bin/env python  --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:12:49 INFO Running runs: ['pwd6l092']
+2025-03-26 11:12:49 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:12:49 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:13:43 INFO Running runs: []
+2025-03-26 11:13:43 INFO Agent received command: run
+2025-03-26 11:13:43 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.007325334307775274
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:13:43 INFO About to run command: /usr/bin/env python  --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.007325334307775274 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:13:48 INFO Running runs: ['owsxk8ti']
+2025-03-26 11:13:48 INFO Cleaning up finished run: owsxk8ti
+2025-03-26 11:13:49 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:13:49 INFO Agent received command: run
+2025-03-26 11:13:49 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.006147781037093637
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:13:49 INFO About to run command: /usr/bin/env python  --batch_size=64 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.006147781037093637 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:13:54 INFO Running runs: ['66dap0s7']
+2025-03-26 11:13:54 INFO Cleaning up finished run: 66dap0s7
+2025-03-26 11:13:54 INFO Agent received command: run
+2025-03-26 11:13:54 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.008069775487428921
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-03-26 11:13:54 INFO About to run command: /usr/bin/env python  --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.008069775487428921 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-03-26 11:13:59 INFO Running runs: ['dp1yl00l']
+2025-03-26 11:13:59 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:13:59 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:17:05 ERROR 403 response executing GraphQL.
+2025-03-26 11:17:05 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-26 11:17:05 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-26 11:17:06 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:37:48 INFO Running runs: []
+2025-03-26 11:37:48 INFO Agent received command: run
+2025-03-26 11:37:48 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.002663275827900338
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:37:48 INFO About to run command: /usr/bin/env python sweep_train --batch_size=128 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.002663275827900338 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:37:53 INFO Running runs: ['tgtspnm7']
+2025-03-26 11:37:53 INFO Cleaning up finished run: tgtspnm7
+2025-03-26 11:37:54 INFO Closing mailbox, abandoning 0 handles.
+2025-03-26 11:37:54 INFO Agent received command: run
+2025-03-26 11:37:54 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.005875482190604809
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-03-26 11:37:54 INFO About to run command: /usr/bin/env python sweep_train --batch_size=128 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.005875482190604809 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-03-26 11:37:59 INFO Running runs: ['oyhtvlmf']
+2025-03-26 11:37:59 INFO Cleaning up finished run: oyhtvlmf
+2025-03-26 11:38:00 INFO Agent received command: run
+2025-03-26 11:38:00 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.0025800127794881615
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-03-26 11:38:00 INFO About to run command: /usr/bin/env python sweep_train --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.0025800127794881615 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-03-26 11:38:05 INFO Running runs: ['j2zerkke']
+2025-03-26 11:38:05 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-03-26 11:38:05 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-03-26 11:45:05 ERROR 403 response executing GraphQL.
+2025-03-26 11:45:05 ERROR {"errors":[{"message":"permission denied","path":["upsertSweep"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertSweep":null}}
+2025-03-26 11:45:05 ERROR Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/cli/cli.py", line 886, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<3 lines>...
+        prior_runs=prior_runs,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/internal.py", line 137, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 65, in wrapper
+    raise err
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/apis/normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3351, in upsert_sweep
+    raise e
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 3345, in upsert_sweep
+    response = self.gql(
+        mutation,
+        variable_values=variables,
+        check_retry_fn=util.no_retry_4xx,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/internal/internal_api.py", line 370, in gql
+    ret = self._retry_gql(
+        *args,
+        retry_cancel_event=self.context.cancel_event,
+        **kwargs,
+    )
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/sdk/lib/retry.py", line 150, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/site-packages/wandb/util.py", line 855, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: permission denied
+
+2025-03-26 11:45:06 INFO Closing mailbox, abandoning 0 handles.
