@@ -1,12 +1,15 @@
 {
   "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
   "python": "CPython 3.13.2",
-  "startedAt": "2025-03-12T13:36:44.900617Z",
+  "startedAt": "2025-03-25T20:24:14.343741Z",
+  "args": [
+    "--log=True"
+  ],
   "program": "/home/lyngsberg/fagproject/02466_project/fagproject/src/project/NN_train.py",
   "codePath": "fagproject/src/project/NN_train.py",
   "git": {
     "remote": "https://github.com/Lyngsberg/02466_project",
-    "commit": "e395b97af2f8a6cef88257230ad76d876928d4f2"
+    "commit": "db15acf97fb34066ba36f5c0ae2be7774f1d83f9"
   },
   "email": "Eliasrasmussen12345@gmail.com",
   "root": "/home/lyngsberg/fagproject/02466_project",
@@ -20,7 +23,7 @@
   "disk": {
     "/": {
       "total": "1081101176832",
-      "used": "96591298560"
+      "used": "97088937984"
     }
   },
   "memory": {
