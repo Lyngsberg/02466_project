@@ -8,6 +8,7 @@ import sympy as sp
 from PN_models import Polynomial_Network, PolynomialNet, PN_Neuron
 from NN_models import NN_model1
 from sklearn.model_selection import train_test_split
+from plot import plot_sampled_function_vs_polynomial_estimate
 
 random_seed = 42
 np.random.seed(random_seed)
@@ -15,7 +16,7 @@ torch.manual_seed(random_seed)
 
 
 
-def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs=1000, learning_rate=0.01):
+def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs=1000, learning_rate=0.01, path = None):
     criterion = nn.MSELoss()
     #optimizer = optim.Adam(model.parameters(), lr=learning_rate) #other BFGS optim try its not from pytorch!!!
     optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
@@ -43,7 +44,7 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs=1000, learning_r
         
         # Perform LBFGS optimization step
         optimizer.step(closure)
-        if model.__class__.__name__ == ('Polynomial_Network' or 'PolynomialNet') and (epoch % 300 == 0 or epoch == n_epochs-1):
+        if model.__class__.__name__ in ['Polynomial_Network', 'PolynomialNet'] and (epoch % 300 == 0 or epoch == n_epochs-1):
             x, y = sp.symbols('x y')
             polynomial = model.symbolic_forward(x, y)
             print(f"Polynomial: {polynomial}")
@@ -64,34 +65,15 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs=1000, learning_r
         if epoch % 50 == 0:
             print(f"Epoch {epoch}, Train Loss: {train_loss.item():.4f}, Validation Loss: {val_loss.item():.4f}")
         
-        if model.__class__.__name__ == ('Polynomial_Network' or 'PolynomialNet') and epoch == n_epochs-1:
-            plot(X_val, Y_val, val_predictions, polynomial=polynomial)
+        if model.__class__.__name__ in ['Polynomial_Network', 'PolynomialNet'] and epoch == n_epochs - 1:
+            x, y = sp.symbols('x y')
+            polynomial = model.symbolic_forward(x, y)
+            print(f"Polynomial: {polynomial}")
+            print(f"Polynomial.simplify: {polynomial.simplify()}")
+            plot_sampled_function_vs_polynomial_estimate(X_val, Y_val, val_predictions, polynomial=polynomial)
+
 
     return model, train_losses, val_losses
-
-def plot(x_test, y_test, output, polynomial=None):
-    #cubic_poly = lambda x, y: x**3 + y**3 - 3*x*y
-    qubic_poly = lambda x, y: 3*x**2 + 2*y**2 + 1
-    fig = plt.figure(figsize=(10, 10))
-    ax = fig.add_subplot(111, projection='3d')
-    
-    x_vals = np.linspace(min(x_test[:, 0].numpy()), max(x_test[:, 0].numpy()), 50)
-    y_vals = np.linspace(min(x_test[:, 1].numpy()), max(x_test[:, 1].numpy()), 50)
-    X, Y = np.meshgrid(x_vals, y_vals)
-    #Z_cubic = cubic_poly(X, Y)
-    Z_cubic = qubic_poly(X, Y)
-    
-    ax.plot_surface(X, Y, Z_cubic, color='y', alpha=0.4, label='Cubic Polynomial')
-    
-    if polynomial is not None:
-        Z_poly = np.zeros_like(X)
-        f_poly = sp.lambdify((sp.Symbol('x'), sp.Symbol('y')), polynomial, 'numpy')  # Convert to numpy function
-        
-        for i in range(X.shape[0]):
-            for j in range(X.shape[1]):
-                Z_poly[i, j] = f_poly(X[i, j], Y[i, j])
-        
-        ax.plot_surface(X, Y, Z_poly, color='g', alpha=0.4, label='Learned Polynomial')
 
 path_quadratic_1 = 'fagproject/data/train_q_1.pkl'
 path_quadratic_2 = 'fagproject/data/train_q:2.pkl'
@@ -108,7 +90,7 @@ path_smooth_2 = 'fagproject/data/train_s:2.pkl'
 path_smooth_with_noise_1 = 'fagproject/data/train_s_n_1.pkl'
 path_smooth_with_noise_2 = 'fagproject/data/train_s_n_2.pkl'
 
-path = path_quadratic_with_noise_2
+path = path_quadratic_with_noise_1
 X, y = torch.load(path)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -126,10 +108,10 @@ lr = 0.01
 
 # Train models with validation tracking
 print("\nTraining Neural Network:")
-NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr)
+NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
 
 print("\nTraining Polynomial_Network (n_neurons=1):")
-poly_network, train_losses_poly_network, val_losses_poly_network = train_model(poly_network, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr)
+poly_network, train_losses_poly_network, val_losses_poly_network = train_model(poly_network, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
 
 # Evaluate on test data
 with torch.no_grad():

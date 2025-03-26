@@ -56,7 +56,7 @@ def main(num_samples: int, seed: int, x_low: int, x_high: int, y_low:int, y_high
         X_c, Y_c, Z_c = generate_data(num_samples, cubic_polynomial, i*x_low, i*x_high, i*y_low, i*y_high)
         X_s, Y_s, Z_s = generate_data(num_samples, smooth_function, i*x_low, i*x_high, i*y_low, i*y_high)
 
-        X_q_n, Y_q_n, Z_q_n = generate_data_with_noise(num_samples, quadratic_polynomial, 0.1, i*x_low, i*x_high, i*y_low, i*y_high)
+        X_q_n, Y_q_n, Z_q_n = generate_data_with_noise(num_samples, quadratic_polynomial, 0.5, i*x_low, i*x_high, i*y_low, i*y_high)
         X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 0.1, i*x_low, i*x_high, i*y_low, i*y_high)
         X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 0.1, i*x_low, i*x_high, i*y_low, i*y_high)
 
@@ -71,33 +71,33 @@ def main(num_samples: int, seed: int, x_low: int, x_high: int, y_low:int, y_high
         process_and_save_data(X_s_n, Y_s_n,Z_s_n, f'fagproject/data/train_s_n_{i}.pkl')
 
     # Make 6 sub-3d plots for each of the functions
-    # fig = plt.figure(figsize=(15, 10))
+    fig = plt.figure(figsize=(15, 10))
 
-    # ax1 = fig.add_subplot(231, projection='3d')
-    # ax1.scatter(X_q, Y_q, Z_q)
-    # ax1.set_title('Quadratic Polynomial')
+    ax1 = fig.add_subplot(231, projection='3d')
+    ax1.scatter(X_q, Y_q, Z_q)
+    ax1.set_title('Quadratic Polynomial')
 
-    # ax2 = fig.add_subplot(232, projection='3d')
-    # ax2.scatter(X_c, Y_c, Z_c)
-    # ax2.set_title('Cubic Polynomial')
+    ax2 = fig.add_subplot(232, projection='3d')
+    ax2.scatter(X_c, Y_c, Z_c)
+    ax2.set_title('Cubic Polynomial')
 
-    # ax3 = fig.add_subplot(233, projection='3d')
-    # ax3.scatter(X_s, Y_s, Z_s)
-    # ax3.set_title('Smooth Function')
+    ax3 = fig.add_subplot(233, projection='3d')
+    ax3.scatter(X_s, Y_s, Z_s)
+    ax3.set_title('Smooth Function')
 
-    # ax4 = fig.add_subplot(234, projection='3d')
-    # ax4.scatter(X_q_n, Y_q_n, Z_q_n)
-    # ax4.set_title('Quadratic Polynomial with Noise')
+    ax4 = fig.add_subplot(234, projection='3d')
+    ax4.scatter(X_q_n, Y_q_n, Z_q_n)
+    ax4.set_title('Quadratic Polynomial with Noise')
 
-    # ax5 = fig.add_subplot(235, projection='3d')
-    # ax5.scatter(X_c_n, Y_c_n, Z_c_n)
-    # ax5.set_title('Cubic Polynomial with Noise')
+    ax5 = fig.add_subplot(235, projection='3d')
+    ax5.scatter(X_c_n, Y_c_n, Z_c_n)
+    ax5.set_title('Cubic Polynomial with Noise')
 
-    # ax6 = fig.add_subplot(236, projection='3d')
-    # ax6.scatter(X_s_n, Y_s_n, Z_s_n)
-    # ax6.set_title('Smooth Function with Noise')
+    ax6 = fig.add_subplot(236, projection='3d')
+    ax6.scatter(X_s_n, Y_s_n, Z_s_n)
+    ax6.set_title('Smooth Function with Noise')
 
-    # plt.show()
+    plt.show()
 
 
     plt.show()
