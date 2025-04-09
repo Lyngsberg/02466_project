@@ -53,3 +53,26 @@ class PolynomialNet(nn.Module):
     def symbolic_forward(self, x, y):
         x_exp = sp.Matrix([x, y, 1])
         return (x_exp.T * sp.Matrix(self.W.tolist()) * x_exp)[0]
+    
+
+class PolynomialWidth2(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.w1 = nn.Parameter(torch.randn(3, 3))
+        self.w2 = nn.Parameter(torch.randn(3, 3))
+    
+    def forward(self, x):
+        x_exp = torch.cat([x, torch.ones(x.shape[0], 1, device=x.device)], dim=1)  # Shape (batch, 3)
+        
+        # Quadratic transformation for each neuron
+        n1 = torch.sum(x_exp.unsqueeze(1) @ self.w1 @ x_exp.unsqueeze(2), dim=(1, 2))
+        n2 = torch.sum(x_exp.unsqueeze(1) @ self.w2 @ x_exp.unsqueeze(2), dim=(1, 2))
+        
+        return torch.stack([n1, n2], dim=1)  # Shape (batch, 2)
+    
+    def symbolic_forward(self, x, y):
+        x_exp = sp.Matrix([x, y, 1])
+        W1 = sp.Matrix(self.w1.tolist())
+        W2 = sp.Matrix(self.w2.tolist())
+        return [(x_exp.T * W1 * x_exp)[0], (x_exp.T * W2 * x_exp)[0]]
+    
