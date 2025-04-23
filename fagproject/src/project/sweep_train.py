@@ -19,6 +19,7 @@ def train_model():
     learning_rate = wandb.config.learning_rate
     epochs = wandb.config.epochs
     seed = wandb.config.seed
+    optimizer_name = wandb.config.optimizer_name
 
     modul_name = model_modul_name[0]
     model_name = model_modul_name[1]
@@ -37,6 +38,8 @@ def train_model():
             "LEARNING_RATE": learning_rate,
             "EPOCHS": epochs,
             "SEED": seed
+
+
         },
     )
 
@@ -64,46 +67,92 @@ def train_model():
     model = model_class().to(device) if models_modul != "PN_models" else model_class(n_neurons=1).to(device)
 
     criterion = nn.MSELoss().to(device)
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    if optimizer_name == "Adam":
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    elif optimizer_name == "SGD":
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    elif optimizer_name == "BFGS":
+        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate)
 
-    for epoch in range(epochs):
-        model.train()
-        epoch_loss = 0.0
-
-        for x_batch, y_batch in train_loader:
-            x_batch, y_batch = x_batch.to(device), y_batch.to(device)
-
+    if optimizer_name == "BFGS":
+        def closure():
             optimizer.zero_grad()
-            outputs = model(x_batch)
-            loss = criterion(outputs, y_batch)
-            loss.backward()
-            optimizer.step()
+            predictions = model(x_train)
+            train_loss = criterion(predictions, y_train)
+            train_loss.backward()
+            return train_loss
+        for epoch in range(epochs):
+            model.train()
+            optimizer.step(closure)
+            print(f"Epoch {epoch + 1}/{epochs}, Loss: {closure().item():.4f}")
 
-            epoch_loss += loss.item()
+            model.eval()
+            val_mse = 0.0
+            num_batches = 0
+            with torch.no_grad():
+                for x_batch, y_batch in test_loader:
+                    x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
-        print(f"Epoch {epoch + 1}/{epochs}, Loss: {epoch_loss:.4f}")
+                    outputs = model(x_batch)
+                    loss = criterion(outputs, y_batch)
+                    val_mse += loss.item()  # Accumulate the loss
+                    num_batches += 1
 
-        model.eval()
-        val_mse = 0.0
-        with torch.no_grad():
-            for x_batch, y_batch in test_loader:
+            val_mse /= num_batches 
+            wandb.log({
+                "epoch": epoch + 1,
+                "train_loss": closure().item(),
+                "val_loss": val_mse,
+            })
+
+            print(
+                f"Epoch {epoch + 1}/{epochs}, "
+                f"Epoch MSE: {closure().item():.4f}, "
+                f"Val MSE: {val_mse:.4f}, "
+            )
+    else:
+        for epoch in range(epochs):
+            model.train()
+            epoch_loss = 0.0
+
+            for x_batch, y_batch in train_loader:
                 x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
+                optimizer.zero_grad()
                 outputs = model(x_batch)
                 loss = criterion(outputs, y_batch)
-                val_mse /= loss.item()
+                loss.backward()
+                optimizer.step()
 
-        wandb.log({
-            "epoch": epoch + 1,
-            "train_loss": epoch_loss,
-            "validation_MSE": val_mse,
-        })
+                epoch_loss += loss.item()
 
-        print(
-            f"Epoch {epoch + 1}/{epochs}, "
-            f"Epoch MSE: {epoch_loss:.4f}, "
-            f"Val MSE: {val_mse:.4f}, "
-        )
+                print(f"Epoch {epoch + 1}/{epochs}, Loss: {epoch_loss:.4f}")
+
+                model.eval()
+                val_mse = 0.0
+                num_batches = 0
+                with torch.no_grad():
+                    for x_batch, y_batch in test_loader:
+                        x_batch, y_batch = x_batch.to(device), y_batch.to(device)
+
+                        outputs = model(x_batch)
+                        loss = criterion(outputs, y_batch)
+                        val_mse += loss.item()  # Accumulate the loss
+                        num_batches += 1
+
+                val_mse /= num_batches
+
+                wandb.log({
+                    "epoch": epoch + 1,
+                    "train_loss": epoch_loss,
+                    "val_loss": val_mse,
+                })
+
+                print(
+                    f"Epoch {epoch + 1}/{epochs}, "
+                    f"Epoch MSE: {epoch_loss:.4f}, "
+                    f"Val MSE: {val_mse:.4f}, "
+                )
 
     model_path = os.path.join("fagproject/models", f"{model_name}{data_type}.pth")
     torch.save(model.state_dict(), model_path)
@@ -114,7 +163,7 @@ def train_model():
         name="Neural_Network" if modul_name == "NN_models" else "Polynomial_Network",
         type="model",
         description="A trained model",
-        metadata={"Val loss": val_mse, "Date": datetime.now()},
+        metadata={"val_loss": val_mse, "Date": datetime.now()},
     )
     artifact.add_file(model_path)
     run.log_artifact(artifact)

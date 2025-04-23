@@ -11,12 +11,16 @@ metric:
 parameters:
   data_type:
     values:
-      - 'train_q_1.pkl'  # Example dataset 1
-      - 'train_q_2.pkl'  # Example dataset 2
+      - 'train_q_n_1.pkl'  # Example dataset 1
   model_modul_name:
     values:
-      - ['NN_models', 'NN_model1']  # Example model 1
-      - ['PN_model2', 'Polynomial_Network']  # Example model 2
+      #- ['NN_model', 'NN_model1']  # Example model 1
+      - ['PN_model', 'Polynomial_Network']  # Example model 2
+  optimizer_name:
+    values:
+      - 'Adam'  # Example optimizer
+      - 'SGD'
+      - 'BFGS'  # Example optimizer
   batch_size:
     values:
       - 32  # Example batch size
