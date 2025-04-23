@@ -1,0 +1,24 @@
+[34m[1mwandb[39m[22m: [33mWARNING[39m Ignoring project 'Fagprojekt' when running a sweep.
+[34m[1mwandb[39m[22m: [33mWARNING[39m Ignoring entity 'lyngsberg-danmarks-tekniske-universitet-dtu' when running a sweep.
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:69: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x_train = torch.tensor(x_train, dtype=torch.float32).to(device)
+Using device: cuda
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:70: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x_test = torch.tensor(x_test, dtype=torch.float32).to(device)
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:71: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  y_train = torch.tensor(y_train, dtype=torch.float32).to(device).view(-1, 1)
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:72: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  y_test = torch.tensor(y_test, dtype=torch.float32).to(device).view(-1, 1)
+Traceback (most recent call last):
+  File "/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py", line 146, in <module>
+    train_model()
+    ~~~~~~~~~~~^^
+  File "/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py", line 81, in train_model
+    models_modul = importlib.import_module(modul_name)
+  File "/home/lyngsberg/miniconda3/envs/fagprojekt/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'PN_model2'

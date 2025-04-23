@@ -1,0 +1,22 @@
+[34m[1mwandb[39m[22m: [33mWARNING[39m Ignoring project 'Fagprojekt' when running a sweep.
+[34m[1mwandb[39m[22m: [33mWARNING[39m Ignoring entity 'lyngsberg-danmarks-tekniske-universitet-dtu' when running a sweep.
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:69: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x_train = torch.tensor(x_train, dtype=torch.float32).to(device)
+Using device: cuda
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:70: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x_test = torch.tensor(x_test, dtype=torch.float32).to(device)
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:71: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  y_train = torch.tensor(y_train, dtype=torch.float32).to(device).view(-1, 1)
+/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py:72: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  y_test = torch.tensor(y_test, dtype=torch.float32).to(device).view(-1, 1)
+Epoch 1/5, Loss: 1509.5576
+Epoch 1/5, Epoch MSE: 1509.5576, Val MSE: 0.0000,
+Epoch 2/5, Loss: 1507.3057
+Epoch 2/5, Epoch MSE: 1507.3057, Val MSE: 0.0000,
+Epoch 3/5, Loss: 1505.5250
+Epoch 3/5, Epoch MSE: 1505.5250, Val MSE: 0.0000,
+Epoch 4/5, Loss: 1505.3061
+Epoch 4/5, Epoch MSE: 1505.3061, Val MSE: 0.0000,
+Epoch 5/5, Loss: 1505.1987
+Epoch 5/5, Epoch MSE: 1505.1987, Val MSE: 0.0000,
+Model saved locally to fagproject/models/NN_model1train_q_2.pkl.pth

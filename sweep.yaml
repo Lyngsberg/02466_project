@@ -6,38 +6,42 @@ program: fagproject/src/project/sweep_train.py
 method: random  # You can also use 'grid' if you want to test all combinations of hyperparameters
 name: sweep_test  # Name of the sweep
 metric:
-  name: val_loss  # The metric we want to optimize
+  name: validation_MSE  # The metric we want to optimize
   goal: minimize  # We want to minimize the metric
 parameters:
   data_type:
     values:
-      - 'train_q_n_1.pkl'  # Example dataset 1
+      - 'train_c_n_1'  # Example dataset 1
+      - 'train_c_n_2.pkl'  # Example dataset 2
+      - 'train_q_n_1.pkk'
+      - 'train_q_n_2.pkl'
+      - 'train_s_n_1.pkl'
+      - 'train_s_n_2.pkl'
   model_modul_name:
     values:
-      #- ['NN_model', 'NN_model1']  # Example model 1
-      - ['PN_model', 'Polynomial_Network']  # Example model 2
-  optimizer_name:
-    values:
-      - 'Adam'  # Example optimizer
-      - 'SGD'
-      - 'BFGS'  # Example optimizer
+      - ['NN_models', 'NN_model1']  # Example model 1
+      - ['PN_models', 'Polynomial_Network']  # Example model 2
   batch_size:
     values:
       - 32  # Example batch size
-      - 64  # Example batch size
-      - 128  # Example batch size
+      #- 64  # Example batch size
+      #- 128  # Example batch size
   learning_rate:
-    min: 0.0001  # Minimum learning rate
+    min: 0.001  # Minimum learning rate
     max: 0.01  # Maximum learning rate
   epochs:
     values:
-      - 3  # Example number of epochs
-      - 5  # Example number of epochs
-      - 10  # Example number of epochs
+      - 1000  # Example number of epochs
+      - 1500  # Example number of epochs
+      - 2000  # Example number of epochs
   seed:
     values:
       - 42  # Example seed 1
       - 123  # Example seed 2
       - 456  # Example seed 3
-run_cap: 20  # Limits the sweep to 20 runs
-
+  optimizr:
+    values:
+      - "Adam"
+      - "SGD"
+      - "BFGS"
+run_cap: 50  # Limits the sweep to 20 runs
