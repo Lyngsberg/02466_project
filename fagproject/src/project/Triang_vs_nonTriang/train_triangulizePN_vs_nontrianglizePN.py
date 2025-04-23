@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
 import sympy as sp
 from PN_models_for_triang_vs_nontriang import Polynomial_Network, PolynomialNet, PN_Neuron
-from NN_models import NN_model1
 from sklearn.model_selection import train_test_split
 from plot import plot_sampled_function_vs_polynomial_estimate, plot_weights, plot_weights_mean, plot_weights_mean_compare
 
