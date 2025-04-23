@@ -1,0 +1,114 @@
+{
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "CPython 3.13.2",
+    "heartbeatAt": "2025-04-23T11:19:16.221269",
+    "startedAt": "2025-04-23T11:19:15.748350",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "/tmp/tmpox4xy6ig/port-64917.txt",
+        "--pid",
+        "64917"
+    ],
+    "state": "running",
+    "program": "/home/lyngsberg/fagproject/02466_project/fagproject/src/project/sweep_train.py",
+    "codePathLocal": "fagproject/src/project/sweep_train.py",
+    "codePath": "fagproject/src/project/sweep_train.py",
+    "git": {
+        "remote": "https://github.com/Lyngsberg/02466_project",
+        "commit": "32a67a2213ee4b9d2a8686d11af4deb131de2859"
+    },
+    "email": "Eliasrasmussen12345@gmail.com",
+    "root": "/home/lyngsberg/fagproject/02466_project",
+    "host": "DESKTOP-KTB5R6K",
+    "username": null,
+    "executable": "/home/lyngsberg/miniconda3/envs/fagprojekt/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2208.0080000000003,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2208.008,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1081101176832,
+            "used": 97798680576
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 16623251456
+    }
+}

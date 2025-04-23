@@ -1610,3 +1610,168 @@ Traceback (most recent call last):
 wandb.errors.errors.UsageError: permission denied
 
 2025-03-26 11:56:22 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:11:52 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:12:06 INFO Running runs: []
+2025-04-23 13:12:06 INFO Agent received command: run
+2025-04-23 13:12:06 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.006184237935052191
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 456
+2025-04-23 13:12:06 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.006184237935052191 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=456
+2025-04-23 13:12:11 INFO Running runs: ['xor3ne2u']
+2025-04-23 13:12:11 INFO Cleaning up finished run: xor3ne2u
+2025-04-23 13:12:12 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:12:13 INFO Agent received command: run
+2025-04-23 13:12:13 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.007217250670661767
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-04-23 13:12:13 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.007217250670661767 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-04-23 13:12:18 INFO Running runs: ['y07aw5m5']
+2025-04-23 13:12:18 INFO Cleaning up finished run: y07aw5m5
+2025-04-23 13:12:18 INFO Agent received command: run
+2025-04-23 13:12:18 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.0054794999814255126
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-04-23 13:12:18 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.0054794999814255126 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-04-23 13:12:23 INFO Running runs: ['gf149gtw']
+2025-04-23 13:12:23 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2025-04-23 13:12:23 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true
+2025-04-23 13:13:07 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:13:20 INFO Running runs: []
+2025-04-23 13:13:20 INFO Agent received command: run
+2025-04-23 13:13:20 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.008500026225771723
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-04-23 13:13:20 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.008500026225771723 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-04-23 13:13:25 INFO Running runs: ['c0ao8zg1']
+2025-04-23 13:13:45 INFO Cleaning up finished run: c0ao8zg1
+2025-04-23 13:13:46 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:13:46 INFO Agent received command: run
+2025-04-23 13:13:46 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.002372902592389728
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-04-23 13:13:46 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.002372902592389728 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-04-23 13:13:51 INFO Running runs: ['kk4rx4e4']
+2025-04-23 13:14:11 INFO Cleaning up finished run: kk4rx4e4
+2025-04-23 13:14:11 INFO Agent received command: run
+2025-04-23 13:14:11 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.0026750219460205046
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-04-23 13:14:11 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.0026750219460205046 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-04-23 13:14:16 INFO Running runs: ['rh3bkfyc']
+2025-04-23 13:14:37 INFO Cleaning up finished run: rh3bkfyc
+2025-04-23 13:14:37 INFO Agent received command: run
+2025-04-23 13:14:37 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_1.pkl
+	epochs: 10
+	learning_rate: 0.005144244734257723
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-04-23 13:14:37 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_1.pkl --epochs=10 --learning_rate=0.005144244734257723 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-04-23 13:14:42 INFO Running runs: ['4uzaoxfr']
+2025-04-23 13:14:57 INFO Cleaning up finished run: 4uzaoxfr
+2025-04-23 13:14:58 INFO Agent received command: run
+2025-04-23 13:14:58 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_1.pkl
+	epochs: 5
+	learning_rate: 0.002339818840939348
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-04-23 13:14:58 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_1.pkl --epochs=5 --learning_rate=0.002339818840939348 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-04-23 13:15:03 INFO Running runs: ['ktf27cv0']
+2025-04-23 13:15:17 INFO Cleaning up finished run: ktf27cv0
+2025-04-23 13:15:18 INFO Agent received command: run
+2025-04-23 13:15:18 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 5
+	learning_rate: 0.00011142667826019764
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 42
+2025-04-23 13:15:18 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=5 --learning_rate=0.00011142667826019764 "--model_modul_name=['NN_models', 'NN_model1']" --seed=42
+2025-04-23 13:15:23 INFO Running runs: ['d8umusr2']
+2025-04-23 13:15:38 INFO Cleaning up finished run: d8umusr2
+2025-04-23 13:15:39 INFO Agent received command: run
+2025-04-23 13:15:39 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_1.pkl
+	epochs: 3
+	learning_rate: 0.0014663894127918368
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-04-23 13:15:39 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_1.pkl --epochs=3 --learning_rate=0.0014663894127918368 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-04-23 13:15:43 INFO Running runs: ['rr24bgqm']
+2025-04-23 13:16:04 INFO Cleaning up finished run: rr24bgqm
+2025-04-23 13:16:04 INFO Agent received command: run
+2025-04-23 13:16:04 INFO Agent starting run with config:
+	batch_size: 32
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.00369435217598998
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 42
+2025-04-23 13:16:04 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=32 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.00369435217598998 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=42
+2025-04-23 13:16:09 INFO Running runs: ['3xiro7oc']
+2025-04-23 13:16:24 INFO Cleaning up finished run: 3xiro7oc
+2025-04-23 13:16:24 INFO Agent received command: run
+2025-04-23 13:16:24 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.009149320113130847
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 123
+2025-04-23 13:16:24 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.009149320113130847 "--model_modul_name=['NN_models', 'NN_model1']" --seed=123
+2025-04-23 13:16:29 INFO Running runs: ['zq49rfga']
+2025-04-23 13:18:35 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:18:49 INFO Running runs: []
+2025-04-23 13:18:49 INFO Agent received command: run
+2025-04-23 13:18:49 INFO Agent starting run with config:
+	batch_size: 128
+	data_type: train_q_2.pkl
+	epochs: 3
+	learning_rate: 0.0056593926868805135
+	model_modul_name: ['NN_models', 'NN_model1']
+	seed: 456
+2025-04-23 13:18:49 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=128 --data_type=train_q_2.pkl --epochs=3 --learning_rate=0.0056593926868805135 "--model_modul_name=['NN_models', 'NN_model1']" --seed=456
+2025-04-23 13:18:54 INFO Running runs: ['aqmh8g50']
+2025-04-23 13:19:09 INFO Cleaning up finished run: aqmh8g50
+2025-04-23 13:19:10 INFO Closing mailbox, abandoning 0 handles.
+2025-04-23 13:19:10 INFO Agent received command: run
+2025-04-23 13:19:10 INFO Agent starting run with config:
+	batch_size: 64
+	data_type: train_q_2.pkl
+	epochs: 10
+	learning_rate: 0.0025801744215353827
+	model_modul_name: ['PN_model2', 'Polynomial_Network']
+	seed: 123
+2025-04-23 13:19:10 INFO About to run command: /usr/bin/env python fagproject/src/project/sweep_train.py --batch_size=64 --data_type=train_q_2.pkl --epochs=10 --learning_rate=0.0025801744215353827 "--model_modul_name=['PN_model2', 'Polynomial_Network']" --seed=123
+2025-04-23 13:19:15 INFO Running runs: ['ud6jpcbz']
+2025-04-23 13:19:30 INFO Cleaning up finished run: ud6jpcbz
+2025-04-23 13:19:31 INFO Agent received command: exit
+2025-04-23 13:19:31 INFO Received exit command. Killing runs and quitting.

@@ -12,6 +12,24 @@ from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
 
 def train_model():
+    run = wandb.init(
+        entity="lyngsberg-danmarks-tekniske-universitet-dtu",
+        project="Fagprojekt",
+        reinit=True
+    )
+    
+    config = wandb.config  # Now this is safe
+
+    # Get hyperparameters from wandb.config
+    data_type = config.data_type
+    model_modul_name = config.model_modul_name
+    batch_size = config.batch_size
+    learning_rate = config.learning_rate
+    epochs = config.epochs
+    seed = config.seed
+
+
+    """
     # Get hyperparameters from wandb.config
     data_type = wandb.config.data_type
     model_modul_name = wandb.config.model_modul_name
@@ -19,6 +37,7 @@ def train_model():
     learning_rate = wandb.config.learning_rate
     epochs = wandb.config.epochs
     seed = wandb.config.seed
+    """
 
     modul_name = model_modul_name[0]
     model_name = model_modul_name[1]
@@ -85,13 +104,16 @@ def train_model():
 
         model.eval()
         val_mse = 0.0
+        n_batches = 0
         with torch.no_grad():
             for x_batch, y_batch in test_loader:
                 x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
                 outputs = model(x_batch)
                 loss = criterion(outputs, y_batch)
-                val_mse /= loss.item()
+                val_mse += loss.item()
+                n_batches += 1
+            val_mse = val_mse / n_batches
 
         wandb.log({
             "epoch": epoch + 1,
@@ -121,5 +143,4 @@ def train_model():
 
 # Initialize sweep
 if __name__ == "__main__":
-    # This will only be triggered by wandb.agent, not run directly
-    pass
+    train_model()
