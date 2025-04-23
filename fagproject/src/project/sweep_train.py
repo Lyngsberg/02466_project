@@ -83,7 +83,7 @@ def train_model():
     # Initialize the model
     models_modul = importlib.import_module(modul_name)
     model_class = getattr(models_modul, model_name)
-    model = model_class().to(device) if models_modul != "PN_models" else model_class(n_neurons=1).to(device)
+    model = model_class().to(device) if modul_name != "PN_models" else model_class(n_neurons=1).to(device)
 
     criterion = nn.MSELoss().to(device)
     if optimizer_name == "Adam":
@@ -121,14 +121,9 @@ def train_model():
             wandb.log({
                 "epoch": epoch + 1,
                 "train_loss": closure().item(),
-                "val_loss": val_mse,
+                "validation_MSE": val_mse,
             })
-
-            print(
-                f"Epoch {epoch + 1}/{epochs}, "
-                f"Epoch MSE: {closure().item():.4f}, "
-                f"Val MSE: {val_mse:.4f}, "
-            )
+            print(val_mse)
     else:
         for epoch in range(epochs):
             model.train()
@@ -145,8 +140,6 @@ def train_model():
 
                 epoch_loss += loss.item()
 
-                print(f"Epoch {epoch + 1}/{epochs}, Loss: {epoch_loss:.4f}")
-
         model.eval()
         val_mse = 0.0
         n_batches = 0
@@ -158,17 +151,18 @@ def train_model():
                 loss = criterion(outputs, y_batch)
                 val_mse += loss.item()
                 n_batches += 1
-            val_mse = val_mse / n_batches
+        val_mse = val_mse / n_batches
 
-            wandb.log({
+        wandb.log({
                     "epoch": epoch + 1,
                     "train_loss": epoch_loss,
-                    "val_loss": val_mse,
+                    "validation_MSE": val_mse,
                 })
+        print(val_mse)
 
-    model_path = os.path.join("fagproject/models", f"{model_name}{data_type}.pth")
-    torch.save(model.state_dict(), model_path)
-    print(f"Model saved locally to {model_path}")
+    #model_path = os.path.join("fagproject/models", f"{model_name}{data_type}.pth")
+    #torch.save(model.state_dict(), model_path)
+    #print(f"Model saved locally to {model_path}")
 
 
     artifact = wandb.Artifact(
@@ -177,7 +171,7 @@ def train_model():
         description="A trained model",
         metadata={"val_loss": val_mse, "Date": datetime.now()},
     )
-    artifact.add_file(model_path)
+    #artifact.add_file(model_path)
     run.log_artifact(artifact)
 
 # Initialize sweep

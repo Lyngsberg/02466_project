@@ -15,7 +15,7 @@ class PN_Neuron(nn.Module):
         self.W = nn.Parameter(torch.randn(3, 3))  # Learnable 3x3 matrix
 
     def forward(self, x):
-        ones = torch.ones(x.shape[0], 1)
+        ones = torch.ones(x.size(0), 1, device=x.device)
         z = torch.cat((x, ones), dim=1)  
         output = torch.sum(z.unsqueeze(1) @ self.W @ z.unsqueeze(2), dim=(1,2), keepdim=True).squeeze(-1)
         return output
