@@ -5,7 +5,11 @@ import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
 import sympy as sp
+<<<<<<< Updated upstream
 from PN_models import Polynomial_Network, PolynomialNet, PN_Neuron, Deep_Polynomial_Network, PolynomialWidth2
+=======
+from PN_models import Polynomial_Network, PN_Neuron, Deep_Polynomial_Network, PN_Neuron2
+>>>>>>> Stashed changes
 from NN_models import NN_model1
 from sklearn.model_selection import train_test_split
 from plot import plot_sampled_function_vs_polynomial_estimate
@@ -95,10 +99,14 @@ X, y = torch.load(path)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Initialize models
+<<<<<<< Updated upstream
 # poly_network = Polynomial_Network(n_neurons=1)
 poly_network = Polynomial_Network(n_neurons=1)
 deep_poly_network = Deep_Polynomial_Network(n_layers=2)
 # wide_poly_network = PolynomialWidth2()
+=======
+poly_network = Deep_Polynomial_Network(in_features=3, n_layers=1)  # 2 input features, 1 layer
+>>>>>>> Stashed changes
 # poly_network = PolynomialNet()
 # NeuralNet = NN_model1()
 # NeuralNet = Polynomial_Network(n_neurons=1)

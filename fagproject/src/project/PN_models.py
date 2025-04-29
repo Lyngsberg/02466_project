@@ -72,23 +72,27 @@ class Polynomial_Network(nn.Module):
     def symbolic_forward(self, x, y):
         return sum(neuron.symbolic_forward(x, y) for neuron in self.pn_neuron)
     
-    
-class PolynomialNet(nn.Module):
-    def __init__(self):
+class PN_Neuron2(nn.Module):
+    def __init__(self, in_features=2):
         super().__init__()
-        self.W = nn.Parameter(torch.randn(3, 3)) 
+        self.in_features = in_features
+        self.W = nn.Parameter(torch.randn(in_features + 1, in_features + 1))  # Learnable (in_features+1)x(in_features+1) matrix
 
     def forward(self, x):
-        x_exp = torch.cat([x, torch.ones(x.shape[0], 1)], dim=1) 
-        # print(f'x_exp shape: {x_exp.shape}, x_exp: {x_exp}, W shape: {self.W.shape}, x.shape: {x.shape}, x: {x}')
-        # print(f'x_exp.unsqueeze(1) shape: {x_exp.unsqueeze(1).shape}, x_exp.unsqueeze(1): {x_exp.unsqueeze(1)}')
-        # print(f'x_exp.unsqueeze(2) shape: {x_exp.unsqueeze(2).shape}, x_exp.unsqueeze(2): {x_exp.unsqueeze(2)}, x_exp.unsqueeze(1) @ self.W @ x_exp.unsqueeze(2): {(x_exp.unsqueeze(1) @ self.W @ x_exp.unsqueeze(2)).shape}')
-        return torch.sum(x_exp.unsqueeze(1) @ self.W @ x_exp.unsqueeze(2), dim=(1,2), keepdim=True).squeeze(-1)
-    
-    def symbolic_forward(self, x, y):
-        x_exp = sp.Matrix([x, y, 1])
-        return (x_exp.T * sp.Matrix(self.W.tolist()) * x_exp)[0]
-    
+        # x shape: (batch_size, in_features)
+        ones = torch.ones(x.shape[0], 1, device=x.device)
+        z = torch.cat([x, ones], dim=1)  # z shape: (batch_size, in_features + 1)
+        output = torch.sum(z.unsqueeze(1) @ self.W @ z.unsqueeze(2), dim=(1, 2))
+        return output.unsqueeze(1)  # Shape: (batch_size, 1)
+
+    def symbolic_forward(self, x, y=None):
+        if y is not None:
+            z = sp.Matrix([x, y, 1])
+            W = sp.Matrix(self.W.tolist())
+        else:
+            z = sp.Matrix([x, 1])
+            W = sp.Matrix(self.W_1d.tolist())
+        return (z.T * W * z)[0]    
 
 class Deep_Polynomial_Network(nn.Module):
     def __init__(self, n_layers):
@@ -132,4 +136,27 @@ class PolynomialWidth2(nn.Module):
         W1 = sp.Matrix(self.w1.tolist())
         W2 = sp.Matrix(self.w2.tolist())
         return [(x_exp.T * W1 * x_exp)[0], (x_exp.T * W2 * x_exp)[0]]
+
+class Deep_Polynomial_Network(nn.Module):
+    def __init__(self, in_features, n_layers):
+        super().__init__()
+        self.layers = nn.ModuleList()
+        
+        # First layer: expects in_features (e.g., 4 for Iris)
+        self.layers.append(PN_Neuron2(in_features=in_features))
+        
+        # Remaining layers: each expects 1 feature (scalar output)
+        for _ in range(n_layers - 1):
+            self.layers.append(PN_Neuron2(in_features=1))
+
+    def forward(self, x):
+        for layer in self.layers:
+            x = layer(x)
+        return x
+
+    def symbolic_forward(self, *symbols):
+        out = self.layers[0].symbolic_forward(*symbols)
+        for layer in self.layers[1:]:
+            out = layer.symbolic_forward(out)
+        return out
     
