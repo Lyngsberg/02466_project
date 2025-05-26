@@ -9,7 +9,7 @@ random_seed = 42
 np.random.seed(random_seed)
 torch.manual_seed(random_seed)
 
-class PN_Neuron2(nn.Module):
+class PN_Neuron(nn.Module):
     def __init__(self, in_features=2):
         super().__init__()
         self.in_features = in_features
@@ -27,43 +27,32 @@ class PN_Neuron2(nn.Module):
         W = sp.Matrix(self.W.tolist())
         return (z.T * W * z)[0]
 
-
 class Polynomial_Network(nn.Module):
-    def __init__(self, n_neurons, in_features):
-        super(Polynomial_Network, self).__init__()
-        self.pn_neuron = nn.ModuleList([PN_Neuron2(in_features=in_features) for _ in range(n_neurons)])
-
-    def forward(self, x):
-        pn_outputs = torch.cat([neuron(x) for neuron in self.pn_neuron], dim=1)
-        output = torch.sum(pn_outputs, dim=1, keepdim=True)
-        return output
-
-    def symbolic_forward(self, *symbols):
-        return sum(neuron.symbolic_forward(*symbols) for neuron in self.pn_neuron)
-    
-
-class Deep_Polynomial_Network(nn.Module):
-    def __init__(self, in_features, n_layers):
+    def __init__(self, layers, in_features):
         super().__init__()
         self.layers = nn.ModuleList()
-        
-        # First layer: expects in_features (e.g., 4 for Iris)
-        self.layers.append(PN_Neuron2(in_features=in_features))
-        
-        # Remaining layers: each expects 1 feature (scalar output)
-        for _ in range(n_layers - 1):
-            self.layers.append(PN_Neuron2(in_features=1))
+        self.symbolic_layers = []
+
+        current_in_features = in_features
+        for n_neurons in layers:
+            layer = nn.ModuleList([PN_Neuron(current_in_features) for _ in range(n_neurons)])
+            self.layers.append(layer)
+            current_in_features = n_neurons  # Next layer's input is this layer's output
+
+        self.output_layer = nn.Linear(current_in_features, 1)  # Final scalar output
 
     def forward(self, x):
         for layer in self.layers:
-            x = layer(x)
-        return x
+            x = torch.cat([neuron(x) for neuron in layer], dim=1)
+        return self.output_layer(x)
 
     def symbolic_forward(self, *symbols):
-        out = self.layers[0].symbolic_forward(*symbols)
-        for layer in self.layers[1:]:
-            out = layer.symbolic_forward(out)
-        return out
+        input_syms = list(symbols)
+        for layer in self.layers:
+            input_syms = [neuron.symbolic_forward(*input_syms) for neuron in layer]
+        linear_weights = self.output_layer.weight.data.numpy().flatten()
+        bias = self.output_layer.bias.item()
+        return sum(w * h for w, h in zip(linear_weights, input_syms)) + bias
 
 class PolynomialWidth2(nn.Module):
     def __init__(self):
@@ -84,4 +73,7 @@ class PolynomialWidth2(nn.Module):
         x_exp = sp.Matrix([x, y, 1])
         W1 = sp.Matrix(self.w1.tolist())
         W2 = sp.Matrix(self.w2.tolist())
-        return [(x_exp.T * W1 * x_exp)[0], (x_exp.T * W2 * x_exp)[0]]
+        return [(x_exp.T * W1 * x_exp)[0], (x_exp.T * W2 * x_exp)[0]]    
+
+
+
