@@ -17,34 +17,43 @@ torch.manual_seed(random_seed)
 
 
 
-def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None):
+def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None, optimizer_type='Adam'):
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate) #other BFGS optim try its not from pytorch!!!
-    # optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
+    if optimizer_type == 'Adam':
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    elif optimizer_type == 'SGD':
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+    elif optimizer_type == 'LBFGS':
+        # LBFGS optimizer requires a closure function to compute the loss
+        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
 
 
     train_losses = []
     val_losses = []
     #adam opt
-    # for epoch in range(n_epochs):
-    #     # Training step
-    #     model.train()
-    #     optimizer.zero_grad()
-    #     predictions = model(X_train)
-    #     train_loss = criterion(predictions, Y_train)
-    #     train_loss.backward()
-    #     optimizer.step()
-
     for epoch in range(n_epochs):
-        def closure():
+
+        if optimizer.__class__.__name__ == 'Adam' or optimizer.__class__.__name__ == 'SGD':
+            # Training step
+            model.train()
             optimizer.zero_grad()
             predictions = model(X_train)
             train_loss = criterion(predictions, Y_train)
             train_loss.backward()
-            return train_loss
-        
-        # Perform LBFGS optimization step
-        optimizer.step(closure)
+            optimizer.step()
+
+        elif optimizer.__class__.__name__ == 'LBFGS':
+            for epoch in range(n_epochs):
+                def closure():
+                    optimizer.zero_grad()
+                    predictions = model(X_train)
+                    train_loss = criterion(predictions, Y_train)
+                    train_loss.backward()
+                    return train_loss
+                
+                # Perform LBFGS optimization step
+                optimizer.step(closure)
+
         if model.__class__.__name__ in ['Polynomial_Net', 'NeuralNet', 'Deep_Polynomial_Network'] and (epoch == n_epochs-1):
             symbols = sp.symbols(f'x0:{X_train.shape[1]}')  # e.g., x0, x1, x2 for 3D
             polynomial = model.symbolic_forward(*symbols)
@@ -101,7 +110,7 @@ y = torch.tensor(y, dtype=torch.float32).unsqueeze(1)  # Ensure y is a column ve
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=random_seed)
 
 num_features = X_train.shape[1]
-layers = [1, 1] 
+layers = [5] 
 
 # Initialize models
 torch.manual_seed(random_seed)
