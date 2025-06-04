@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
 import sympy as sp
 from PN_models import Polynomial_Network, PN_Neuron, PolynomialWidth2
-from NN_models import NN_model1
+from NN_models import NN_model1, General_NN
 from sklearn.model_selection import train_test_split
 # from plot import plot_sampled_function_vs_polynomial_estimate
 print("Now training...")
@@ -79,7 +79,7 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
             symbols = sp.symbols(f'x0:{X_train.shape[1]}')  # e.g., x0, x1, x2 for 3D
             polynomial = model.symbolic_forward(*symbols)
             # print(f"Polynomial: {polynomial}")
-            print(f"Polynomial.simplify: {polynomial.simplify()}")
+            print(f"Polynomial.simplify: {polynomial.simplify().evalf(3)}")
             # plot_sampled_function_vs_polynomial_estimate(X_val, Y_val, val_predictions, polynomial=polynomial)
 
 
@@ -110,46 +110,47 @@ y = torch.tensor(y, dtype=torch.float32).unsqueeze(1)  # Ensure y is a column ve
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=random_seed)
 
 num_features = X_train.shape[1]
-layers = [5] 
+layers = [6,1] 
 
 # Initialize models
 torch.manual_seed(random_seed)
 Polynomial_Net = Polynomial_Network(layers, in_features=num_features)
 torch.manual_seed(random_seed)
-NeuralNet = NN_model1(in_features=num_features)
+# NeuralNet = NN_model1(in_features=num_features)
+NeuralNet = General_NN(layers, in_features=num_features)
 print(f"In-features: {X_train.shape[1]}")
 
 n_epochs = 10000
 lr = 0.01
 
 # Train models with validation tracking
-# print("\nTraining Neural Network:")
-# NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
+print("\nTraining Neural Network:")
+NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
 
-print(f"\nTraining Polynomial_Network (layers={layers}):")
-poly_network, train_losses_poly_network, val_losses_poly_network = train_model(Polynomial_Net, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
+# print(f"\nTraining Polynomial_Network (layers={layers}):")
+# poly_network, train_losses_poly_network, val_losses_poly_network = train_model(Polynomial_Net, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
 
 # Evaluate on test data
 with torch.no_grad():
-    test_loss_poly_network = nn.MSELoss()(poly_network(X_test), y_test)
-#     test_loss_NN = nn.MSELoss()(NeuralNet(X_test), y_test)
+    # test_loss_poly_network = nn.MSELoss()(poly_network(X_test), y_test)
+    test_loss_NN = nn.MSELoss()(NeuralNet(X_test), y_test)
 
-# print(f"Test Loss (Neural Network): {test_loss_NN.item():.4f}")
-print(f"Test Loss (Polynomial_Network, layers={layers}): {test_loss_poly_network.item():.4f}")
+print(f"Test Loss (Neural Network): {test_loss_NN.item():.4f}")
+# print(f"Test Loss (Polynomial_Network, layers={layers}): {test_loss_poly_network.item():.4f}")
 
 # log-transform the losses
-# train_losses_NN = np.log(train_losses_NN)
-# val_losses_NN = np.log(val_losses_NN)
-train_losses_poly_network = np.log(train_losses_poly_network)
-val_losses_poly_network = np.log(val_losses_poly_network)
+train_losses_NN = np.log(train_losses_NN)
+val_losses_NN = np.log(val_losses_NN)
+# train_losses_poly_network = np.log(train_losses_poly_network)
+# val_losses_poly_network = np.log(val_losses_poly_network)
 
 # plot the loss
 # Plot training vs validation loss
 plt.figure(figsize=(10, 5))
-# plt.plot(train_losses_NN, label="Neural-Network - Train Loss", linestyle="solid")
-# plt.plot(val_losses_NN, label="Neural-Network - Validation Loss", linestyle="dashed")
-plt.plot(train_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Train Loss", linestyle="solid")
-plt.plot(val_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Validation Loss", linestyle="dashed")
+plt.plot(train_losses_NN, label="Neural-Network - Train Loss", linestyle="solid")
+plt.plot(val_losses_NN, label="Neural-Network - Validation Loss", linestyle="dashed")
+# plt.plot(train_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Train Loss", linestyle="solid")
+# plt.plot(val_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Validation Loss", linestyle="dashed")
 plt.xlabel("Epochs")
 plt.ylabel("Loss")
 plt.legend()
