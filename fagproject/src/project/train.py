@@ -20,10 +20,13 @@ torch.manual_seed(random_seed)
 def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None, optimizer_type='Adam'):
     criterion = nn.MSELoss()
     if optimizer_type == 'Adam':
+        print(f"Using Adam optimizer with learning rate: {learning_rate}")
         optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     elif optimizer_type == 'SGD':
+        print(f"Using SGD optimizer with learning rate: {learning_rate}")
         optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     elif optimizer_type == 'LBFGS':
+        print(f"Using LBFGS optimizer with learning rate: {learning_rate}")
         # LBFGS optimizer requires a closure function to compute the loss
         optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
 
@@ -43,16 +46,15 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
             optimizer.step()
 
         elif optimizer.__class__.__name__ == 'LBFGS':
-            for epoch in range(n_epochs):
-                def closure():
-                    optimizer.zero_grad()
-                    predictions = model(X_train)
-                    train_loss = criterion(predictions, Y_train)
-                    train_loss.backward()
-                    return train_loss
-                
-                # Perform LBFGS optimization step
-                optimizer.step(closure)
+            def closure():
+                optimizer.zero_grad()
+                predictions = model(X_train)
+                train_loss = criterion(predictions, Y_train)
+                train_loss.backward()
+                return train_loss
+            
+            # Perform LBFGS optimization step
+            optimizer.step(closure)
 
         if model.__class__.__name__ in ['Polynomial_Net', 'NeuralNet', 'Deep_Polynomial_Network'] and (epoch == n_epochs-1):
             symbols = sp.symbols(f'x0:{X_train.shape[1]}')  # e.g., x0, x1, x2 for 3D
@@ -110,7 +112,10 @@ y = torch.tensor(y, dtype=torch.float32).unsqueeze(1)  # Ensure y is a column ve
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=random_seed)
 
 num_features = X_train.shape[1]
-layers = [6,1] 
+layers = [3] 
+n_epochs = 10000
+lr = 0.01
+optimizer = 'Adam'  # Choose from 'Adam', 'SGD', 'LBFGS'
 
 # Initialize models
 torch.manual_seed(random_seed)
@@ -120,39 +125,40 @@ torch.manual_seed(random_seed)
 NeuralNet = General_NN(layers, in_features=num_features)
 print(f"In-features: {X_train.shape[1]}")
 
-n_epochs = 10000
-lr = 0.01
 
 # Train models with validation tracking
 print("\nTraining Neural Network:")
-NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
+NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path, optimizer_type=optimizer)
 
-# print(f"\nTraining Polynomial_Network (layers={layers}):")
-# poly_network, train_losses_poly_network, val_losses_poly_network = train_model(Polynomial_Net, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
+print(f"\nTraining Polynomial_Network (layers={layers}):")
+poly_network, train_losses_poly_network, val_losses_poly_network = train_model(Polynomial_Net, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
 
 # Evaluate on test data
 with torch.no_grad():
-    # test_loss_poly_network = nn.MSELoss()(poly_network(X_test), y_test)
+    test_loss_poly_network = nn.MSELoss()(poly_network(X_test), y_test)
     test_loss_NN = nn.MSELoss()(NeuralNet(X_test), y_test)
 
 print(f"Test Loss (Neural Network): {test_loss_NN.item():.4f}")
-# print(f"Test Loss (Polynomial_Network, layers={layers}): {test_loss_poly_network.item():.4f}")
+print(f"Test Loss (Polynomial_Network, layers={layers}): {test_loss_poly_network.item():.4f}")
 
 # log-transform the losses
 train_losses_NN = np.log(train_losses_NN)
 val_losses_NN = np.log(val_losses_NN)
-# train_losses_poly_network = np.log(train_losses_poly_network)
-# val_losses_poly_network = np.log(val_losses_poly_network)
+train_losses_poly_network = np.log(train_losses_poly_network)
+val_losses_poly_network = np.log(val_losses_poly_network)
 
 # plot the loss
 # Plot training vs validation loss
 plt.figure(figsize=(10, 5))
 plt.plot(train_losses_NN, label="Neural-Network - Train Loss", linestyle="solid")
 plt.plot(val_losses_NN, label="Neural-Network - Validation Loss", linestyle="dashed")
-# plt.plot(train_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Train Loss", linestyle="solid")
-# plt.plot(val_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Validation Loss", linestyle="dashed")
+plt.plot(train_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Train Loss", linestyle="solid")
+plt.plot(val_losses_poly_network, label=f"Polynomial_Network (layers={layers}) - Validation Loss", linestyle="dashed")
 plt.xlabel("Epochs")
 plt.ylabel("Loss")
 plt.legend()
 plt.title("Training vs Validation Loss")
 plt.show()
+
+# Save the figure
+plt.savefig(f"fagproject/figs/{optimizer}_{layers}_{lr}_loss_plot.png")
