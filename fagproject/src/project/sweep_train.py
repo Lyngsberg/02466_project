@@ -120,15 +120,18 @@ def train_model():
             val_mse /= num_batches 
             wandb.log({
                 "epoch": epoch + 1,
-                "train_loss": closure().item(),
+                "train_MSE": closure().item(),
                 "validation_MSE": val_mse,
             })
-            print(val_mse)
     else:
+        print(model_modul_name)
         for epoch in range(epochs):
+        
             model.train()
-            epoch_loss = 0.0
+            train_loss_total = 0.0
+            train_samples = 0
 
+            # Training loop
             for x_batch, y_batch in train_loader:
                 x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
@@ -138,32 +141,35 @@ def train_model():
                 loss.backward()
                 optimizer.step()
 
-                epoch_loss += loss.item()
+                # Accumulate total loss and samples for proper MSE
+                train_loss_total += loss.item() * x_batch.size(0)
+                train_samples += x_batch.size(0)
 
-        model.eval()
-        val_mse = 0.0
-        n_batches = 0
-        with torch.no_grad():
-            for x_batch, y_batch in test_loader:
-                x_batch, y_batch = x_batch.to(device), y_batch.to(device)
+            # Compute average train MSE for this epoch
+            train_mse = train_loss_total / train_samples
 
-                outputs = model(x_batch)
-                loss = criterion(outputs, y_batch)
-                val_mse += loss.item()
-                n_batches += 1
-        val_mse = val_mse / n_batches
+            # Validation loop
+            model.eval()
+            val_loss_total = 0.0
+            val_samples = 0
+            with torch.no_grad():
+                for x_batch, y_batch in test_loader:
+                    x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
-        wandb.log({
-                    "epoch": epoch + 1,
-                    "train_loss": epoch_loss,
-                    "validation_MSE": val_mse,
-                })
+                    outputs = model(x_batch)
+                    loss = criterion(outputs, y_batch)
+                    val_loss_total += loss.item() * x_batch.size(0)
+                    val_samples += x_batch.size(0)
+
+            val_mse = val_loss_total / val_samples
+
+            # Log metrics to W&B
+            wandb.log({
+                "epoch": epoch + 1,
+                "train_MSE": train_mse,
+                "validation_MSE": val_mse,
+            })
         print(val_mse)
-
-    #model_path = os.path.join("fagproject/models", f"{model_name}{data_type}.pth")
-    #torch.save(model.state_dict(), model_path)
-    #print(f"Model saved locally to {model_path}")
-
 
     artifact = wandb.Artifact(
         name="Neural_Network" if modul_name == "NN_models" else "Polynomial_Network",
