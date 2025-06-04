@@ -90,10 +90,10 @@ def train_model():
         optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     elif optimizer_name == "SGD":
         optimizer = optim.SGD(model.parameters(), lr=learning_rate)
-    elif optimizer_name == "BFGS":
+    elif optimizer_name == "LBFGS":
         optimizer = optim.LBFGS(model.parameters(), lr=learning_rate)
 
-    if optimizer_name == "BFGS":
+    if optimizer_name == "LBFGS":
         def closure():
             optimizer.zero_grad()
             predictions = model(x_train)

@@ -4,7 +4,7 @@ project: 'Fagprojekt'  # Your project name
 program: fagproject/src/project/sweep_train.py
 
 method: random  # You can also use 'grid' if you want to test all combinations of hyperparameters
-name: Sweep_phase1  # Name of the sweep
+name: Sweep_phase1_final  # Name of the sweep
 metric:
   name: validation_MSE  # The metric we want to optimize
   goal: minimize  # We want to minimize the metric
@@ -13,7 +13,7 @@ parameters:
     values:
       - 'train_c_n_1.pkl'  # Example dataset 1
       - 'train_c_n_2.pkl'  # Example dataset 2
-      - 'train_q_n_1.pkk'
+      - 'train_q_n_1.pkl'
       - 'train_q_n_2.pkl'
       - 'train_s_n_1.pkl'
       - 'train_s_n_2.pkl'
@@ -24,24 +24,23 @@ parameters:
   batch_size:
     values:
       - 32  # Example batch size
-      #- 64  # Example batch size
-      #- 128  # Example batch size
+      - 64  # Example batch size
+      - 128  # Example batch size
   learning_rate:
     min: 0.001  # Minimum learning rate
-    max: 0.01  # Maximum learning rate
+    max: 0.01   # Maximum learning rate
   epochs:
     values:
       - 1000  # Example number of epochs
-      - 1500  # Example number of epochs
       - 2000  # Example number of epochs
   seed:
     values:
       - 42  # Example seed 1
-      - 123  # Example seed 2
-      - 456  # Example seed 3
+      # - 123  # Example seed 2
+      # - 456  # Example seed 3
   optimizer_name:
     values:
       - "Adam"
       - "SGD"
-      - "BFGS"
-run_cap: 50  # Limits the sweep to 20 runs
+      - "LBFGS"
+run_cap: 100  # Limits the sweep to 20 runs

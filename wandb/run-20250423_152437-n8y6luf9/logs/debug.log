@@ -1,0 +1,30 @@
+2025-04-23 15:24:37,750 INFO    MainThread:157276 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-04-23 15:24:37,750 INFO    MainThread:157276 [wandb_setup.py:_flush():67] Configure stats pid to 157276
+2025-04-23 15:24:37,750 INFO    MainThread:157276 [wandb_setup.py:_flush():67] Loading settings from /home/thousig/.config/wandb/settings
+2025-04-23 15:24:37,750 INFO    MainThread:157276 [wandb_setup.py:_flush():67] Loading settings from /home/thousig/fagproject/02466_project/wandb/settings
+2025-04-23 15:24:37,750 INFO    MainThread:157276 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-04-23 15:24:37,751 INFO    MainThread:157276 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/thousig/fagproject/02466_project/wandb/run-20250423_152437-n8y6luf9/logs/debug.log
+2025-04-23 15:24:37,751 INFO    MainThread:157276 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/thousig/fagproject/02466_project/wandb/run-20250423_152437-n8y6luf9/logs/debug-internal.log
+2025-04-23 15:24:37,751 INFO    MainThread:157276 [wandb_init.py:init():761] calling init triggers
+2025-04-23 15:24:37,751 INFO    MainThread:157276 [wandb_init.py:init():766] wandb.init called with sweep_config: {'batch_size': 32, 'data_type': 'train_q_n_1.pkk', 'epochs': 1000, 'learning_rate': 0.004534498037701121, 'model_modul_name': ['PN_models', 'Polynomial_Network'], 'optimizer_name': 'BFGS', 'seed': 456}
+config: {'_wandb': {}}
+2025-04-23 15:24:37,751 INFO    MainThread:157276 [wandb_init.py:init():784] starting backend
+2025-04-23 15:24:37,751 INFO    MainThread:157276 [wandb_init.py:init():788] sending inform_init request
+2025-04-23 15:24:37,753 INFO    MainThread:157276 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-23 15:24:37,753 INFO    MainThread:157276 [wandb_init.py:init():798] backend started and connected
+2025-04-23 15:24:37,753 INFO    MainThread:157276 [wandb_run.py:_config_callback():1261] config_cb None None {'batch_size': 32, 'data_type': 'train_q_n_1.pkk', 'epochs': 1000, 'learning_rate': 0.004534498037701121, 'model_modul_name': ['PN_models', 'Polynomial_Network'], 'optimizer_name': 'BFGS', 'seed': 456}
+2025-04-23 15:24:37,753 INFO    MainThread:157276 [wandb_init.py:init():891] updated telemetry
+2025-04-23 15:24:37,756 INFO    MainThread:157276 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-04-23 15:24:38,167 INFO    MainThread:157276 [wandb_init.py:init():990] starting run threads in backend
+2025-04-23 15:24:39,185 INFO    MainThread:157276 [wandb_run.py:_console_start():2375] atexit reg
+2025-04-23 15:24:39,185 INFO    MainThread:157276 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-04-23 15:24:39,185 INFO    MainThread:157276 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-04-23 15:24:39,185 INFO    MainThread:157276 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-04-23 15:24:39,187 INFO    MainThread:157276 [wandb_init.py:init():1032] run started, returning control to user process
+2025-04-23 15:24:39,190 INFO    MainThread:157276 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/thousig/fagproject/02466_project/wandb/run-20250423_152439-n8y6luf9/logs/debug.log
+2025-04-23 15:24:39,190 INFO    MainThread:157276 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/thousig/fagproject/02466_project/wandb/run-20250423_152439-n8y6luf9/logs/debug-internal.log
+2025-04-23 15:24:39,190 INFO    MainThread:157276 [wandb_init.py:init():761] calling init triggers
+2025-04-23 15:24:39,190 INFO    MainThread:157276 [wandb_init.py:init():766] wandb.init called with sweep_config: {'batch_size': 32, 'data_type': 'train_q_n_1.pkk', 'epochs': 1000, 'learning_rate': 0.004534498037701121, 'model_modul_name': ['PN_models', 'Polynomial_Network'], 'optimizer_name': 'BFGS', 'seed': 456}
+config: {'BATCH_SIZE': 32, 'LEARNING_RATE': 0.004534498037701121, 'EPOCHS': 1000, 'SEED': 456, '_wandb': {}}
+2025-04-23 15:24:39,190 INFO    MainThread:157276 [wandb_init.py:init():776] wandb.init() called while a run is active
+2025-04-23 15:24:39,440 INFO    MsgRouterThr:157276 [mailbox.py:close():129] Closing mailbox, abandoning 0 handles.

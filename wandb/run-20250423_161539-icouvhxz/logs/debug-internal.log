@@ -1,0 +1,112 @@
+2025-04-23 16:15:39,813 INFO    StreamThr :178706 [internal.py:wandb_internal():83] W&B internal server running at pid: 178706, started at: 2025-04-23 16:15:39.810729
+2025-04-23 16:15:39,822 INFO    WriterThread:178706 [datastore.py:open_for_write():87] open: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/run-icouvhxz.wandb
+2025-04-23 16:15:40,602 INFO    SenderThread:178706 [dir_watcher.py:__init__():211] watching files in: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files
+2025-04-23 16:15:40,602 INFO    SenderThread:178706 [sender.py:_start_run_threads():1134] run started: icouvhxz with start time 1745417739.807341
+2025-04-23 16:15:40,812 INFO    HandlerThread:178706 [system_monitor.py:start():187] Starting system monitor
+2025-04-23 16:15:40,815 INFO    SystemMonitor:178706 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-04-23 16:15:40,816 INFO    HandlerThread:178706 [system_monitor.py:probe():207] Collecting system info
+2025-04-23 16:15:40,817 INFO    SystemMonitor:178706 [interfaces.py:start():186] Started cpu monitoring
+2025-04-23 16:15:40,819 INFO    SystemMonitor:178706 [interfaces.py:start():186] Started disk monitoring
+2025-04-23 16:15:40,822 INFO    SystemMonitor:178706 [interfaces.py:start():186] Started gpu monitoring
+2025-04-23 16:15:40,824 INFO    SystemMonitor:178706 [interfaces.py:start():186] Started memory monitoring
+2025-04-23 16:15:40,825 INFO    SystemMonitor:178706 [interfaces.py:start():186] Started network monitoring
+2025-04-23 16:15:41,363 INFO    HandlerThread:178706 [system_monitor.py:probe():217] Finished collecting system info
+2025-04-23 16:15:41,363 INFO    HandlerThread:178706 [system_monitor.py:probe():220] Publishing system info
+2025-04-23 16:15:41,542 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/conda-environment.yaml
+2025-04-23 16:15:42,938 INFO    HandlerThread:178706 [system_monitor.py:probe():222] Finished publishing system info
+2025-04-23 16:15:42,941 INFO    SenderThread:178706 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2025-04-23 16:15:43,541 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/conda-environment.yaml
+2025-04-23 16:15:43,542 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/output.log
+2025-04-23 16:15:43,542 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/requirements.txt
+2025-04-23 16:15:43,542 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/wandb-metadata.json
+2025-04-23 16:15:44,677 INFO    wandb-upload_0:178706 [upload_job.py:push():130] Uploaded file /tmp/tmprbb174ldwandb/kffo0jkj-wandb-metadata.json
+2025-04-23 16:15:45,542 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/output.log
+2025-04-23 16:15:55,954 ERROR   gpu       :178706 [interfaces.py:monitor():140] Failed to sample metric: Unknown Error
+2025-04-23 16:15:55,955 ERROR   gpu       :178706 [interfaces.py:monitor():140] Failed to sample metric: Unknown Error
+2025-04-23 16:15:56,033 INFO    SenderThread:178706 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-23 16:15:56,547 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/wandb-summary.json
+2025-04-23 16:15:57,402 INFO    SenderThread:178706 [sender.py:send_request_log_artifact():1487] logged artifact Polynomial_Network - {'id': 'QXJ0aWZhY3Q6MTY3Njc1ODMwOA==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjYxNzM2OTY0Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY3Njc1ODMwOA==', 'versionIndex': 0}}}
+2025-04-23 16:15:57,403 INFO    SenderThread:178706 [sender.py:send_exit():554] handling exit code: 0
+2025-04-23 16:15:57,403 INFO    SenderThread:178706 [sender.py:send_exit():556] handling runtime: 16
+2025-04-23 16:15:57,405 INFO    SenderThread:178706 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-23 16:15:57,405 INFO    SenderThread:178706 [sender.py:send_exit():562] send defer
+2025-04-23 16:15:57,406 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 0
+2025-04-23 16:15:57,407 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 0
+2025-04-23 16:15:57,407 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 1
+2025-04-23 16:15:57,407 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 1
+2025-04-23 16:15:57,408 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 1
+2025-04-23 16:15:57,408 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 2
+2025-04-23 16:15:57,409 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 2
+2025-04-23 16:15:57,409 INFO    HandlerThread:178706 [system_monitor.py:finish():196] Stopping system monitor
+2025-04-23 16:15:57,414 INFO    HandlerThread:178706 [interfaces.py:finish():198] Joined cpu monitor
+2025-04-23 16:15:57,414 INFO    HandlerThread:178706 [interfaces.py:finish():198] Joined disk monitor
+2025-04-23 16:15:57,438 INFO    HandlerThread:178706 [interfaces.py:finish():198] Joined gpu monitor
+2025-04-23 16:15:57,438 INFO    HandlerThread:178706 [interfaces.py:finish():198] Joined memory monitor
+2025-04-23 16:15:57,439 INFO    HandlerThread:178706 [interfaces.py:finish():198] Joined network monitor
+2025-04-23 16:15:57,440 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 2
+2025-04-23 16:15:57,440 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 3
+2025-04-23 16:15:57,441 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 3
+2025-04-23 16:15:57,442 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 3
+2025-04-23 16:15:57,442 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 4
+2025-04-23 16:15:57,443 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 4
+2025-04-23 16:15:57,444 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 4
+2025-04-23 16:15:57,444 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 5
+2025-04-23 16:15:57,444 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 5
+2025-04-23 16:15:57,446 INFO    SenderThread:178706 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-23 16:15:57,446 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 5
+2025-04-23 16:15:57,446 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 6
+2025-04-23 16:15:57,446 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 6
+2025-04-23 16:15:57,447 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 6
+2025-04-23 16:15:57,547 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/output.log
+2025-04-23 16:15:57,548 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/wandb-summary.json
+2025-04-23 16:15:57,736 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 7
+2025-04-23 16:15:57,736 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 7
+2025-04-23 16:15:57,737 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 7
+2025-04-23 16:15:58,548 INFO    Thread-12 :178706 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/config.yaml
+2025-04-23 16:16:01,487 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 8
+2025-04-23 16:16:01,488 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 8
+2025-04-23 16:16:01,490 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 8
+2025-04-23 16:16:01,490 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 9
+2025-04-23 16:16:01,490 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 9
+2025-04-23 16:16:01,491 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 9
+2025-04-23 16:16:01,491 INFO    SenderThread:178706 [dir_watcher.py:finish():359] shutting down directory watcher
+2025-04-23 16:16:01,551 INFO    SenderThread:178706 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/output.log
+2025-04-23 16:16:01,552 INFO    SenderThread:178706 [dir_watcher.py:finish():389] scan: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files
+2025-04-23 16:16:01,552 INFO    SenderThread:178706 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/output.log output.log
+2025-04-23 16:16:01,552 INFO    SenderThread:178706 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/requirements.txt requirements.txt
+2025-04-23 16:16:01,553 INFO    SenderThread:178706 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/wandb-metadata.json wandb-metadata.json
+2025-04-23 16:16:01,553 INFO    SenderThread:178706 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/config.yaml config.yaml
+2025-04-23 16:16:01,553 INFO    SenderThread:178706 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/conda-environment.yaml conda-environment.yaml
+2025-04-23 16:16:01,554 INFO    SenderThread:178706 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/wandb-summary.json wandb-summary.json
+2025-04-23 16:16:01,554 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 10
+2025-04-23 16:16:01,555 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 10
+2025-04-23 16:16:01,565 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 10
+2025-04-23 16:16:01,566 INFO    SenderThread:178706 [file_pusher.py:finish():169] shutting down file pusher
+2025-04-23 16:16:02,188 INFO    wandb-upload_0:178706 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/output.log
+2025-04-23 16:16:02,372 INFO    wandb-upload_1:178706 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/requirements.txt
+2025-04-23 16:16:02,676 INFO    wandb-upload_3:178706 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/conda-environment.yaml
+2025-04-23 16:16:02,749 INFO    wandb-upload_4:178706 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/wandb-summary.json
+2025-04-23 16:16:03,315 INFO    wandb-upload_2:178706 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/files/config.yaml
+2025-04-23 16:16:03,516 INFO    Thread-11 (_thread_body):178706 [sender.py:transition_state():582] send defer: 11
+2025-04-23 16:16:03,516 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 11
+2025-04-23 16:16:03,517 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 11
+2025-04-23 16:16:03,517 INFO    SenderThread:178706 [file_pusher.py:join():175] waiting for file pusher
+2025-04-23 16:16:03,518 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 12
+2025-04-23 16:16:03,518 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 12
+2025-04-23 16:16:03,519 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 12
+2025-04-23 16:16:03,519 INFO    SenderThread:178706 [file_stream.py:finish():601] file stream finish called
+2025-04-23 16:16:04,040 INFO    SenderThread:178706 [file_stream.py:finish():605] file stream finish is done
+2025-04-23 16:16:04,040 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 13
+2025-04-23 16:16:04,041 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 13
+2025-04-23 16:16:04,042 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 13
+2025-04-23 16:16:04,042 INFO    SenderThread:178706 [sender.py:transition_state():582] send defer: 14
+2025-04-23 16:16:04,042 INFO    HandlerThread:178706 [handler.py:handle_request_defer():188] handle defer: 14
+2025-04-23 16:16:04,043 INFO    SenderThread:178706 [sender.py:send_request_defer():578] handle sender defer: 14
+2025-04-23 16:16:04,052 INFO    MainThread:178706 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-04-23 16:16:04,052 INFO    MainThread:178706 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-04-23 16:16:04,053 INFO    MainThread:178706 [wandb_run.py:_footer_sync_info():3917] logging synced files
+2025-04-23 16:16:04,054 INFO    HandlerThread:178706 [handler.py:finish():897] shutting down handler
+2025-04-23 16:16:05,049 INFO    WriterThread:178706 [datastore.py:close():296] close: /home/thousig/fagproject/02466_project/wandb/run-20250423_161539-icouvhxz/run-icouvhxz.wandb
+2025-04-23 16:16:05,049 INFO    SenderThread:178706 [sender.py:finish():1582] shutting down sender
+2025-04-23 16:16:05,050 INFO    SenderThread:178706 [file_pusher.py:finish():169] shutting down file pusher
+2025-04-23 16:16:05,050 INFO    SenderThread:178706 [file_pusher.py:join():175] waiting for file pusher

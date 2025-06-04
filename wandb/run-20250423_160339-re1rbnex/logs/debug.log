@@ -1,0 +1,7 @@
+2025-04-23 16:03:39,593 INFO    MainThread:175231 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/thousig/fagproject/02466_project/wandb/run-20250423_160339-re1rbnex/logs/debug.log
+2025-04-23 16:03:39,593 INFO    MainThread:175231 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/thousig/fagproject/02466_project/wandb/run-20250423_160339-re1rbnex/logs/debug-internal.log
+2025-04-23 16:03:39,593 INFO    MainThread:175231 [wandb_init.py:init():761] calling init triggers
+2025-04-23 16:03:39,593 INFO    MainThread:175231 [wandb_init.py:init():766] wandb.init called with sweep_config: {'batch_size': 32, 'data_type': 'train_s_n_1.pkl', 'epochs': 2000, 'learning_rate': 0.007836927988603748, 'model_modul_name': ['NN_models', 'NN_model1'], 'optimizer_name': 'BFGS', 'seed': 456}
+config: {'BATCH_SIZE': 32, 'LEARNING_RATE': 0.007836927988603748, 'EPOCHS': 2000, 'SEED': 456, '_wandb': {}}
+2025-04-23 16:03:39,593 INFO    MainThread:175231 [wandb_init.py:init():776] wandb.init() called while a run is active
+2025-04-23 16:04:28,940 INFO    MsgRouterThr:175231 [mailbox.py:close():129] Closing mailbox, abandoning 1 handles.
