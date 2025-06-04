@@ -112,7 +112,7 @@ y = torch.tensor(y, dtype=torch.float32).unsqueeze(1)  # Ensure y is a column ve
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=random_seed)
 
 num_features = X_train.shape[1]
-layers = [3] 
+layers = [5] 
 n_epochs = 10000
 lr = 0.01
 optimizer = 'Adam'  # Choose from 'Adam', 'SGD', 'LBFGS'
@@ -131,7 +131,7 @@ print("\nTraining Neural Network:")
 NeuralNet, train_losses_NN, val_losses_NN = train_model(NeuralNet, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path, optimizer_type=optimizer)
 
 print(f"\nTraining Polynomial_Network (layers={layers}):")
-poly_network, train_losses_poly_network, val_losses_poly_network = train_model(Polynomial_Net, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path)
+poly_network, train_losses_poly_network, val_losses_poly_network = train_model(Polynomial_Net, X_train, y_train, X_test, y_test, n_epochs=n_epochs, learning_rate=lr, path=path, optimizer_type=optimizer)
 
 # Evaluate on test data
 with torch.no_grad():
