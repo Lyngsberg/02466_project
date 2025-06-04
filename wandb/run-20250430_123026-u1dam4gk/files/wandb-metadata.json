@@ -1,0 +1,214 @@
+{
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "CPython 3.13.2",
+    "heartbeatAt": "2025-04-30T10:30:27.789507",
+    "startedAt": "2025-04-30T10:30:26.676621",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "/tmp/tmpp3pjcoaw/port-159441.txt",
+        "--pid",
+        "159441"
+    ],
+    "state": "running",
+    "program": "/home/thousig/fagproject/02466_project/fagproject/src/project/sweep_train.py",
+    "codePathLocal": "fagproject/src/project/sweep_train.py",
+    "codePath": "fagproject/src/project/sweep_train.py",
+    "git": {
+        "remote": "https://github.com/Lyngsberg/02466_project",
+        "commit": "a7631c54bdc4e1bd1a1b686ec056b1964f828ace"
+    },
+    "email": "asger123asger123@gmail.com",
+    "root": "/home/thousig/fagproject/02466_project",
+    "host": "ATS",
+    "username": null,
+    "executable": "/home/thousig/miniconda3/envs/fagproject/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2419.197999999999,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.198,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1081101176832,
+            "used": 124780154880
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 8189190144
+    }
+}

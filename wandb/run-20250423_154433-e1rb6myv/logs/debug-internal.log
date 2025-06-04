@@ -1,0 +1,112 @@
+2025-04-23 15:44:33,488 INFO    StreamThr :168927 [internal.py:wandb_internal():83] W&B internal server running at pid: 168927, started at: 2025-04-23 15:44:33.486515
+2025-04-23 15:44:33,493 INFO    WriterThread:168927 [datastore.py:open_for_write():87] open: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/run-e1rb6myv.wandb
+2025-04-23 15:44:34,088 INFO    SenderThread:168927 [dir_watcher.py:__init__():211] watching files in: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files
+2025-04-23 15:44:34,088 INFO    SenderThread:168927 [sender.py:_start_run_threads():1134] run started: e1rb6myv with start time 1745415873.483698
+2025-04-23 15:44:34,732 INFO    HandlerThread:168927 [system_monitor.py:start():187] Starting system monitor
+2025-04-23 15:44:34,733 INFO    SystemMonitor:168927 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-04-23 15:44:34,733 INFO    HandlerThread:168927 [system_monitor.py:probe():207] Collecting system info
+2025-04-23 15:44:34,734 INFO    SystemMonitor:168927 [interfaces.py:start():186] Started cpu monitoring
+2025-04-23 15:44:34,736 INFO    SystemMonitor:168927 [interfaces.py:start():186] Started disk monitoring
+2025-04-23 15:44:34,736 INFO    SystemMonitor:168927 [interfaces.py:start():186] Started gpu monitoring
+2025-04-23 15:44:34,737 INFO    SystemMonitor:168927 [interfaces.py:start():186] Started memory monitoring
+2025-04-23 15:44:34,739 INFO    SystemMonitor:168927 [interfaces.py:start():186] Started network monitoring
+2025-04-23 15:44:35,257 INFO    HandlerThread:168927 [system_monitor.py:probe():217] Finished collecting system info
+2025-04-23 15:44:35,257 INFO    HandlerThread:168927 [system_monitor.py:probe():220] Publishing system info
+2025-04-23 15:44:36,089 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/conda-environment.yaml
+2025-04-23 15:44:36,428 INFO    HandlerThread:168927 [system_monitor.py:probe():222] Finished publishing system info
+2025-04-23 15:44:36,430 INFO    SenderThread:168927 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2025-04-23 15:44:37,089 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/conda-environment.yaml
+2025-04-23 15:44:37,089 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/requirements.txt
+2025-04-23 15:44:37,089 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/wandb-metadata.json
+2025-04-23 15:44:37,090 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/output.log
+2025-04-23 15:44:37,140 INFO    wandb-upload_0:168927 [upload_job.py:push():130] Uploaded file /tmp/tmpg06its4nwandb/lc5se0b2-wandb-metadata.json
+2025-04-23 15:44:39,091 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/output.log
+2025-04-23 15:44:49,870 ERROR   gpu       :168927 [interfaces.py:monitor():140] Failed to sample metric: Unknown Error
+2025-04-23 15:44:49,871 ERROR   gpu       :168927 [interfaces.py:monitor():140] Failed to sample metric: Unknown Error
+2025-04-23 15:44:56,325 INFO    SenderThread:168927 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-23 15:44:57,121 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/output.log
+2025-04-23 15:44:57,121 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/wandb-summary.json
+2025-04-23 15:44:57,539 INFO    SenderThread:168927 [sender.py:send_request_log_artifact():1487] logged artifact Neural_Network - {'id': 'QXJ0aWZhY3Q6MTY3NjQ3MDQzNw==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU3ODM5NzE2Ng==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY3NjcyOTkwNA==', 'versionIndex': 22}}}
+2025-04-23 15:44:57,539 INFO    SenderThread:168927 [sender.py:send_exit():554] handling exit code: 0
+2025-04-23 15:44:57,540 INFO    SenderThread:168927 [sender.py:send_exit():556] handling runtime: 23
+2025-04-23 15:44:57,541 INFO    SenderThread:168927 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-23 15:44:57,542 INFO    SenderThread:168927 [sender.py:send_exit():562] send defer
+2025-04-23 15:44:57,543 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 0
+2025-04-23 15:44:57,543 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 0
+2025-04-23 15:44:57,544 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 1
+2025-04-23 15:44:57,544 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 1
+2025-04-23 15:44:57,545 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 1
+2025-04-23 15:44:57,545 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 2
+2025-04-23 15:44:57,545 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 2
+2025-04-23 15:44:57,545 INFO    HandlerThread:168927 [system_monitor.py:finish():196] Stopping system monitor
+2025-04-23 15:44:57,548 INFO    HandlerThread:168927 [interfaces.py:finish():198] Joined cpu monitor
+2025-04-23 15:44:57,548 INFO    HandlerThread:168927 [interfaces.py:finish():198] Joined disk monitor
+2025-04-23 15:44:57,568 INFO    HandlerThread:168927 [interfaces.py:finish():198] Joined gpu monitor
+2025-04-23 15:44:57,568 INFO    HandlerThread:168927 [interfaces.py:finish():198] Joined memory monitor
+2025-04-23 15:44:57,568 INFO    HandlerThread:168927 [interfaces.py:finish():198] Joined network monitor
+2025-04-23 15:44:57,569 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 2
+2025-04-23 15:44:57,569 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 3
+2025-04-23 15:44:57,570 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 3
+2025-04-23 15:44:57,571 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 3
+2025-04-23 15:44:57,571 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 4
+2025-04-23 15:44:57,572 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 4
+2025-04-23 15:44:57,572 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 4
+2025-04-23 15:44:57,572 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 5
+2025-04-23 15:44:57,573 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 5
+2025-04-23 15:44:57,574 INFO    SenderThread:168927 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-23 15:44:57,574 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 5
+2025-04-23 15:44:57,574 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 6
+2025-04-23 15:44:57,575 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 6
+2025-04-23 15:44:57,575 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 6
+2025-04-23 15:44:57,849 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 7
+2025-04-23 15:44:57,850 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 7
+2025-04-23 15:44:57,850 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 7
+2025-04-23 15:44:58,121 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/config.yaml
+2025-04-23 15:44:58,122 INFO    Thread-12 :168927 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/wandb-summary.json
+2025-04-23 15:45:00,749 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 8
+2025-04-23 15:45:00,750 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 8
+2025-04-23 15:45:00,752 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 8
+2025-04-23 15:45:00,752 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 9
+2025-04-23 15:45:00,753 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 9
+2025-04-23 15:45:00,754 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 9
+2025-04-23 15:45:00,754 INFO    SenderThread:168927 [dir_watcher.py:finish():359] shutting down directory watcher
+2025-04-23 15:45:01,124 INFO    SenderThread:168927 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/output.log
+2025-04-23 15:45:01,125 INFO    SenderThread:168927 [dir_watcher.py:finish():389] scan: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files
+2025-04-23 15:45:01,125 INFO    SenderThread:168927 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/output.log output.log
+2025-04-23 15:45:01,125 INFO    SenderThread:168927 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/requirements.txt requirements.txt
+2025-04-23 15:45:01,126 INFO    SenderThread:168927 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/wandb-metadata.json wandb-metadata.json
+2025-04-23 15:45:01,126 INFO    SenderThread:168927 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/config.yaml config.yaml
+2025-04-23 15:45:01,126 INFO    SenderThread:168927 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/conda-environment.yaml conda-environment.yaml
+2025-04-23 15:45:01,126 INFO    SenderThread:168927 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/wandb-summary.json wandb-summary.json
+2025-04-23 15:45:01,126 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 10
+2025-04-23 15:45:01,127 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 10
+2025-04-23 15:45:01,133 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 10
+2025-04-23 15:45:01,133 INFO    SenderThread:168927 [file_pusher.py:finish():169] shutting down file pusher
+2025-04-23 15:45:01,524 INFO    wandb-upload_1:168927 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/requirements.txt
+2025-04-23 15:45:01,609 INFO    wandb-upload_0:168927 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/output.log
+2025-04-23 15:45:01,648 INFO    wandb-upload_3:168927 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/conda-environment.yaml
+2025-04-23 15:45:01,663 INFO    wandb-upload_4:168927 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/wandb-summary.json
+2025-04-23 15:45:01,666 INFO    wandb-upload_2:168927 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/files/config.yaml
+2025-04-23 15:45:01,867 INFO    Thread-11 (_thread_body):168927 [sender.py:transition_state():582] send defer: 11
+2025-04-23 15:45:01,868 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 11
+2025-04-23 15:45:01,870 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 11
+2025-04-23 15:45:01,870 INFO    SenderThread:168927 [file_pusher.py:join():175] waiting for file pusher
+2025-04-23 15:45:01,870 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 12
+2025-04-23 15:45:01,871 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 12
+2025-04-23 15:45:01,872 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 12
+2025-04-23 15:45:01,872 INFO    SenderThread:168927 [file_stream.py:finish():601] file stream finish called
+2025-04-23 15:45:02,156 INFO    SenderThread:168927 [file_stream.py:finish():605] file stream finish is done
+2025-04-23 15:45:02,157 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 13
+2025-04-23 15:45:02,157 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 13
+2025-04-23 15:45:02,158 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 13
+2025-04-23 15:45:02,158 INFO    SenderThread:168927 [sender.py:transition_state():582] send defer: 14
+2025-04-23 15:45:02,159 INFO    HandlerThread:168927 [handler.py:handle_request_defer():188] handle defer: 14
+2025-04-23 15:45:02,160 INFO    SenderThread:168927 [sender.py:send_request_defer():578] handle sender defer: 14
+2025-04-23 15:45:02,167 INFO    MainThread:168927 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-04-23 15:45:02,168 INFO    MainThread:168927 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-04-23 15:45:02,168 INFO    MainThread:168927 [wandb_run.py:_footer_sync_info():3917] logging synced files
+2025-04-23 15:45:02,169 INFO    HandlerThread:168927 [handler.py:finish():897] shutting down handler
+2025-04-23 15:45:03,164 INFO    WriterThread:168927 [datastore.py:close():296] close: /home/thousig/fagproject/02466_project/wandb/run-20250423_154433-e1rb6myv/run-e1rb6myv.wandb
+2025-04-23 15:45:03,165 INFO    SenderThread:168927 [sender.py:finish():1582] shutting down sender
+2025-04-23 15:45:03,165 INFO    SenderThread:168927 [file_pusher.py:finish():169] shutting down file pusher
+2025-04-23 15:45:03,165 INFO    SenderThread:168927 [file_pusher.py:join():175] waiting for file pusher

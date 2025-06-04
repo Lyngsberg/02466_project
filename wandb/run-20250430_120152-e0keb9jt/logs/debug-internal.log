@@ -1,0 +1,1159 @@
+2025-04-30 12:01:52,176 INFO    StreamThr :147405 [internal.py:wandb_internal():83] W&B internal server running at pid: 147405, started at: 2025-04-30 12:01:52.174850
+2025-04-30 12:01:52,180 INFO    WriterThread:147405 [datastore.py:open_for_write():87] open: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/run-e0keb9jt.wandb
+2025-04-30 12:01:52,666 INFO    SenderThread:147405 [dir_watcher.py:__init__():211] watching files in: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files
+2025-04-30 12:01:52,666 INFO    SenderThread:147405 [sender.py:_start_run_threads():1134] run started: e0keb9jt with start time 1746007312.172436
+2025-04-30 12:01:52,913 INFO    HandlerThread:147405 [system_monitor.py:start():187] Starting system monitor
+2025-04-30 12:01:52,913 INFO    SystemMonitor:147405 [system_monitor.py:_start():151] Starting system asset monitoring threads
+2025-04-30 12:01:52,914 INFO    HandlerThread:147405 [system_monitor.py:probe():207] Collecting system info
+2025-04-30 12:01:52,916 INFO    SystemMonitor:147405 [interfaces.py:start():186] Started cpu monitoring
+2025-04-30 12:01:52,917 INFO    SystemMonitor:147405 [interfaces.py:start():186] Started disk monitoring
+2025-04-30 12:01:52,918 INFO    SystemMonitor:147405 [interfaces.py:start():186] Started gpu monitoring
+2025-04-30 12:01:52,919 INFO    SystemMonitor:147405 [interfaces.py:start():186] Started memory monitoring
+2025-04-30 12:01:52,920 INFO    SystemMonitor:147405 [interfaces.py:start():186] Started network monitoring
+2025-04-30 12:01:53,995 INFO    HandlerThread:147405 [system_monitor.py:probe():217] Finished collecting system info
+2025-04-30 12:01:53,995 INFO    HandlerThread:147405 [system_monitor.py:probe():220] Publishing system info
+2025-04-30 12:01:54,667 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/conda-environment.yaml
+2025-04-30 12:01:56,223 INFO    HandlerThread:147405 [system_monitor.py:probe():222] Finished publishing system info
+2025-04-30 12:01:56,228 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2025-04-30 12:01:56,667 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/conda-environment.yaml
+2025-04-30 12:01:56,667 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/requirements.txt
+2025-04-30 12:01:56,667 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:01:56,667 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-metadata.json
+2025-04-30 12:01:56,898 INFO    wandb-upload_0:147405 [upload_job.py:push():130] Uploaded file /tmp/tmp3w1v7fcawandb/kzfehwwt-wandb-metadata.json
+2025-04-30 12:01:57,267 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,312 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,362 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,444 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,498 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,547 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,607 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,668 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_created():272] file/dir created: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:01:57,694 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,830 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:57,902 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,057 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,111 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,159 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,280 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,345 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,393 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,441 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,489 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,540 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,592 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,641 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,668 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:01:58,669 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:01:58,757 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,905 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,952 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:58,997 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,124 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,172 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,249 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,302 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,348 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,394 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,462 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,618 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,670 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:01:59,672 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,719 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,775 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,823 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,878 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:01:59,957 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,002 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,048 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,104 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,155 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,230 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,290 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,339 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,385 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,481 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,529 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,610 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,670 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:00,670 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:00,680 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,729 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,786 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,855 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,921 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:00,984 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,048 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,121 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,183 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,242 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,393 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,407 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,470 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,557 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,629 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,670 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:01,702 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,775 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,837 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,896 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:01,957 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,016 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,080 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,128 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,238 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,283 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,330 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,430 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,477 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,532 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,671 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:02,671 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:02,695 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,802 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,871 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:02,925 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,002 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,066 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,180 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,250 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,355 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,491 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,548 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,599 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,656 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,671 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:03,755 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,849 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:03,928 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,046 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,164 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,251 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,353 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,416 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,535 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,641 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,672 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:04,672 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:04,697 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,797 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:04,911 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,052 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,142 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,210 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,270 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,352 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,419 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,478 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,581 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,649 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,672 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:05,757 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,859 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,915 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:05,974 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,031 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,092 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,217 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,361 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,490 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,590 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,673 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:06,674 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:06,742 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,818 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,882 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:06,945 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,005 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,069 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,136 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,203 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,268 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,333 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,392 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,455 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,527 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,663 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,674 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:07,809 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:07,884 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,017 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,101 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,150 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,191 ERROR   gpu       :147405 [interfaces.py:monitor():140] Failed to sample metric: Unknown Error
+2025-04-30 12:02:08,192 ERROR   gpu       :147405 [interfaces.py:monitor():140] Failed to sample metric: Unknown Error
+2025-04-30 12:02:08,198 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,253 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,380 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,505 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,603 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,674 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:08,675 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:08,734 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:08,882 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,018 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,069 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,130 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,179 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,234 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,300 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,369 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,473 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,535 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,596 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,673 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,675 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:09,769 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,850 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:09,978 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,025 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,082 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,233 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,285 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,372 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,495 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,585 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,675 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:10,676 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:10,743 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,808 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,857 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:10,907 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,008 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,125 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,220 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,619 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,622 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,623 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,676 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:11,683 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,780 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,921 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:11,976 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,025 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,133 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,203 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,318 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,442 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,503 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,555 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,620 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,677 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:12,677 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:12,689 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,846 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,895 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:12,953 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,007 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,072 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,183 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,289 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,384 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,537 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,641 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,677 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:13,768 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,833 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,898 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:13,962 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,111 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,228 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,349 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,411 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,469 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,544 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,645 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,678 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:14,678 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:14,708 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,744 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,820 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:14,911 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,015 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,046 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,091 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,196 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,231 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,333 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,341 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,358 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,424 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,439 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,492 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,539 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,556 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,619 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,638 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,680 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:15,706 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,757 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,841 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:15,979 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,074 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,099 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,196 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,268 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,354 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,355 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,407 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,483 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,500 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,528 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,589 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,606 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,635 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,654 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,679 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:16,680 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:16,697 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,762 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,811 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,835 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,922 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,953 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,972 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:16,998 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,026 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,052 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,067 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,116 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,159 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,184 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,213 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,226 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,245 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,272 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,285 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,307 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,335 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,385 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,410 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,437 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,453 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,476 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,557 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,597 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,625 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,656 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,680 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:17,686 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,734 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,772 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,815 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,856 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,875 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,887 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,913 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,925 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,948 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:17,986 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,004 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,051 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,081 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,103 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,143 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,205 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,232 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,272 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,289 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,370 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,423 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,468 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,541 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,640 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,677 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,680 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:18,681 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:18,703 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,715 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,740 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,761 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,774 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,792 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,814 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,828 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,860 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,880 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,897 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,922 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:18,978 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,020 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,046 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,087 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,123 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,144 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,162 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,189 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,207 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,242 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,262 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,291 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,325 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,351 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,395 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,425 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,453 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,467 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,489 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,532 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,568 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,585 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,600 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,608 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,653 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,681 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:19,719 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,741 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,756 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,767 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,793 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,813 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,844 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,868 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,889 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,908 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,928 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,948 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,964 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:19,991 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,007 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,043 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,066 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,109 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,130 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,149 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,168 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,189 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,199 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,218 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,235 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,248 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,260 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,277 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,297 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,311 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,340 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,351 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,359 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,373 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,384 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,400 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,415 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,427 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,441 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,461 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,476 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,487 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,518 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,545 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,570 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,583 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,601 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,615 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,629 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,650 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,673 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,682 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:20,683 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:20,683 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,699 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,710 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,729 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,748 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,766 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,780 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,795 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,822 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,840 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,859 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,877 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,896 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,910 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,925 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,937 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,960 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,976 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:20,987 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,005 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,041 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,056 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,090 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,117 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,137 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,180 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,200 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,222 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,255 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,272 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,284 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,346 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,348 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,351 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,352 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,357 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,377 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,403 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,425 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,471 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,491 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,523 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,548 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,578 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,589 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,612 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,633 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,650 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,673 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,684 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:21,693 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,712 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,729 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,754 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,768 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,780 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,794 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,818 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,830 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,842 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,860 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,883 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,889 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,904 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,916 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,936 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,948 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,977 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,982 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:21,997 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,013 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,026 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,045 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,056 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,080 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,110 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,150 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,172 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,216 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,241 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,277 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,301 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,319 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,336 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,372 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,404 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,413 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,430 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,680 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,682 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,684 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,689 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,695 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/config.yaml
+2025-04-30 12:02:22,696 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:22,696 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:22,697 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,699 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,702 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,704 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,706 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,708 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,709 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,710 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,715 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,716 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,718 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,719 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,720 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,722 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,723 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,724 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,725 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,727 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,729 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,731 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,740 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,754 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,765 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,783 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,798 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,816 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,840 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,860 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,875 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,887 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,902 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,915 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,936 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,958 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,974 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:22,997 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,017 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,027 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,040 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,051 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,064 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,076 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,090 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,101 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,126 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,155 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,179 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,215 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,236 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,254 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,263 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,281 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,306 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,319 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,343 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,365 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,380 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,396 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,406 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,427 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,440 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,460 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,473 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,507 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,528 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,543 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,554 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,563 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,573 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,594 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,616 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,651 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,672 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,692 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:23,698 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,713 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,734 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,745 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,755 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,763 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,774 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,788 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,807 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,829 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,850 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,882 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,914 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,933 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,947 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,959 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,968 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,979 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:23,994 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,003 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,017 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,027 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,044 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,065 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,085 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,102 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,115 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,123 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,143 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,165 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,190 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,206 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,220 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,231 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,240 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,264 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,278 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,289 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,304 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,315 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,339 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,353 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,370 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,384 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,393 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,404 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,415 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,425 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,440 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,451 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,461 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,472 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,481 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,500 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,517 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,527 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,545 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,558 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,586 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,616 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,637 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,647 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,697 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,703 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:24,703 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:24,703 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,707 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,723 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,738 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,764 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,775 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,795 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,824 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,832 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,844 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,859 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,867 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,877 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,886 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,903 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,927 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,944 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,957 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,967 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:24,991 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,006 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,026 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,038 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,050 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,070 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,105 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,125 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,139 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,159 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,168 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,184 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,204 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,214 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,229 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,242 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,252 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,261 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,272 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,282 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,289 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,313 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,336 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,357 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,367 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,378 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,400 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,414 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,422 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,434 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,442 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,456 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,466 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,479 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,488 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,497 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,505 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,516 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,524 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,533 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,542 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,553 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,565 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,573 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,583 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,596 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,604 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,616 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,625 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,633 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,642 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,656 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,679 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,700 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,702 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:25,751 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,765 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,794 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,810 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,822 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,834 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,848 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,858 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,871 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,889 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,906 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,918 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,928 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,937 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,948 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,968 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:25,997 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,016 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,045 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,065 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,092 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,111 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,125 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,147 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,180 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,199 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,241 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,258 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,277 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,542 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,545 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,546 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,548 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,549 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,551 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,553 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,555 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,556 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,557 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,559 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,560 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,561 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,563 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,564 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,566 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,607 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,608 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,610 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,612 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,615 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,619 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,628 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,636 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,648 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,659 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,667 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,675 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,701 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,721 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:26,732 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,761 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,762 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,765 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,771 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,783 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,796 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,807 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,818 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,831 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,845 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,856 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,870 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,883 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,901 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,923 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,944 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,971 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,989 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:26,997 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,007 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,015 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,035 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,046 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,058 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,067 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,075 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,088 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,096 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,107 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,116 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,124 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,134 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,144 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,153 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,164 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,175 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,186 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,194 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,208 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,216 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,224 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,238 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,259 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,270 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,291 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,313 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,332 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,340 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,358 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,368 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,376 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,386 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,399 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,408 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,416 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,439 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,451 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,459 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,470 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,482 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,506 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,533 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,552 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,565 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,576 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,586 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,594 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,604 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,631 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,652 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,673 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,699 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,709 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,722 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:27,722 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:27,736 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,751 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,763 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,772 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,788 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,802 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,813 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,834 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,855 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,882 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,910 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,915 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,931 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,943 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,960 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,986 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:27,994 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,004 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,011 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,021 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,033 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,056 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,077 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,088 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,111 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,130 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,145 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,152 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,162 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,178 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,195 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,203 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,213 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,229 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,240 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,253 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,271 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,282 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,292 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,310 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,323 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,334 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,348 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,361 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,371 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,382 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,393 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,402 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,413 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,426 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,437 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,473 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,495 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,524 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,544 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,565 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,594 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,605 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,615 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,633 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,652 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,682 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,704 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,718 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,723 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:28,730 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,742 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,786 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,789 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,805 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,817 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,826 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,836 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,843 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,852 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,865 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,874 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,882 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,898 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,950 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,972 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:28,992 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,014 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,032 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,043 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,052 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,067 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,083 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,092 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,107 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,119 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,131 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,143 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,156 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,166 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,196 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,216 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,235 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,246 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,256 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,282 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,303 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,324 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,359 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,376 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,385 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,401 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,422 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,434 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,447 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,457 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,485 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,507 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,522 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,535 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,547 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,558 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,570 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,600 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,617 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,633 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,645 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,660 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,677 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,692 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,705 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,718 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,723 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:29,724 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:29,732 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,749 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,785 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,806 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,827 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,843 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,854 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,886 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,905 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,925 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,933 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,944 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,953 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,963 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,973 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,984 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:29,995 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,012 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,022 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,034 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,047 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,059 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,082 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,091 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,103 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,119 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,141 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,169 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,180 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,202 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,225 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,239 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,253 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,265 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,275 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,291 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,327 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,341 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,361 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,373 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,386 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,417 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,445 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,465 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,478 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,489 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:30,724 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:31,476 INFO    SenderThread:147405 [sender.py:send_request_log_artifact():1487] logged artifact Neural_Network - {'id': 'QXJ0aWZhY3Q6MTY3NjQ3MDQzNw==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU3ODM5NzE2Ng==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY3NjcyOTkwNA==', 'versionIndex': 22}}}
+2025-04-30 12:02:31,480 INFO    SenderThread:147405 [sender.py:send_exit():554] handling exit code: 0
+2025-04-30 12:02:31,481 INFO    SenderThread:147405 [sender.py:send_exit():556] handling runtime: 38
+2025-04-30 12:02:31,481 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:31,482 INFO    SenderThread:147405 [sender.py:send_exit():562] send defer
+2025-04-30 12:02:31,482 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 0
+2025-04-30 12:02:31,483 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 0
+2025-04-30 12:02:31,483 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 1
+2025-04-30 12:02:31,484 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 1
+2025-04-30 12:02:31,484 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 1
+2025-04-30 12:02:31,484 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 2
+2025-04-30 12:02:31,485 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 2
+2025-04-30 12:02:31,485 INFO    HandlerThread:147405 [system_monitor.py:finish():196] Stopping system monitor
+2025-04-30 12:02:31,488 INFO    HandlerThread:147405 [interfaces.py:finish():198] Joined cpu monitor
+2025-04-30 12:02:31,490 INFO    HandlerThread:147405 [interfaces.py:finish():198] Joined disk monitor
+2025-04-30 12:02:31,515 INFO    HandlerThread:147405 [interfaces.py:finish():198] Joined gpu monitor
+2025-04-30 12:02:31,516 INFO    HandlerThread:147405 [interfaces.py:finish():198] Joined memory monitor
+2025-04-30 12:02:31,516 INFO    HandlerThread:147405 [interfaces.py:finish():198] Joined network monitor
+2025-04-30 12:02:31,517 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 2
+2025-04-30 12:02:31,517 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 3
+2025-04-30 12:02:31,518 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 3
+2025-04-30 12:02:31,519 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 3
+2025-04-30 12:02:31,519 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 4
+2025-04-30 12:02:31,519 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 4
+2025-04-30 12:02:31,520 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 4
+2025-04-30 12:02:31,520 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 5
+2025-04-30 12:02:31,520 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 5
+2025-04-30 12:02:31,522 INFO    SenderThread:147405 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2025-04-30 12:02:31,522 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 5
+2025-04-30 12:02:31,522 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 6
+2025-04-30 12:02:31,523 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 6
+2025-04-30 12:02:31,523 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 6
+2025-04-30 12:02:31,523 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 7
+2025-04-30 12:02:31,524 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 7
+2025-04-30 12:02:31,525 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 7
+2025-04-30 12:02:31,725 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:31,725 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:32,813 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 8
+2025-04-30 12:02:32,815 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 8
+2025-04-30 12:02:32,816 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 8
+2025-04-30 12:02:32,816 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 9
+2025-04-30 12:02:32,817 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 9
+2025-04-30 12:02:32,817 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 9
+2025-04-30 12:02:32,817 INFO    SenderThread:147405 [dir_watcher.py:finish():359] shutting down directory watcher
+2025-04-30 12:02:33,726 INFO    Thread-12 :147405 [dir_watcher.py:_on_file_modified():289] file/dir modified: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:33,727 INFO    SenderThread:147405 [dir_watcher.py:finish():389] scan: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files
+2025-04-30 12:02:33,727 INFO    SenderThread:147405 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log output.log
+2025-04-30 12:02:33,728 INFO    SenderThread:147405 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/requirements.txt requirements.txt
+2025-04-30 12:02:33,728 INFO    SenderThread:147405 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-metadata.json wandb-metadata.json
+2025-04-30 12:02:33,728 INFO    SenderThread:147405 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/config.yaml config.yaml
+2025-04-30 12:02:33,729 INFO    SenderThread:147405 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/conda-environment.yaml conda-environment.yaml
+2025-04-30 12:02:33,738 INFO    SenderThread:147405 [dir_watcher.py:finish():403] scan save: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json wandb-summary.json
+2025-04-30 12:02:33,739 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 10
+2025-04-30 12:02:33,742 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 10
+2025-04-30 12:02:33,746 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 10
+2025-04-30 12:02:33,746 INFO    SenderThread:147405 [file_pusher.py:finish():169] shutting down file pusher
+2025-04-30 12:02:34,164 INFO    wandb-upload_1:147405 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/requirements.txt
+2025-04-30 12:02:34,299 INFO    wandb-upload_4:147405 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/wandb-summary.json
+2025-04-30 12:02:34,312 INFO    wandb-upload_3:147405 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/conda-environment.yaml
+2025-04-30 12:02:34,314 INFO    wandb-upload_2:147405 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/config.yaml
+2025-04-30 12:02:34,448 INFO    wandb-upload_0:147405 [upload_job.py:push():130] Uploaded file /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/files/output.log
+2025-04-30 12:02:34,649 INFO    Thread-11 (_thread_body):147405 [sender.py:transition_state():582] send defer: 11
+2025-04-30 12:02:34,650 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 11
+2025-04-30 12:02:34,652 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 11
+2025-04-30 12:02:34,652 INFO    SenderThread:147405 [file_pusher.py:join():175] waiting for file pusher
+2025-04-30 12:02:34,653 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 12
+2025-04-30 12:02:34,653 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 12
+2025-04-30 12:02:34,654 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 12
+2025-04-30 12:02:34,654 INFO    SenderThread:147405 [file_stream.py:finish():601] file stream finish called
+2025-04-30 12:02:34,966 INFO    SenderThread:147405 [file_stream.py:finish():605] file stream finish is done
+2025-04-30 12:02:34,966 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 13
+2025-04-30 12:02:34,967 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 13
+2025-04-30 12:02:34,967 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 13
+2025-04-30 12:02:34,968 INFO    SenderThread:147405 [sender.py:transition_state():582] send defer: 14
+2025-04-30 12:02:34,968 INFO    HandlerThread:147405 [handler.py:handle_request_defer():188] handle defer: 14
+2025-04-30 12:02:34,969 INFO    SenderThread:147405 [sender.py:send_request_defer():578] handle sender defer: 14
+2025-04-30 12:02:34,979 INFO    MainThread:147405 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-04-30 12:02:34,979 INFO    MainThread:147405 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-04-30 12:02:34,980 INFO    MainThread:147405 [wandb_run.py:_footer_sync_info():3917] logging synced files
+2025-04-30 12:02:34,981 INFO    HandlerThread:147405 [handler.py:finish():897] shutting down handler
+2025-04-30 12:02:35,974 INFO    WriterThread:147405 [datastore.py:close():296] close: /home/thousig/fagproject/02466_project/wandb/run-20250430_120152-e0keb9jt/run-e0keb9jt.wandb
+2025-04-30 12:02:35,974 INFO    SenderThread:147405 [sender.py:finish():1582] shutting down sender
+2025-04-30 12:02:35,975 INFO    SenderThread:147405 [file_pusher.py:finish():169] shutting down file pusher
+2025-04-30 12:02:35,975 INFO    SenderThread:147405 [file_pusher.py:join():175] waiting for file pusher
