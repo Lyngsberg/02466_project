@@ -63,6 +63,7 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs=1000, learning_r
 
     train_losses = []
     val_losses = []
+    #
     #adam opt
     # for epoch in range(n_epochs):
     #     # Training step
