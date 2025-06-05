@@ -28,6 +28,7 @@ def train_model():
     epochs = config.epochs
     seed = config.seed
     optimizer_name = config.optimizer_name
+    weight_decay = config.weight_decay
 
 
     """
@@ -87,11 +88,11 @@ def train_model():
 
     criterion = nn.MSELoss().to(device)
     if optimizer_name == "Adam":
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
     elif optimizer_name == "SGD":
-        optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
     elif optimizer_name == "LBFGS":
-        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate)
+        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
     if optimizer_name == "LBFGS":
         def closure():
@@ -103,7 +104,7 @@ def train_model():
         for epoch in range(epochs):
             model.train()
             optimizer.step(closure)
-            print(f"Epoch {epoch + 1}/{epochs}, Loss: {closure().item():.4f}")
+            # print(f"Epoch {epoch + 1}/{epochs}, Loss: {closure().item():.4f}")
 
             model.eval()
             val_mse = 0.0

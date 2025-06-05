@@ -20,12 +20,12 @@ torch.manual_seed(random_seed)
 def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None, optimizer_type='Adam'):
     criterion = nn.MSELoss()
     if optimizer_type == 'Adam':
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-4)
     elif optimizer_type == 'SGD':
-        optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate, weight_decay=1e-4)
     elif optimizer_type == 'LBFGS':
         # LBFGS optimizer requires a closure function to compute the loss
-        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
+        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20, weight_decay=1e-4)
 
 
     train_losses = []
