@@ -4,6 +4,10 @@ import torch.optim as optim
 import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
+import sympy as sp
+random_seed = 42
+np.random.seed(random_seed)
+torch.manual_seed(random_seed)
 
 # Define the Feedforward Neural Network
 class NN_model1(nn.Module):
@@ -17,24 +21,4 @@ class NN_model1(nn.Module):
         x = self.output(x)  # Output layer
         return x
 
-class General_NN(nn.Module):
-    def __init__(self, layers, in_features):
-        super().__init__()
-        self.layers = nn.ModuleList()
 
-        # First hidden layer
-        current_in = in_features
-        for out_features in layers[:-1]:
-            self.layers.append(nn.Linear(current_in, out_features))
-            current_in = out_features
-
-        # Output layer (no ReLU)
-        self.output_layer = nn.Linear(current_in, 1)
-
-    def forward(self, x):
-        for layer in self.layers:
-            x = torch.relu(layer(x))
-        return self.output_layer(x)
-
-
-print("NN_model1 loaded")

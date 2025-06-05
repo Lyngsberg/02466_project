@@ -2,8 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 from torch.utils.data import DataLoader, TensorDataset
-
-np.random.seed(42)
+import pickle
+import argparse
+import random
+random_seed = 42
+np.random.seed(random_seed)
+torch.manual_seed(random_seed)
 
 def quadratic_polynomial(x,y):
     return 3*x**2 + 2*y**2 + 1
@@ -14,15 +18,15 @@ def cubic_polynomial(x,y):
 def smooth_function(x,y):
     return np.sin(x) + np.cos(y)
 
-def generate_data(n_samples, function):
-    x = np.random.uniform(-1, 1, n_samples)
-    y = np.random.uniform(-1, 1, n_samples)
+def generate_data(n_samples, function, x_low, x_high, y_low, y_high):
+    x = np.random.uniform(x_low, x_high, n_samples)
+    y = np.random.uniform(y_low, y_high, n_samples)
     z = function(x, y)
     return x, y, z
 
-def generate_data_with_noise(n_samples, function, noise):
-    x = np.random.uniform(-1, 1, n_samples)
-    y = np.random.uniform(-1, 1, n_samples)
+def generate_data_with_noise(n_samples, function, noise, x_low, x_high, y_low, y_high):
+    x = np.random.uniform(x_low, x_high, n_samples)
+    y = np.random.uniform(y_low, y_high, n_samples)
     z = function(x, y) + noise * np.random.randn(n_samples)
     return x, y, z
 
@@ -32,64 +36,80 @@ def plot_data(x, y, z):
     ax.scatter(x, y, z)
     plt.show()
 
-num_samples = 1000
+# Convert to tensors and save data
+def save_data(filename, *data):
+    torch.save(data, filename)
 
-X_q, Y_q, Z_q = generate_data(num_samples, quadratic_polynomial)
-X_c, Y_c, Z_c = generate_data(num_samples, cubic_polynomial)
-X_s, Y_s, Z_s = generate_data(num_samples, smooth_function)
+# Define a function to process and save data
+def process_and_save_data(X, Y, Z, filename):
+    X_data = torch.tensor(np.vstack((X, Y)).T, dtype=torch.float32)
+    Z_data = torch.tensor(Z, dtype=torch.float32).unsqueeze(1)
+    save_data(filename, X_data, Z_data)
 
-X_q_n, Y_q_n, Z_q_n = generate_data_with_noise(num_samples, quadratic_polynomial, 1)
-X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 1)
-X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 1)
+def main(num_samples: int, seed: int, x_low: int, x_high: int, y_low:int, y_high: int, ran: int):
 
-# Convert to tensors
-X_train_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
-Y_train_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
-X_test_q = torch.tensor(np.vstack((X_q, Y_q)).T, dtype=torch.float32)
-Y_test_q = torch.tensor(Z_q, dtype=torch.float32).unsqueeze(1)
+    random.seed(seed)
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+    for i in range(1,ran+1):
+        X_q, Y_q, Z_q = generate_data(num_samples, quadratic_polynomial, i*x_low, i*x_high, i*y_low, i*y_high)
+        X_c, Y_c, Z_c = generate_data(num_samples, cubic_polynomial, i*x_low, i*x_high, i*y_low, i*y_high)
+        X_s, Y_s, Z_s = generate_data(num_samples, smooth_function, i*x_low, i*x_high, i*y_low, i*y_high)
 
-
-train_loader_q = DataLoader(TensorDataset(X_train_q, Y_train_q), batch_size=32, shuffle=True)
-test_loader_q = DataLoader(TensorDataset(X_test_q, Y_test_q), batch_size=32, shuffle=False)
-
-X_train_q_n = torch.tensor(np.vstack((X_q_n, Y_q_n)).T, dtype=torch.float32)
-Y_train_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
-X_test_q_n = torch.tensor(np.vstack((X_q_n, Y_q_n)).T, dtype=torch.float32)
-Y_test_q_n = torch.tensor(Z_q_n, dtype=torch.float32).unsqueeze(1)
-
-X_train_c_n = torch.tensor(np.vstack((X_c_n, Y_c_n)).T, dtype=torch.float32)
-Y_train_c_n = torch.tensor(Z_c_n, dtype=torch.float32).unsqueeze(1)
-X_test_c_n = torch.tensor(np.vstack((X_c_n, Y_c_n)).T, dtype=torch.float32)
-Y_test_c_n = torch.tensor(Z_c_n, dtype=torch.float32).unsqueeze(1)
-
-train_loader_q_n = DataLoader(TensorDataset(X_train_q_n, Y_train_q_n), batch_size=32, shuffle=True)
-test_loader_q_n = DataLoader(TensorDataset(X_test_q_n, Y_test_q_n), batch_size=32, shuffle=False)
+        X_q_n, Y_q_n, Z_q_n = generate_data_with_noise(num_samples, quadratic_polynomial, 0.5, i*x_low, i*x_high, i*y_low, i*y_high)
+        X_c_n, Y_c_n, Z_c_n = generate_data_with_noise(num_samples, cubic_polynomial, 0.1, i*x_low, i*x_high, i*y_low, i*y_high)
+        X_s_n, Y_s_n, Z_s_n = generate_data_with_noise(num_samples, smooth_function, 0.1, i*x_low, i*x_high, i*y_low, i*y_high)
 
 
-# Make 6 sub-3d plots for each of the functions
-fig = plt.figure(figsize=(15, 10))
-ax1 = fig.add_subplot(231, projection='3d')
-ax1.scatter(X_q, Y_q, Z_q)
-ax1.set_title('Quadratic Polynomial')
 
-ax2 = fig.add_subplot(232, projection='3d')
-ax2.scatter(X_c, Y_c, Z_c)
-ax2.set_title('Cubic Polynomial')
+        # Process and save all datasets
+        process_and_save_data(X_q, Y_q, Z_q, f'fagproject/data/train_q_{i}.pkl')
+        process_and_save_data(X_q_n, Y_q_n, Z_q_n, f'fagproject/data/train_q_n_{i}.pkl')
+        process_and_save_data(X_c, Y_c, Z_c, f'fagproject/data/train_c_{i}.pkl')
+        process_and_save_data(X_c_n, Y_c_n, Z_c_n, f'fagproject/data/train_c_n_{i}.pkl')
+        process_and_save_data(X_s, Y_s, Z_s, f'fagproject/data/train_s_{i}.pkl')
+        process_and_save_data(X_s_n, Y_s_n,Z_s_n, f'fagproject/data/train_s_n_{i}.pkl')
 
-ax3 = fig.add_subplot(233, projection='3d')
-ax3.scatter(X_s, Y_s, Z_s)
-ax3.set_title('Smooth Function')
+    # Make 6 sub-3d plots for each of the functions
+    fig = plt.figure(figsize=(15, 10))
 
-ax4 = fig.add_subplot(234, projection='3d')
-ax4.scatter(X_q_n, Y_q_n, Z_q_n)
-ax4.set_title('Quadratic Polynomial with Noise')
+    ax1 = fig.add_subplot(231, projection='3d')
+    ax1.scatter(X_q, Y_q, Z_q)
+    ax1.set_title('Quadratic Polynomial')
 
-ax5 = fig.add_subplot(235, projection='3d')
-ax5.scatter(X_c_n, Y_c_n, Z_c_n)
-ax5.set_title('Cubic Polynomial with Noise')
+    ax2 = fig.add_subplot(232, projection='3d')
+    ax2.scatter(X_c, Y_c, Z_c)
+    ax2.set_title('Cubic Polynomial')
 
-ax6 = fig.add_subplot(236, projection='3d')
-ax6.scatter(X_s_n, Y_s_n, Z_s_n)
-ax6.set_title('Smooth Function with Noise')
+    ax3 = fig.add_subplot(233, projection='3d')
+    ax3.scatter(X_s, Y_s, Z_s)
+    ax3.set_title('Smooth Function')
 
-plt.show()
+    ax4 = fig.add_subplot(234, projection='3d')
+    ax4.scatter(X_q_n, Y_q_n, Z_q_n)
+    ax4.set_title('Quadratic Polynomial with Noise')
+
+    ax5 = fig.add_subplot(235, projection='3d')
+    ax5.scatter(X_c_n, Y_c_n, Z_c_n)
+    ax5.set_title('Cubic Polynomial with Noise')
+
+    ax6 = fig.add_subplot(236, projection='3d')
+    ax6.scatter(X_s_n, Y_s_n, Z_s_n)
+    ax6.set_title('Smooth Function with Noise')
+
+    plt.show()
+
+
+    plt.show()
+if __name__=="__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--num_samples", type=int, default=1000)
+    parser.add_argument("--x_low", type=int, default=-1)
+    parser.add_argument("--x_high", type=int, default=1)
+    parser.add_argument("--y_low", type=int, default=-1)
+    parser.add_argument("--y_high", type=int, default=1)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--ran", type=int, default=1)
+    args = parser.parse_args()
+
+    main(args.num_samples, args.seed, args.x_low, args.x_high, args.y_low, args.y_high, args.ran)
