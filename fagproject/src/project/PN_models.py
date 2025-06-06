@@ -12,18 +12,29 @@ torch.manual_seed(random_seed)
 class PN_Neuron(nn.Module):
     def __init__(self):
         super(PN_Neuron, self).__init__()
-        self.W = nn.Parameter(torch.randn(3, 3))  # Learnable 3x3 matrix
-
-    def forward(self, x):
-        ones = torch.ones(x.size(0), 1, device=x.device)
-        z = torch.cat((x, ones), dim=1)  
-        output = torch.sum(z.unsqueeze(1) @ self.W @ z.unsqueeze(2), dim=(1,2), keepdim=True).squeeze(-1)
-        return output
+        # Store full matrix as parameter
+        self.W = nn.Parameter(torch.randn(3, 3))
+        self.W.data[1, 0] = 0
+        self.W.data[2, 0] = 0
+        self.W.data[2, 1] = 0
+        # Create a mask for the upper triangular part
+        self.register_buffer('mask', torch.triu(torch.ones(3, 3)))
+        # Register a hook to apply the mask to the gradients
+        self.W.register_hook(lambda grad: grad * self.mask)
     
-    def symbolic_forward(self, x, y):
-        x_exp = sp.Matrix([x, y, 1])  # Expand input (x, y, 1)
-        return (x_exp.T * sp.Matrix(self.W.tolist()) * x_exp)[0]  # Compute bilinear form
+    def forward(self, x):
+        # x shape: (batch_size, in_features)
+        W_upper = self.W * self.mask
+        ones = torch.ones(x.shape[0], 1, device=x.device)
+        z = torch.cat([x, ones], dim=1)  # z shape: (batch_size, in_features + 1)
+        output = torch.sum(z.unsqueeze(1) @ W_upper @ z.unsqueeze(2), dim=(1, 2))
+        return output.unsqueeze(1)  # Shape: (batch_size, 1)
 
+    def symbolic_forward(self, *symbols):
+        z = sp.Matrix(list(symbols) + [1])
+        W = sp.Matrix((self.W @ self.mask).detach().cpu().numpy().tolist())
+        return (z.T @ W @ z)[0]
+    
 class Polynomial_Network(nn.Module):
     def __init__(self, n_neurons):
         super(Polynomial_Network, self).__init__()
@@ -55,24 +66,5 @@ class PolynomialNet(nn.Module):
         return (x_exp.T * sp.Matrix(self.W.tolist()) * x_exp)[0]
     
 
-class PolynomialWidth2(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.w1 = nn.Parameter(torch.randn(3, 3))
-        self.w2 = nn.Parameter(torch.randn(3, 3))
-    
-    def forward(self, x):
-        x_exp = torch.cat([x, torch.ones(x.shape[0], 1, device=x.device)], dim=1)  # Shape (batch, 3)
-        
-        # Quadratic transformation for each neuron
-        n1 = torch.sum(x_exp.unsqueeze(1) @ self.w1 @ x_exp.unsqueeze(2), dim=(1, 2))
-        n2 = torch.sum(x_exp.unsqueeze(1) @ self.w2 @ x_exp.unsqueeze(2), dim=(1, 2))
-        
-        return torch.stack([n1, n2], dim=1)  # Shape (batch, 2)
-    
-    def symbolic_forward(self, x, y):
-        x_exp = sp.Matrix([x, y, 1])
-        W1 = sp.Matrix(self.w1.tolist())
-        W2 = sp.Matrix(self.w2.tolist())
-        return [(x_exp.T * W1 * x_exp)[0], (x_exp.T * W2 * x_exp)[0]]
+
     

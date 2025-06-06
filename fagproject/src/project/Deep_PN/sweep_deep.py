@@ -10,6 +10,7 @@ from datetime import datetime
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
+import pandas as pd
 
 def train_model():
     run = wandb.init(
@@ -28,6 +29,7 @@ def train_model():
     epochs = config.epochs
     seed = config.seed
     optimizer_name = config.optimizer_name
+    layers = config.layers
 
 
     """
@@ -65,9 +67,17 @@ def train_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    data_path = f"fagproject/data/{data_type}"
-    x, y = torch.load(data_path)
+    # Load data
+    data = pd.read_csv(f'fagproject/data/{data_type}')
+    data = data.dropna()
+    # Convert "Yes"/"No" to 1/0
+    data.replace({"Yes": 1, "No": 0}, inplace=True)
+    x = data.iloc[:, :-1].values  # Features
+    y = data.iloc[:, -1].values  # Target variable
+    x = torch.tensor(x, dtype=torch.float32)
+    y = torch.tensor(y, dtype=torch.float32).unsqueeze(1)  # Ensure y is a column vector
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=seed)
+
 
     x_train = torch.tensor(x_train, dtype=torch.float32).to(device)
     x_test = torch.tensor(x_test, dtype=torch.float32).to(device)
@@ -80,10 +90,11 @@ def train_model():
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
+    num_features = x_train.shape[1]
     # Initialize the model
     models_modul = importlib.import_module(modul_name)
     model_class = getattr(models_modul, model_name)
-    model = model_class().to(device) if modul_name != "PN_models" else model_class(n_neurons=1).to(device)
+    model = model_class(layers=layers, in_features=num_features).to(device) if modul_name != "PN_model_triang_deep" else model_class(layers=layers, in_features=num_features).to(device)
 
     criterion = nn.MSELoss().to(device)
     if optimizer_name == "Adam":
