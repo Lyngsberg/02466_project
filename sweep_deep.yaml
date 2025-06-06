@@ -1,26 +1,21 @@
 entity: 'lyngsberg-danmarks-tekniske-universitet-dtu'  # Your username
 project: 'Fagprojekt'  # Your project name
 
-program: fagproject/src/project/sweep_train.py
+program: fagproject/src/project/Deep_PN/sweep_deep.py
 
 method: random  # You can also use 'grid' if you want to test all combinations of hyperparameters
-name: Sweep_phase1_final  # Name of the sweep
+name: Sweep_phase2  # Name of the sweep
 metric:
   name: validation_MSE  # The metric we want to optimize
   goal: minimize  # We want to minimize the metric
 parameters:
   data_type:
     values:
-      - 'train_c_n_4.pkl'  # Example dataset 1
-      - 'train_c_n_2.pkl'  # Example dataset 2
-      - 'train_q_n_4.pkl'
-      - 'train_q_n_2.pkl'
-      - 'train_s_n_4.pkl'
-      - 'train_s_n_2.pkl'
+      - Student_Performance.csv  # Example dataset
   model_modul_name:
     values:
-      - ['NN_models', 'NN_model1']  # Example model 1
-      - ['PN_models', 'Polynomial_Network']  # Example model 2
+      - ['NN_deep', 'General_NN']  # Example model 1
+      - ['PN_model_triang_deep', 'Polynomial_Network']  # Example model 2
   batch_size:
     values:
       - 64  # Example batch size
@@ -29,7 +24,7 @@ parameters:
     max: 0.01   # Maximum learning rate
   epochs:
     values:
-      - 500 
+      - 2000 
   seed:
     distribution: int_uniform
     min: 1
@@ -39,6 +34,17 @@ parameters:
       - "Adam"
       - "SGD"
       - "LBFGS"
+  layers:
+    values:
+      - [1]
+      - [1, 1]
+      - [1, 1, 1]
+      - [2]
+      - [2, 2]
+      - [2, 2, 2]
+      - [3]
+      - [3, 3]
+      - [3, 3, 3]
 
 
 run_cap: 300  # Limits the sweep to 100 runs
