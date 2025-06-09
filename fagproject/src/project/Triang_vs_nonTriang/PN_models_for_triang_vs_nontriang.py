@@ -62,3 +62,25 @@ class PN_Neuron(nn.Module):
         W_list = (self.W * self.mask).detach().cpu().numpy().tolist()
         x_exp = sp.Matrix([x, y, 1])
         return (x_exp.T * sp.Matrix(W_list) * x_exp)[0]
+
+# class PN_Neuron(nn.Module):
+#     def __init__(self):
+#         super().__init__()
+#         # Store only the 6 parameters of the upper-triangular matrix
+#         self.params = nn.Parameter(torch.randn(6))
+
+#     def forward(self, x):
+#         # Reconstruct the upper-triangular matrix from params
+#         W = torch.zeros(3, 3, device=x.device)
+#         W[0, 0], W[0, 1], W[0, 2], W[1, 1], W[1, 2], W[2, 2] = self.params
+#         ones = torch.ones(x.shape[0], 1, device=x.device)
+#         z = torch.cat((x, ones), dim=1)
+#         output = torch.sum(z.unsqueeze(1) @ W @ z.unsqueeze(2), dim=(1, 2), keepdim=True).squeeze(-1)
+#         return output
+
+#     def symbolic_forward(self, x, y):
+#         W = sp.zeros(3)
+#         p = self.params.detach().cpu().numpy()
+#         W[0, 0], W[0, 1], W[0, 2], W[1, 1], W[1, 2], W[2, 2] = p
+#         z = sp.Matrix([x, y, 1])
+#         return (z.T * W * z)[0]
