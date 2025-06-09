@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader, TensorDataset
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 def train_model():
     run = wandb.init(
@@ -30,6 +31,8 @@ def train_model():
     seed = config.seed
     optimizer_name = config.optimizer_name
     layers = config.layers
+    l2_lambda = config.l2_lambda
+
 
 
     """
@@ -68,29 +71,42 @@ def train_model():
     print(f"Using device: {device}")
 
     # Load data
-    data = pd.read_csv(f'fagproject/data/{data_type}')
-    data = data.dropna()
-    # Convert "Yes"/"No" to 1/0
-    data.replace({"Yes": 1, "No": 0}, inplace=True)
-    x = data.iloc[:, :-1].values  # Features
-    y = data.iloc[:, -1].values  # Target variable
-    x = torch.tensor(x, dtype=torch.float32)
-    y = torch.tensor(y, dtype=torch.float32).unsqueeze(1)  # Ensure y is a column vector
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=seed)
+    if data_type == "Student_Performance.csv":
+        data = pd.read_csv(f'fagproject/data/{data_type}')
+        data = data.dropna()
+        # Convert "Yes"/"No" to 1/0
+        data.replace({"Yes": 1, "No": 0}, inplace=True)
+    elif data_type == "Folds5x2_pp.xlsx":
+        data = pd.read_excel('fagproject/data/Folds5x2_pp.xlsx')
+    else:
+        raise ValueError("Unsupported data type. Please use 'Student_Performance.csv' or 'Folds5x2_pp.xlsx'.")
 
+    X = data.iloc[:, :-1].values
+    y = data.iloc[:, -1].values.reshape(-1, 1)
 
-    x_train = torch.tensor(x_train, dtype=torch.float32).to(device)
-    x_test = torch.tensor(x_test, dtype=torch.float32).to(device)
-    y_train = torch.tensor(y_train, dtype=torch.float32).to(device).view(-1, 1)
-    y_test = torch.tensor(y_test, dtype=torch.float32).to(device).view(-1, 1)
+    X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3)
 
-    train_dataset = TensorDataset(x_train, y_train)
-    test_dataset = TensorDataset(x_test, y_test)
+    scaler_X = StandardScaler()
+    X_train_np = scaler_X.fit_transform(X_train_np)
+    X_test_np = scaler_X.transform(X_test_np)
+
+    scaler_y = StandardScaler()
+    scaler_y.fit(y_train_np)
+    y_train_np = scaler_y.transform(y_train_np)
+    y_test_np = scaler_y.transform(y_test_np)
+
+    X_train = torch.tensor(X_train_np, dtype=torch.float32)
+    X_test = torch.tensor(X_test_np, dtype=torch.float32)
+    y_train = torch.tensor(y_train_np, dtype=torch.float32)
+    y_test = torch.tensor(y_test_np, dtype=torch.float32)
+
+    train_dataset = TensorDataset(X_train, y_train)
+    test_dataset = TensorDataset(X_test, y_test)
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-    num_features = x_train.shape[1]
+    num_features = X_train.shape[1]
     # Initialize the model
     models_modul = importlib.import_module(modul_name)
     model_class = getattr(models_modul, model_name)
@@ -107,10 +123,8 @@ def train_model():
     if optimizer_name == "LBFGS":
         def closure():
             optimizer.zero_grad()
-            predictions = model(x_train)
+            predictions = model(X_train)
             base_loss = criterion(predictions, y_train)
-
-            l2_lambda = 1e-4  # You can tune this
             l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
             loss = base_loss + l2_lambda * l2_norm
 
@@ -130,8 +144,6 @@ def train_model():
 
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
-
-                    l2_lambda = 1e-4
                     l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
                     loss = base_loss + l2_lambda * l2_norm
 
