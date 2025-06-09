@@ -11,8 +11,8 @@ metric:
 parameters:
   data_type:
     values:
-      - Student_Performance.csv  # Example dataset
-      - 'Folds5X2_pp.xlsx'  # Example dataset
+      #- "Student_Performance.csv"  # Example dataset
+      - "Folds5x2_pp.xlsx"  # Example dataset
   model_modul_name:
     values:
       - ['NN_deep', 'General_NN']  # Example model 1
@@ -25,7 +25,7 @@ parameters:
     max: 0.01   # Maximum learning rate
   epochs:
     values:
-      - 10000 
+      - 100
   seed:
     distribution: int_uniform
     min: 1
@@ -46,12 +46,10 @@ parameters:
       - [3]
       - [3, 3]
       - [3, 3, 3]
+
   l2_lambda:
-    values:
-     log_uniform: [1e-10, 1e-0]  # L2 regularization parameter
-  
+    distribution: log_uniform_values
+    min: 1e-10
+    max: 1e-0
 
-
-
-
-run_cap: 300  # Limits the sweep to 100 runs
+run_cap: 500  # Limits the sweep to 500 runs

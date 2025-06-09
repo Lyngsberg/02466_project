@@ -14,6 +14,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 def train_model():
+    print("Now training...")
     run = wandb.init(
         entity="lyngsberg-danmarks-tekniske-universitet-dtu",
         project="Fagprojekt",
@@ -127,13 +128,17 @@ def train_model():
             base_loss = criterion(predictions, y_train)
             l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
             loss = base_loss + l2_lambda * l2_norm
-
             loss.backward()
             return loss
 
         for epoch in range(epochs):
+            print(f"Epoch {epoch + 1}/{epochs}")
             model.train()
-            optimizer.step(closure)
+            optimizer.step(closure)  # ✅ Pass the closure function
+
+            # Unscale training loss
+            train_loss = closure().item()  # Call once here
+            train_mse = train_loss * (scaler_y.scale_[0] ** 2)
 
             model.eval()
             val_mse = 0.0
@@ -141,26 +146,29 @@ def train_model():
             with torch.no_grad():
                 for x_batch, y_batch in test_loader:
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
-
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
                     l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
                     loss = base_loss + l2_lambda * l2_norm
 
-                    val_mse += loss.item()
+                    # Unscale base loss
+                    unscaled_val_loss = base_loss * (scaler_y.scale_[0] ** 2)
+                    val_mse += unscaled_val_loss.item()
                     num_batches += 1
 
             val_mse /= num_batches
-            train_mse = closure().item()
 
             wandb.log({
                 "epoch": epoch + 1,
                 "train_MSE": train_mse,
                 "validation_MSE": val_mse,
             })
+            print(f"Train MSE: {train_mse:.4f}, Validation MSE: {val_mse:.4f}")
+
 
     else:
         for epoch in range(epochs):
+            print(f"Epoch {epoch + 1}/{epochs}")
             model.train()
             train_loss_total = 0.0
             train_samples = 0
@@ -172,14 +180,15 @@ def train_model():
                 outputs = model(x_batch)
                 base_loss = criterion(outputs, y_batch)
 
-                l2_lambda = 1e-4
                 l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
                 loss = base_loss + l2_lambda * l2_norm
 
                 loss.backward()
                 optimizer.step()
 
-                train_loss_total += loss.item() * x_batch.size(0)
+                # Track unscaled loss
+                unscaled_loss = base_loss * (scaler_y.scale_[0] ** 2)
+                train_loss_total += unscaled_loss.item() * x_batch.size(0)
                 train_samples += x_batch.size(0)
 
             train_mse = train_loss_total / train_samples
@@ -194,11 +203,12 @@ def train_model():
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
 
-                    l2_lambda = 1e-4
                     l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
                     loss = base_loss + l2_lambda * l2_norm
 
-                    val_loss_total += loss.item() * x_batch.size(0)
+                    # Track unscaled loss
+                    unscaled_loss = base_loss * (scaler_y.scale_[0] ** 2)
+                    val_loss_total += unscaled_loss.item() * x_batch.size(0)
                     val_samples += x_batch.size(0)
 
             val_mse = val_loss_total / val_samples
@@ -208,6 +218,7 @@ def train_model():
                 "train_MSE": train_mse,
                 "validation_MSE": val_mse,
             })
+
     print(val_mse)
 
 
