@@ -124,7 +124,6 @@ def train_model():
                 "validation_MSE": val_mse,
             })
     else:
-        print(model_modul_name)
         for epoch in range(epochs):
         
             model.train()
@@ -169,7 +168,6 @@ def train_model():
                 "train_MSE": train_mse,
                 "validation_MSE": val_mse,
             })
-        print(val_mse)
 
     artifact = wandb.Artifact(
         name="Neural_Network" if modul_name == "NN_models" else "Polynomial_Network",

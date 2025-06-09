@@ -109,7 +109,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 num_features = X_train.shape[1]
 layers = [10] 
-n_epochs = 500
+n_epochs = 10000
 lr = 0.001
 optimizer = 'LBFGS'  # Choose from 'Adam', 'SGD', 'LBFGS'
 

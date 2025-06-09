@@ -17,12 +17,12 @@ class PN_Neuron(nn.Module):
         for i in range(0,   in_features + 1):
             for j in range(0, i):
                 self.W.data[i, j] = 0
-        print(f"PN_Neuron initialized with W shape: {self.W.shape}, W: {self.W}")
+        #print(f"PN_Neuron initialized with W shape: {self.W.shape}, W: {self.W}")
         # Create a mask for the upper triangular part
         self.register_buffer('mask', torch.triu(torch.ones(in_features + 1, in_features + 1)))
         # Ensure the diagonal is not masked
         self.mask.data.fill_diagonal_(1)
-        print(f"Mask shape: {self.mask.shape}, Mask: {self.mask}")
+        #print(f"Mask shape: {self.mask.shape}, Mask: {self.mask}")
         # Register a hook to apply the mask to the gradients
         self.W.register_hook(lambda grad: grad * self.mask)
 
