@@ -22,6 +22,16 @@ class PN_Neuron(nn.Module):
         # Register a hook to apply the mask to the gradients
         self.W.register_hook(lambda grad: grad * self.mask)
     
+        # Store full matrix as parameter
+        self.W = nn.Parameter(torch.randn(3, 3))
+        self.W.data[1, 0] = 0
+        self.W.data[2, 0] = 0
+        self.W.data[2, 1] = 0
+        # Create a mask for the upper triangular part
+        self.register_buffer('mask', torch.triu(torch.ones(3, 3)))
+        # Register a hook to apply the mask to the gradients
+        self.W.register_hook(lambda grad: grad * self.mask)
+    
     def forward(self, x):
         # x shape: (batch_size, in_features)
         W_upper = self.W * self.mask

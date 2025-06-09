@@ -17,6 +17,7 @@ parameters:
       - 'train_q_n_2.pkl'
       - 'train_s_n_4.pkl'
       - 'train_s_n_2.pkl'
+      - 'train_s_n_5.pkl'
   model_modul_name:
     values:
       - ['NN_models', 'NN_model1']  # Example model 1

@@ -13,7 +13,7 @@ class PN_Neuron(nn.Module):
     def __init__(self, in_features=2):
         super().__init__()
         self.in_features = in_features
-        self.W = nn.Parameter(torch.randn(in_features + 1, in_features + 1))  # Learnable (in_features+1)x(in_features+1) matrix
+        self.W = nn.Parameter(torch.randn(in_features + 1, in_features + 1)*0.00001)  # Learnable (in_features+1)x(in_features+1) matrix
         for i in range(0,   in_features + 1):
             for j in range(0, i):
                 self.W.data[i, j] = 0

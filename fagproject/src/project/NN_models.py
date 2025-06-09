@@ -11,14 +11,14 @@ torch.manual_seed(random_seed)
 
 # Define the Feedforward Neural Network
 class NN_model1(nn.Module):
-    def __init__(self):
-        super(NN_model1, self).__init__()
-        self.hidden = nn.Linear(2, 2)  # 2 input neurons -> 2 hidden neurons
-        self.output = nn.Linear(2, 1)  # 2 hidden neurons -> 1 output neuron
+    def __init__(self, in_features=5):
+        super().__init__()
+        self.hidden = nn.Linear(in_features, 5)
+        self.output = nn.Linear(5, 1)
 
     def forward(self, x):
         x = torch.relu(self.hidden(x))  # Activation function for hidden layer
-        x = torch.sigmoid(self.output(x))  # Sigmoid activation for output
+        x = self.output(x)  # Output layer
         return x
 
 
