@@ -10,54 +10,51 @@ api = wandb.Api()
 sweep = api.sweep("lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/x8oyk7sp")
 
 # Dictionaries to store per-model histories
-train_histories = {
-    "NN_model1": [],
-    "Polynomial_Network": []
-}
-val_histories = {
-    "NN_model1": [],
-    "Polynomial_Network": []
-}
+train_histories = {}
+val_histories = {}
+runtime_by_model = {}
 
 # PN-specific by optimizer
 pn_train_by_optimizer = {}
 pn_val_by_optimizer = {}
 
-
-runtime_by_model = {
-    "NN_model1": [],
-    "Polynomial_Network": []
-}
-
 # Collect MSE histories
 for run in sweep.runs:
-
     config = run.config
     model_modul = config.get("model_modul_name", [])
     if not isinstance(model_modul, list) or len(model_modul) < 2:
         continue
 
     model_type = model_modul[1]
-    if model_type not in train_histories:
+    if model_type not in ["NN_model1", "Polynomial_Network"]:
         continue
-    
+
+    # 🧠 DIFFERENTIATE NN BY LAYERS
+    if model_type == "NN_model1":
+        layers = config.get("layers", [])
+        model_key = f"{model_type}: {layers}"
+    else:
+        model_key = model_type
+
     try:
         history = run.history(samples=1500)
         val_series = np.log(history["validation_MSE"].dropna().reset_index(drop=True))
         train_series = np.log(history["train_MSE"].dropna().reset_index(drop=True))
 
-        # Runtime is collected from the last _runtime value
+        # Runtime tracking
         if "_runtime" in history.columns:
             last_runtime = history["_runtime"].dropna().values[-1]
-            runtime_by_model[model_type].append(last_runtime)
+            runtime_by_model.setdefault(model_key, []).append(last_runtime)
 
+        # Store PN optimizer info separately
         if model_type == "Polynomial_Network":
             optimizer = config.get("optimizer_name", "unknown")
             pn_train_by_optimizer.setdefault(optimizer, []).append(train_series)
             pn_val_by_optimizer.setdefault(optimizer, []).append(val_series)
 
-        val_histories[model_type].append(val_series)
-        train_histories[model_type].append(train_series)
+        # General storage
+        train_histories.setdefault(model_key, []).append(train_series)
+        val_histories.setdefault(model_key, []).append(val_series)
 
     except Exception as e:
         print(f"Error fetching history for run {run.name}: {e}")
@@ -138,11 +135,11 @@ def plot_runtime_bar(runtime_dict, title="Training Runtime per Model"):
 
 
 # Plot both train and validation MSE
-plot_histories(train_histories, "Mean Train MSE per Epoch with 95% CI", "Train MSE")
+#plot_histories(train_histories, "Mean Train MSE per Epoch with 95% CI", "Train MSE")
 plot_histories(val_histories, "Mean Validation MSE per Epoch with 95% CI", "Validation MSE")
 
 # Plot only PN: optimizer comparisons
 plot_histories(pn_train_by_optimizer, "PN: Mean Train MSE per Epoch by Optimizer", "Train MSE")
-plot_histories(pn_val_by_optimizer, "PN: Mean Validation MSE per Epoch by Optimizer", "Validation MSE")
+#plot_histories(pn_val_by_optimizer, "PN: Mean Validation MSE per Epoch by Optimizer", "Validation MSE")
 
 plot_runtime_bar(runtime_by_model, "Mean Training Runtime per Model (with 95% CI)")

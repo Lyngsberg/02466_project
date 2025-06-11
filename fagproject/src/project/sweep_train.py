@@ -28,7 +28,7 @@ def train_model():
     epochs = config.epochs
     seed = config.seed
     optimizer_name = config.optimizer_name
-    weight_decay = config.weight_decay
+    layers = config.layers
 
 
     """
@@ -57,9 +57,8 @@ def train_model():
             "BATCH_SIZE": batch_size,
             "LEARNING_RATE": learning_rate,
             "EPOCHS": epochs,
-            "SEED": seed
-
-
+            "SEED": seed,
+            "LAYERS": layers
         },
     )
 
@@ -81,29 +80,25 @@ def train_model():
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
+    in_features = x_test.shape[1]
     # Initialize the model
     models_modul = importlib.import_module(modul_name)
     model_class = getattr(models_modul, model_name)
-    model = model_class().to(device) if modul_name != "PN_models" else model_class(n_neurons=1).to(device)
+    model = model_class(layers = layers, in_features = in_features).to(device) if modul_name != "PN_models" else model_class(n_neurons=1).to(device)
 
     criterion = nn.MSELoss().to(device)
     if optimizer_name == "Adam":
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     elif optimizer_name == "SGD":
-        optimizer = optim.SGD(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     elif optimizer_name == "LBFGS":
-        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate)
 
     if optimizer_name == "LBFGS":
         def closure():
             optimizer.zero_grad()
             predictions = model(x_train)
-            base_loss = criterion(predictions, y_train)
-
-            l2_lambda = 1e-4  # You can tune this
-            l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
-            loss = base_loss + l2_lambda * l2_norm
-
+            loss = criterion(predictions, y_train)
             loss.backward()
             return loss
 
@@ -119,11 +114,7 @@ def train_model():
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
                     outputs = model(x_batch)
-                    base_loss = criterion(outputs, y_batch)
-
-                    l2_lambda = 1e-4
-                    l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
-                    loss = base_loss + l2_lambda * l2_norm
+                    loss = criterion(outputs, y_batch)
 
                     val_mse += loss.item()
                     num_batches += 1
@@ -148,11 +139,7 @@ def train_model():
 
                 optimizer.zero_grad()
                 outputs = model(x_batch)
-                base_loss = criterion(outputs, y_batch)
-
-                l2_lambda = 1e-4
-                l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
-                loss = base_loss + l2_lambda * l2_norm
+                loss = criterion(outputs, y_batch)
 
                 loss.backward()
                 optimizer.step()
@@ -170,11 +157,7 @@ def train_model():
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
                     outputs = model(x_batch)
-                    base_loss = criterion(outputs, y_batch)
-
-                    l2_lambda = 1e-4
-                    l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
-                    loss = base_loss + l2_lambda * l2_norm
+                    loss = criterion(outputs, y_batch)
 
                     val_loss_total += loss.item() * x_batch.size(0)
                     val_samples += x_batch.size(0)
