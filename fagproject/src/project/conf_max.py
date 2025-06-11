@@ -13,6 +13,8 @@ from sympy import Symbol, Mul, Pow
 from collections import defaultdict
 from Deep_PN.PN_model_triang_deep import Polynomial_Network, PN_Neuron
 from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import seaborn as sns
 
 # Set random seed
 random_seed = 42
@@ -119,14 +121,7 @@ def plot_coefficients_with_ci(summary):
     plt.savefig(f"fagproject/src/project/interpretability_plots/conf_e_{n_epochs}_k_{k}")
     plt.close()
 
-def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None, optimizer_type='Adam'):
-    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    # model = model.to(device)
-    # X_train = X_train.to(device)
-    # Y_train = Y_train.to(device)
-    # X_val = X_val.to(device)
-    # Y_val = Y_val.to(device)
-
+def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None, optimizer_type='Adam', l2_lambda=1e-4):
     # Scale first (while still NumPy arrays)
     scaler_X = StandardScaler()
     X_train = scaler_X.fit_transform(X_train)
@@ -142,31 +137,48 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
     X_val = torch.tensor(X_val, dtype=torch.float32)
     Y_val = torch.tensor(Y_val, dtype=torch.float32)
 
-
     criterion = nn.MSELoss()
-    optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
+    if optimizer_type == 'Adam':
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-4)
+    elif optimizer_type == 'SGD':
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate, weight_decay=1e-4)
+    elif optimizer_type == 'LBFGS':
+        optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
 
     train_losses = []
     val_losses = []
 
+    def closure():
+        optimizer.zero_grad()
+        predictions = model(X_train)
+        base_loss = criterion(predictions,Y_train)
+        l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+        train_loss = base_loss + l2_lambda * l2_norm
+        train_loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
+        return train_loss
+
     for epoch in range(n_epochs):
-        def closure():
+        model.train()
+
+        if optimizer_type in ['Adam', 'SGD']:
             optimizer.zero_grad()
             predictions = model(X_train)
-            loss = criterion(predictions, Y_train)
-            loss.backward()
-            return loss
+            base_loss = criterion(predictions,Y_train)
 
-        optimizer.step(closure)
+            
+            l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+            train_loss = base_loss + l2_lambda * l2_norm
+            train_loss.backward()
 
-        # Evaluate losses
-        model.eval()
-        with torch.no_grad():
-            train_loss = criterion(model(X_train), Y_train)
-            val_loss = criterion(model(X_val), Y_val)
+            #print(f'optimizer step: {optimizer.step()}')
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
 
-        train_losses.append(train_loss.item())
-        val_losses.append(val_loss.item())
+            optimizer.step()
+ 
+        elif optimizer_type == 'LBFGS':
+            optimizer.step(closure)
 
 
     x, y = sp.symbols('x y')
@@ -179,19 +191,20 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
 # Load dataset
 path = 'fagproject/data/train_q_n_1.pkl'
 X, y = torch.load(path)
-X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
 # Train Polynomial Network
 n_epochs = 1000
-learning_rate = 0.01
-k = 40
+learning_rate = 0.0001
+k = 50
 layers = [2,2,2] 
-num_features = X_train.shape[1]
+
 print("Training Polynomial Network...")
 
 coef_list = []
 for i in range(k):
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=i)
+    num_features = X_train.shape[1]
     print(f"Traning model: {i+1}")
     Polynomial_Net = Polynomial_Network(layers, in_features=num_features)
     poly_network, train_losses, val_losses, polynomial_symbolic = train_model(Polynomial_Net, X_train, y_train, X_val, y_val, n_epochs=n_epochs, learning_rate=learning_rate, path=path)
