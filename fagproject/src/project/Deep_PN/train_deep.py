@@ -125,10 +125,9 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
 
             optimizer.step()
-            train_loss = loss.item()
+ 
         elif optimizer_type == 'LBFGS':
             optimizer.step(closure)
-            train_loss = closure().item()
 
         model.eval()
         with torch.no_grad():
