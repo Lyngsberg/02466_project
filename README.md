@@ -1,7 +1,8 @@
 # 02466_project
 Project for DTU course 02466
-
+```text
 02466_project/
+
 ├── .gitignore
 ├── LICENSE
 ├── sweep_deep_NN_final_model_training.yaml
@@ -57,3 +58,5 @@ Project for DTU course 02466
     ├── debug.log
     ├── debug-cli.thousig.log
     └── sweep
+
+```
