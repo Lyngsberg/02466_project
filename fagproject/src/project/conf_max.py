@@ -116,6 +116,7 @@ def plot_coefficients_with_ci(summary):
     plt.xticks(x, labels, rotation=45)
     plt.ylabel("Coefficient Value")
     plt.title("Mean and Confidence Interval of Coefficients")
+    plt.ylim(-0.05, 0.1)
     plt.grid(True, linestyle="--", alpha=0.6)
     plt.tight_layout()
     plt.savefig(f"fagproject/src/project/interpretability_plots/conf_e_{n_epochs}_k_{k}")
@@ -139,9 +140,9 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
 
     criterion = nn.MSELoss()
     if optimizer_type == 'Adam':
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-4)
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     elif optimizer_type == 'SGD':
-        optimizer = optim.SGD(model.parameters(), lr=learning_rate, weight_decay=1e-4)
+        optimizer = optim.SGD(model.parameters(), lr=learning_rate)
     elif optimizer_type == 'LBFGS':
         optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
 
@@ -176,48 +177,57 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
 
             optimizer.step()
- 
+
         elif optimizer_type == 'LBFGS':
             optimizer.step(closure)
 
 
-    x, y = sp.symbols('x y')
+    x1, x2, x3, x4 = sp.symbols('x1 x2 x3 x4')
     #model = model.to('cpu')
-    polynomial = model.symbolic_forward(x, y)
+    polynomial = model.symbolic_forward(x1, x2, x3, x4)
     print(polynomial)
 
     return model, train_losses, val_losses, polynomial
 
 # Load dataset
-path = 'fagproject/data/train_q_n_1.pkl'
-X, y = torch.load(path)
+path = "Folds5x2_pp.xlsx" 
 
+if path == "Student_Performance.csv":
+    data = pd.read_csv(f'fagproject/data/{path}')
+    data = data.dropna()
+    # Convert "Yes"/"No" to 1/0
+    data.replace({"Yes": 1, "No": 0}, inplace=True)
+elif path == "Folds5x2_pp.xlsx":
+    data = pd.read_excel('fagproject/data/Folds5x2_pp.xlsx')
+
+X = data.iloc[:, :-1].values
+y = data.iloc[:, -1].values.reshape(-1, 1)
 
 # Train Polynomial Network
-n_epochs = 1000
-learning_rate = 0.0001
-k = 20
-layers = [1] 
+n_epochs = 10000
+learning_rate = 0.00093
+k = 30
+layers = [3,3,3] 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 print("Training Polynomial Network...")
-
+criterion = nn.MSELoss()
 coef_list = []
 for i in range(k):
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=i)
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.3, random_state=i)
+    X_val = torch.from_numpy(X_val).double().to(device)
+    X_train = torch.from_numpy(X_train).double().to(device)
     num_features = X_train.shape[1]
     print(f"Traning model: {i+1}")
     Polynomial_Net = Polynomial_Network(layers, in_features=num_features)
     poly_network, train_losses, val_losses, polynomial_symbolic = train_model(Polynomial_Net, X_train, y_train, X_val, y_val, n_epochs=n_epochs, learning_rate=learning_rate, path=path)
 
-    # Evaluate on test data
-    with torch.no_grad():
-        test_loss = nn.MSELoss()(poly_network(X_val), y_val)
-        #print(f"Test Loss (Polynomial Network): {test_loss.item():.4f}")
 
     coef = extract_single_variable_terms(polynomial_symbolic)
     coef_list.append(coef)
+    print(coef)
 
-print(coef_list)
+#print(coef_list)
 results = [extract_max_by_order_single_dict(d) for d in coef_list]
 summary = summarize_coefficients(results)
 plot_coefficients_with_ci(summary)
