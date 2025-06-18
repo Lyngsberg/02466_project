@@ -79,13 +79,16 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
 
     return model, train_losses, val_losses
 
-path = 'fagproject/data/Student_Performance.csv'
+# Data loading
+# path = 'fagproject/data/Student_Performance.csv'
+data = pd.read_excel('fagproject/data/Folds5x2_pp.xlsx')
 
-# Load and preprocess data
-data = pd.read_csv(path).dropna()
-data.replace({"Yes": 1, "No": 0}, inplace=True)
+# data = pd.read_csv(path).dropna()
+# data.replace({"Yes": 1, "No": 0}, inplace=True)
 X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values.reshape(-1, 1)
+
+print(f"Data shape: {X.shape}, Target shape: {y.shape}")
 
 X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3, random_state=random_seed)
 
