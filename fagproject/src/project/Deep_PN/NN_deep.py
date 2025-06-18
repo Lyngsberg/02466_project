@@ -45,4 +45,4 @@ class General_NN(nn.Module):
             x = torch.relu(layer(x))
         return self.output_layer(x)
 
-print("NN_model1 loaded with Xavier initialization")
+

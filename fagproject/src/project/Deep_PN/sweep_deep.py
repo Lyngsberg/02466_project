@@ -85,7 +85,7 @@ def train_model():
     X = data.iloc[:, :-1].values
     y = data.iloc[:, -1].values.reshape(-1, 1)
 
-    X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3)
+    X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3, random_state=seed)
 
     scaler_X = StandardScaler()
     X_train_np = scaler_X.fit_transform(X_train_np)
@@ -134,7 +134,7 @@ def train_model():
         for epoch in range(epochs):
             print(f"Epoch {epoch + 1}/{epochs}")
             model.train()
-            optimizer.step(closure)  # ✅ Pass the closure function
+            optimizer.step(closure)  # Pass the closure function
 
             # Unscale training loss
             train_loss = closure().item()  # Call once here
