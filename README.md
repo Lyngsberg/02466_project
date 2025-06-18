@@ -2,7 +2,6 @@
 Project for DTU course 02466
 ```text
 02466_project/
-
 ├── .gitignore
 ├── LICENSE
 ├── sweep_deep_NN_final_model_training.yaml
@@ -60,3 +59,7 @@ Project for DTU course 02466
     └── sweep
 
 ```
+```bash
+git clone https://github.com/Lyngsberg/02466_project.git
+cd 02466_project
+pip install -r fagproject/requirements.txt
