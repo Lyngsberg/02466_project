@@ -25,7 +25,8 @@ parameters:
       - 0.00093
   epochs:
     values:
-      - 1000
+      - 10000
+      #- 1000
   seed:
     distribution: int_uniform
     min: 1
