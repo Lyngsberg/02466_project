@@ -24,13 +24,7 @@ def train_model(model, n_epochs, data_type, optimizer_type, learning_rate=0.01, 
     Y_train = torch.tensor(Y_train, dtype=torch.float32).view(-1, 1)
     Y_test = torch.tensor(Y_test, dtype=torch.float32).view(-1, 1)
 
-    train_dataset = TensorDataset(X_train, Y_train)
-    test_dataset = TensorDataset(X_test, Y_test)
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-    in_features = X_test.shape[1]
     criterion = nn.MSELoss()
     if optimizer_type == 'Adam':
         optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -69,8 +63,8 @@ def train_model(model, n_epochs, data_type, optimizer_type, learning_rate=0.01, 
         train_losses.append(train_loss)
         val_losses.append(val_loss)
 
-        if epoch % 500 == 0 or epoch == n_epochs - 1:
-            epoch
+        if epoch % 200 == 0:
+            print(epoch)
 
     return model, train_losses, val_losses
 
@@ -85,44 +79,64 @@ def compute_final_ci(losses, confidence=0.95):
     h = stderr * t.ppf((1 + confidence) / 2., n - 1)
     return mean, mean - h, mean + h
 
-layers = [[1], [1,1], [1,1,1], [2], [2,1], [2,2], [2,1,1], [2,2,1], [2,2,2]]
-n_epochs = 1000
+layers = [[1], [1,1], [1,1,1], [2], [2,1], [2,2], [2,1,1], [2,2,1], [2,2,2], [2,2,2,2], [3,2,1,3]]
+data_types = ["train_c_2.pkl", "train_c_4.pkl", "train_q_2.pkl", "train_q_4.pkl", "train_s_2.pkl", "train_s_4.pkl"]
+n_epochs = 3000
 lr = 0.0001
 optimizer = 'Adam'
 
-for layer in layers:
-    PN_val_loss = []
-    NN_val_loss = []
-    for i in range(20):
+results_summary = {}
+matching_performance = []
 
-        Polynomial_Net = Polynomial_Network([1], in_features=2)
-        NeuralNet = General_NN(layer, in_features=2)
+for data_type in data_types:
+    print(f"\n=== Data Type: {data_type} ===")
+    found = False
+    for layer in layers:
+        PN_val_loss = []
+        NN_val_loss = []
 
-        data = "train_c_2.pkl"
-        print("\nTraining Neural Network:")
-        NeuralNet, train_losses_NN, val_losses_NN = train_model(
-            NeuralNet, n_epochs, data, optimizer)
-        
-        print(val_losses_NN[-1])
-        print(f"\nTraining Polynomial_Network (layers={layer}):")
-        poly_network, train_losses_poly_network, val_losses_poly_network = train_model(
-            Polynomial_Net, n_epochs, data, optimizer)
-        PN_val_loss.append(val_losses_poly_network)
-        NN_val_loss.append(val_losses_NN)
+        for i in range(20):
+            print(f"Data type: {data_type}, layer: {layer}, training iteration: {i}")
+            Polynomial_Net = Polynomial_Network([1], in_features=2)
+            NeuralNet = General_NN(layer, in_features=2)
 
-        print(val_losses_poly_network[-1])
-    PN_mean, PN_lower, PN_upper = compute_final_ci(PN_val_loss[-1])
-    NN_mean, NN_lower, NN_upper = compute_final_ci(NN_val_loss[-1])
+            # Train NN
+            NeuralNet, _, val_losses_NN = train_model(
+                NeuralNet, n_epochs, data_type, optimizer, learning_rate=lr)
+            NN_val_loss.append(val_losses_NN[-1])
 
-    # Check CI overlap and whether NN is better
-    overlap = not (PN_upper < NN_lower or NN_upper < PN_lower)
-    nn_better = NN_upper < PN_lower  # NN upper bound < PN lower bound
+            # Train PN
+            Polynomial_Net, _, val_losses_PN = train_model(
+                Polynomial_Net, n_epochs, data_type, optimizer, learning_rate=lr)
+            PN_val_loss.append(val_losses_PN[-1])
 
-    if nn_better or not overlap:
-        print(f"\nLayer configuration: {layer}")
-        print(f"PN CI: ({PN_lower:.4f}, {PN_upper:.4f})")
-        print(f"NN CI: ({NN_lower:.4f}, {NN_upper:.4f})")
-        if nn_better:
-            print("NN is statistically better than PN.")
-        elif not overlap:
-            print("Confidence intervals do not overlap.")
+        # Compute mean and CI for both
+        PN_mean, PN_lower, PN_upper = compute_final_ci(PN_val_loss)
+        NN_mean, NN_lower, NN_upper = compute_final_ci(NN_val_loss)
+
+        # Check conditions
+        overlap = not (PN_upper < NN_lower or NN_upper < PN_lower)
+        nn_better = NN_upper < PN_lower
+
+        if nn_better or overlap:
+            print(f"\n✅ Match Found for {data_type}")
+            print(f"Layer configuration: {layer}")
+            print(f"PN Mean ± CI: {PN_mean:.4f} ({PN_lower:.4f}, {PN_upper:.4f})")
+            print(f"NN Mean ± CI: {NN_mean:.4f} ({NN_lower:.4f}, {NN_upper:.4f})")
+
+            results_summary[data_type] = {
+                'layer': layer,
+                'reason': 'NN better' if nn_better else 'Overlap',
+                'PN_mean': PN_mean,
+                'PN_CI': (PN_lower, PN_upper),
+                'NN_mean': NN_mean,
+                'NN_CI': (NN_lower, NN_upper)
+            }
+
+            matching_performance.append((data_type, layer, PN_lower, PN_upper, NN_lower, NN_upper))
+            found = True
+            break  # Exit loop for this data_type
+
+    if not found:
+        print(f"❌ No overlap or NN improvement found for {data_type}")
+print(matching_performance)
