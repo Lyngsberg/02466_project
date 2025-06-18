@@ -196,8 +196,8 @@ X, y = torch.load(path)
 # Train Polynomial Network
 n_epochs = 1000
 learning_rate = 0.0001
-k = 50
-layers = [2,2,2] 
+k = 20
+layers = [1] 
 
 print("Training Polynomial Network...")
 
