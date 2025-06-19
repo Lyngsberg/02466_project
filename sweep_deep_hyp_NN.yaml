@@ -1,0 +1,61 @@
+entity: 'lyngsberg-danmarks-tekniske-universitet-dtu'  # Your username
+project: 'Fagprojekt'  # Your project name
+
+program: fagproject/src/project/Deep_PN/sweep_deep.py
+
+method: random  # You can also use 'grid' if you want to test all combinations of hyperparameters
+name: Sweep_phase2  # Name of the sweep
+metric:
+  name: validation_MSE  # The metric we want to optimize
+  goal: minimize  # We want to minimize the metric
+parameters:
+  data_type:
+    values:
+      #- "Student_Performance.csv"  # Example dataset
+      - "Folds5x2_pp.xlsx"  # Example dataset
+  model_modul_name:
+    values:
+      # - ['NN_deep', 'General_NN']  # Example model 1
+      - ['PN_model_triang_deep', 'Polynomial_Network']  # Example model 2
+  batch_size:
+    values:
+      - 64  # Example batch size
+  learning_rate:
+    distribution: uniform
+    max: 0.01
+    min: 0.000001
+  epochs:
+    values:
+      - 5000
+  seed:
+    distribution: int_uniform
+    min: 1
+    max: 1000
+  optimizer_name:
+    values:
+      - "Adam"
+      - "SGD"
+      - "LBFGS"
+  layers:
+    values:
+      - [3]
+      - [4]
+      - [6, 3]
+      - [4, 2]
+      - [6]
+      - [6, 4, 2]
+      - [7]
+      - [8, 4]
+      - [9, 4, 2]
+
+  l2_lambda:
+    values:
+          - 0.0000001
+          - 0.000001
+          - 0.00001
+          - 0.0001
+          - 0.001
+          - 0.01
+          - 0.1
+
+run_cap: 150  # Limits the sweep to 150 runs

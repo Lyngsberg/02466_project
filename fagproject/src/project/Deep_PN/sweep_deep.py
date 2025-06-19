@@ -62,6 +62,7 @@ def train_model():
         data.replace({"Yes": 1, "No": 0}, inplace=True)
     elif data_type == "Folds5x2_pp.xlsx":
         data = pd.read_excel('fagproject/data/Folds5x2_pp.xlsx')
+        print("Data loaded from Folds5x2_pp.xlsx")
     else:
         raise ValueError("Unsupported data type.")
 
@@ -107,10 +108,10 @@ def train_model():
     elif optimizer_name == "LBFGS":
         optimizer = optim.LBFGS(model.parameters(), lr=learning_rate)
 
-    best_val_mse = float("inf")
+    best_val_mse = 10000
     epochs_no_improve = 0
-    early_stopping_patience = 20
-    early_stopping_delta = 0.001
+    early_stopping_patience = 100
+    early_stopping_delta = 0.0005
 
     if optimizer_name == "LBFGS":
         def closure():
@@ -147,15 +148,19 @@ def train_model():
             print(f"Train MSE: {train_mse:.4f}, Validation MSE: {val_mse:.4f}")
 
             if math.isnan(val_mse):
-                print("Validation MSE is NaN. Stopping training.")
+                #print("Validation MSE is NaN. Stopping training.")
                 break
             improvement = best_val_mse - val_mse
             if improvement / best_val_mse > early_stopping_delta:
+                print(f"Improvement: {improvement:.6f}, Best Val MSE: {best_val_mse:.6f}, Current Val MSE: {val_mse:.6f}")
                 best_val_mse = val_mse
                 epochs_no_improve = 0
             else:
+                print(f"No significant improvement: {improvement:.6f}, Best Val MSE: {best_val_mse:.6f}, Current Val MSE: {val_mse:.6f}")
                 epochs_no_improve += 1
+                #best_val_mse = val_mse
             if epochs_no_improve >= early_stopping_patience:
+
                 print(f"No improvement >0.1% in {early_stopping_patience} epochs. Stopping early.")
                 break
 
@@ -198,14 +203,17 @@ def train_model():
             wandb.log({"epoch": epoch + 1, "train_MSE": train_mse, "validation_MSE": val_mse})
 
             if math.isnan(val_mse):
-                print("Validation MSE is NaN. Stopping training.")
+                #print("Validation MSE is NaN. Stopping training.")
                 break
             improvement = best_val_mse - val_mse
             if improvement / best_val_mse > early_stopping_delta:
+                print(f"Improvement: {improvement:.6f}, Best Val MSE: {best_val_mse:.6f}, Current Val MSE: {val_mse:.6f}")
                 best_val_mse = val_mse
                 epochs_no_improve = 0
             else:
+                print(f"No significant improvement: {improvement:.6f}, Best Val MSE: {best_val_mse:.6f}, Current Val MSE: {val_mse:.6f}")
                 epochs_no_improve += 1
+                #best_val_mse = val_mse
             if epochs_no_improve >= early_stopping_patience:
                 print(f"No improvement >0.1% in {early_stopping_patience} epochs. Stopping early.")
                 break
