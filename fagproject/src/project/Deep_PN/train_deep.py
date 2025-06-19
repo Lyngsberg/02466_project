@@ -72,7 +72,7 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
         optimizer = optim.LBFGS(model.parameters(), lr=learning_rate, max_iter=20)
 
     train_losses = []
-    val_losses = []
+    test_losses = []
 
     def closure():
         optimizer.zero_grad()
@@ -101,25 +101,25 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
 
         model.eval()
         with torch.no_grad():
-            val_predictions = model(X_val)
-            base_val_loss = criterion(val_predictions, Y_val).item()
-            val_loss = base_val_loss + l2_lambda * sum(param.pow(2.0).sum().item() for param in model.parameters())
+            test_predictions = model(X_val)
+            base_val_loss = criterion(test_predictions, Y_val).item()
+            test_loss = base_val_loss + l2_lambda * sum(param.pow(2.0).sum().item() for param in model.parameters())
 
         train_loss_unscaled = float(train_loss) * (scaler_y.scale_[0] ** 2)
-        val_loss_unscaled = float(val_loss) * (scaler_y.scale_[0] ** 2)
+        test_loss_unscaled = float(test_loss) * (scaler_y.scale_[0] ** 2)
 
         train_losses.append(train_loss_unscaled)
-        val_losses.append(val_loss_unscaled)
+        test_losses.append(test_loss_unscaled)
 
         if epoch % 500 == 0 or epoch == n_epochs - 1:
-            print(f"Epoch {epoch}, Train Loss: {train_loss_unscaled:.4f}, Validation Loss: {val_loss_unscaled:.4f}")
+            print(f"Epoch {epoch}, Train Loss: {train_loss_unscaled:.4f}, Test Loss: {test_loss_unscaled:.4f}")
 
         # if model.__class__.__name__ in ['Polynomial_Network', 'PolynomialNet'] and epoch == n_epochs - 1:
         #     symbols = sp.symbols(f'x0:{X_train.shape[1]}')
         #     polynomial = model.symbolic_forward(*symbols)
         #     print(f"Polynomial.simplify: {polynomial.simplify().evalf(3)}")
 
-    return model, train_losses, val_losses
+    return model, train_losses, test_losses
 
 # Data loading
 # path = 'fagproject/data/Student_Performance.csv'
@@ -138,7 +138,13 @@ index = 0
 X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values.reshape(-1, 1)
 
-X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3)
+# First, split into temp train and test
+X_train_val, X_test, y_train_val, y_test = train_test_split(X, y, test_size=0.2)
+
+# Then split train_val into train and val
+X_train, X_val, y_train, y_val = train_test_split(X_train_val, y_train_val, test_size=0.25)  # 0.25 of 0.8 = 0.2
+X_train_np, X_test_np, y_train_np, y_test_np = X_train, X_test, y_train, y_test
+
 
 scaler_X = StandardScaler()
 X_train_np = scaler_X.fit_transform(X_train_np)

@@ -85,24 +85,29 @@ def train_model():
     X = data.iloc[:, :-1].values
     y = data.iloc[:, -1].values.reshape(-1, 1)
 
-    X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3, random_state=seed)
+    # First, split into temp train and test
+    X_train_val, X_val, y_train_val, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Then split train_val into train and val
+    X_train, X_test, y_train, y_test = train_test_split(X_train_val, y_train_val, test_size=0.25, random_state=42)  # 0.25 of 0.8 = 0.2
+
 
     scaler_X = StandardScaler()
     X_train_np = scaler_X.fit_transform(X_train_np)
-    X_test_np = scaler_X.transform(X_test_np)
+    X_val_np = scaler_X.transform(X_val_np)
 
     scaler_y = StandardScaler()
     scaler_y.fit(y_train_np)
     y_train_np = scaler_y.transform(y_train_np)
-    y_test_np = scaler_y.transform(y_test_np)
+    y_val_np = scaler_y.transform(y_val_np)
 
     X_train = torch.tensor(X_train_np, dtype=torch.float32)
-    X_test = torch.tensor(X_test_np, dtype=torch.float32)
+    X_val = torch.tensor(X_val_np, dtype=torch.float32)
     y_train = torch.tensor(y_train_np, dtype=torch.float32)
-    y_test = torch.tensor(y_test_np, dtype=torch.float32)
+    y_val = torch.tensor(y_val_np, dtype=torch.float32)
 
     train_dataset = TensorDataset(X_train, y_train)
-    test_dataset = TensorDataset(X_test, y_test)
+    test_dataset = TensorDataset(X_val, y_val)
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
