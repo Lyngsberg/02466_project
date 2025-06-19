@@ -85,7 +85,7 @@ def train_model():
     X = data.iloc[:, :-1].values
     y = data.iloc[:, -1].values.reshape(-1, 1)
 
-    X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3)
+    X_train_np, X_test_np, y_train_np, y_test_np = train_test_split(X, y, test_size=0.3, random_state=seed)
 
     scaler_X = StandardScaler()
     X_train_np = scaler_X.fit_transform(X_train_np)
@@ -111,8 +111,6 @@ def train_model():
     # Initialize the model
     models_modul = importlib.import_module(modul_name)
     model_class = getattr(models_modul, model_name)
-    print(f"model_name: {model_name}, modul_name: {modul_name}")
-
     model = model_class(layers=layers, in_features=num_features).to(device) if modul_name != "PN_model_triang_deep" else model_class(layers=layers, in_features=num_features).to(device)
 
     criterion = nn.MSELoss().to(device)
@@ -134,9 +132,9 @@ def train_model():
             return loss
 
         for epoch in range(epochs):
-            #print(f"Epoch {epoch + 1}/{epochs}")
+            print(f"Epoch {epoch + 1}/{epochs}")
             model.train()
-            optimizer.step(closure)  
+            optimizer.step(closure)  # Pass the closure function
 
             # Unscale training loss
             train_loss = closure().item()  # Call once here
@@ -150,7 +148,8 @@ def train_model():
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
-
+                    l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+                    loss = base_loss + l2_lambda * l2_norm
 
                     # Unscale base loss
                     unscaled_val_loss = base_loss * (scaler_y.scale_[0] ** 2)
@@ -164,7 +163,7 @@ def train_model():
                 "train_MSE": train_mse,
                 "validation_MSE": val_mse,
             })
-            #print(f"Train MSE: {train_mse:.4f}, Validation MSE: {val_mse:.4f}")
+            print(f"Train MSE: {train_mse:.4f}, Validation MSE: {val_mse:.4f}")
 
 
     else:
@@ -203,6 +202,9 @@ def train_model():
 
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
+
+                    l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+                    loss = base_loss + l2_lambda * l2_norm
 
                     # Track unscaled loss
                     unscaled_loss = base_loss * (scaler_y.scale_[0] ** 2)

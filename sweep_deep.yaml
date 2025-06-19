@@ -15,17 +15,17 @@ parameters:
       - "Folds5x2_pp.xlsx"  # Example dataset
   model_modul_name:
     values:
-      # - ['NN_deep', 'General_NN']  # Example model 1
+      - ['NN_deep', 'General_NN']  # Example model 1
       - ['PN_model_triang_deep', 'Polynomial_Network']  # Example model 2
   batch_size:
     values:
       - 64  # Example batch size
   learning_rate:
-    min: 0.000001  # Minimum learning rate
+    min: 0.001  # Minimum learning rate
     max: 0.01   # Maximum learning rate
   epochs:
     values:
-      - 10000
+      - 100
   seed:
     distribution: int_uniform
     min: 1
@@ -48,14 +48,8 @@ parameters:
       - [3, 3, 3]
 
   l2_lambda:
-    values:
-      - 0.0000001
-      - 0.000001
-      - 0.00001
-      - 0.0001
-      - 0.001
-      - 0.01
-      - 0.1
+    distribution: log_uniform_values
+    min: 1e-10
+    max: 1e-0
 
-
-run_cap: 200  # Limits the sweep to 200 runs
+run_cap: 500  # Limits the sweep to 500 runs

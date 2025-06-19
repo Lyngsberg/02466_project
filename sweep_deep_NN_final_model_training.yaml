@@ -15,29 +15,29 @@ parameters:
       - "Folds5x2_pp.xlsx"  # Example dataset
   model_modul_name:
     values:
-      - ["PN_model_triang_deep", "Polynomial_Network"]  # Example model 1
+      - ['NN_deep', 'General_NN']  # Example model 1
 
   batch_size:
     values:
       - 64  # Example batch size
   learning_rate:
     values:
-      - 0.00093
+      - 0.0033
   epochs:
     values:
       - 10000
-      #- 1000
+      # - 1000
   seed:
     distribution: int_uniform
     min: 1
     max: 1000
   optimizer_name:
     values:
-      - "Adam"
+      - "SGD"
 
   layers:
     values:
-      - [3, 3, 3]
+      - [9, 6, 2]
 # | PN Shape    | PN Params | ANN Shape (in → hidden → out) | ANN Params |
 # | ----------- | --------- | ----------------------------- | ---------- |
 # | `[1]`       | 15        | 4 → 3 → 1                     | 19
@@ -53,8 +53,8 @@ parameters:
 
   l2_lambda:
     values:
-      - 0.001
+      - 0.0001
 
 
 
-run_cap: 30  # Limits the sweep to 50 runs
+run_cap: 30  # Limits the sweep to 30 runs
