@@ -95,20 +95,25 @@ def train_model():
     scaler_X = StandardScaler()
     X_train_np = scaler_X.fit_transform(X_train_np)
     X_val_np = scaler_X.transform(X_val_np)
+    X_test_np = scaler_X.transform(X_test_np)
 
     scaler_y = StandardScaler()
     scaler_y.fit(y_train_np)
     y_train_np = scaler_y.transform(y_train_np)
     y_val_np = scaler_y.transform(y_val_np)
+    y_test_np = scaler_y.transform(y_test_np)
 
     X_train = torch.tensor(X_train_np, dtype=torch.float32)
     X_val = torch.tensor(X_val_np, dtype=torch.float32)
     y_train = torch.tensor(y_train_np, dtype=torch.float32)
     y_val = torch.tensor(y_val_np, dtype=torch.float32)
+    X_test = torch.tensor(X_test_np, dtype=torch.float32)
+    y_test = torch.tensor(y_test_np, dtype=torch.float32)
 
     train_dataset = TensorDataset(X_train, y_train)
     val_dataset = TensorDataset(X_val, y_val)
     test_dataset = TensorDataset(X_test, y_test)
+
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
@@ -151,7 +156,7 @@ def train_model():
             val_mse = 0.0
             num_batches = 0
             with torch.no_grad():
-                for x_batch, y_batch in val_loader:
+                for x_batch, y_batch in test_loader:
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
@@ -204,7 +209,7 @@ def train_model():
             val_loss_total = 0.0
             val_samples = 0
             with torch.no_grad():
-                for x_batch, y_batch in val_loader:
+                for x_batch, y_batch in test_loader:
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
 
                     outputs = model(x_batch)
