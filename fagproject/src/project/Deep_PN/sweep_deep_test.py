@@ -90,7 +90,7 @@ def train_model():
 
     # Then split train_val into train and val
     X_train, X_test, y_train, y_test = train_test_split(X_train_val, y_train_val, test_size=0.25, random_state=42)  # 0.25 of 0.8 = 0.2
-
+    
 
     scaler_X = StandardScaler()
     X_train_np = scaler_X.fit_transform(X_train_np)
@@ -153,29 +153,29 @@ def train_model():
             train_mse = train_loss * (scaler_y.scale_[0] ** 2)
 
             model.eval()
-            val_mse = 0.0
+            test_mse = 0.0
             num_batches = 0
             with torch.no_grad():
                 for x_batch, y_batch in test_loader:
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
-                    l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
-                    loss = base_loss + l2_lambda * l2_norm
+                    #l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+                    loss = base_loss #+ l2_lambda * l2_norm
 
                     # Unscale base loss
-                    unscaled_val_loss = base_loss * (scaler_y.scale_[0] ** 2)
-                    val_mse += unscaled_val_loss.item()
+                    unscaled_test_loss = base_loss * (scaler_y.scale_[0] ** 2)
+                    test_mse += unscaled_test_loss.item()
                     num_batches += 1
 
-            val_mse /= num_batches
+            test_mse /= num_batches
 
             wandb.log({
                 "epoch": epoch + 1,
                 "train_MSE": train_mse,
-                "validation_MSE": val_mse,
+                "validation_MSE": test_mse,
             })
-            print(f"Train MSE: {train_mse:.4f}, Validation MSE: {val_mse:.4f}")
+            print(f"Train MSE: {train_mse:.4f}, Validation MSE: {test_mse:.4f}")
 
 
     else:
@@ -206,8 +206,8 @@ def train_model():
             train_mse = train_loss_total / train_samples
 
             model.eval()
-            val_loss_total = 0.0
-            val_samples = 0
+            test_loss_total = 0.0
+            test_samples = 0
             with torch.no_grad():
                 for x_batch, y_batch in test_loader:
                     x_batch, y_batch = x_batch.to(device), y_batch.to(device)
@@ -215,30 +215,29 @@ def train_model():
                     outputs = model(x_batch)
                     base_loss = criterion(outputs, y_batch)
 
-                    l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
-                    loss = base_loss + l2_lambda * l2_norm
+                    loss = base_loss
 
                     # Track unscaled loss
                     unscaled_loss = base_loss * (scaler_y.scale_[0] ** 2)
-                    val_loss_total += unscaled_loss.item() * x_batch.size(0)
-                    val_samples += x_batch.size(0)
+                    test_loss_total += unscaled_loss.item() * x_batch.size(0)
+                    test_samples += x_batch.size(0)
 
-            val_mse = val_loss_total / val_samples
+            test_mse = test_loss_total / test_samples
 
             wandb.log({
                 "epoch": epoch + 1,
                 "train_MSE": train_mse,
-                "validation_MSE": val_mse,
+                "validation_MSE": test_mse,
             })
 
-    print(val_mse)
+    print(test_mse)
 
 
     artifact = wandb.Artifact(
         name="Neural_Network" if modul_name == "NN_models" else "Polynomial_Network",
         type="model",
         description="A trained model",
-        metadata={"val_loss": val_mse, "Date": datetime.now()},
+        metadata={"test_loss": test_mse, "Date": datetime.now()},
     )
     #artifact.add_file(model_path)
     run.log_artifact(artifact)

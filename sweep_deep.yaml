@@ -16,7 +16,7 @@ parameters:
   model_modul_name:
     values:
       - ['NN_deep', 'General_NN']  # Example model 1
-      - ['PN_model_triang_deep', 'Polynomial_Network']  # Example model 2
+      #- ['PN_model_triang_deep', 'Polynomial_Network']  # Example model 2
   batch_size:
     values:
       - 64  # Example batch size
@@ -37,15 +37,15 @@ parameters:
       - "LBFGS"
   layers:
     values:
-      - [1]
-      - [1, 1]
-      - [1, 1, 1]
-      - [2]
-      - [2, 2]
-      - [2, 2, 2]
       - [3]
-      - [3, 3]
-      - [3, 3, 3]
+      - [4]
+      - [6, 3]
+      - [4, 2]
+      - [6]
+      - [6, 4, 2]
+      - [7]
+      - [8, 4]
+      - [9, 4, 2]
 
   l2_lambda:
     distribution: log_uniform_values
