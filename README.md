@@ -42,7 +42,10 @@ Project for DTU course 02466
 │           ├── performance_statistics.py
 │           ├── sweep_train.py
 │           ├── Deep_PN/
-│           │   └── sweep_deep.py
+│           │   ├── NN_deep.py
+│           │   ├── PN_model_triang_deep.py
+│           │   ├── sweep_deep.py
+│           │   └── train_deep.py
 │           ├── Wandb_train.py
 │           ├── visualize.py
 │           ├── PN_models.py
