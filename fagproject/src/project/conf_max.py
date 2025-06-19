@@ -116,7 +116,7 @@ def plot_coefficients_with_ci(summary):
     plt.xticks(x, labels, rotation=45)
     plt.ylabel("Coefficient Value")
     plt.title("Mean and Confidence Interval of Coefficients")
-    plt.ylim(-0.05, 0.1)
+    plt.ylim(-0.005, 0.01)
     plt.grid(True, linestyle="--", alpha=0.6)
     plt.tight_layout()
     plt.savefig(f"fagproject/src/project/interpretability_plots/conf_e_{n_epochs}_k_{k}")
@@ -204,7 +204,7 @@ X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values.reshape(-1, 1)
 
 # Train Polynomial Network
-n_epochs = 10000
+n_epochs = 1000
 learning_rate = 0.00093
 k = 30
 layers = [3,3,3] 
@@ -214,7 +214,7 @@ print("Training Polynomial Network...")
 criterion = nn.MSELoss()
 coef_list = []
 for i in range(k):
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.3, random_state=i)
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.99, random_state=i)
     X_val = torch.from_numpy(X_val).double().to(device)
     X_train = torch.from_numpy(X_train).double().to(device)
     num_features = X_train.shape[1]
