@@ -8,21 +8,18 @@ Project for DTU course 02466
 ├── sweep_deep_PN_final_model_training.yaml
 ├── sweep_deep.yaml
 ├── sweep.yaml
+├── README.md
 ├── fagproject/
 │   ├── .gitignore
 │   ├── .pre-commit-config.yaml
 │   ├── LICENSE
 │   ├── pyproject.toml
-│   ├── README.md
 │   ├── requirements_dev.txt
 │   ├── requirements.txt
 │   ├── tasks.py
 │   ├── .github/
 │   ├── configs/
 │   ├── data/
-│   ├── dockerfiles/
-│   │   ├── train.dockerfile
-│   │   └── api.dockerfile
 │   ├── docs/
 │   │   ├── mkdocs.yml
 │   │   └── source/
@@ -46,23 +43,27 @@ Project for DTU course 02466
 │           │   ├── PN_model_triang_deep.py
 │           │   ├── sweep_deep.py
 │           │   └── train_deep.py
+│           ├── Triang_vs_nonTriang/
+│           │   ├── plot.py
+│           │   ├── PN_model_for_triang.py
+│           │   └──  train_triangulizePN_vs_nontrianglizePN.py
 │           ├── Wandb_train.py
 │           ├── visualize.py
 │           ├── PN_models.py
 │           └── NN_models.py
-├── tests/
-│   ├── __init__.py
-│   ├── test_api.py
-│   ├── test_data.py
-│   └── test_model.py
 └── wandb/
-    ├── latest-run
-    ├── debug.log
-    ├── debug-cli.thousig.log
-    └── sweep
+
 
 ```
 ```bash
 git clone https://github.com/Lyngsberg/02466_project.git
 cd 02466_project
 pip install -r fagproject/requirements.txt
+```
+
+```text
+to run the scripts for the deep models:
+```
+```bash
+python fagproject/src/project/Deep_PN/train_deep.py
+```
