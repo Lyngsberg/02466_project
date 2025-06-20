@@ -1,7 +1,8 @@
 entity: 'lyngsberg-danmarks-tekniske-universitet-dtu'  # Your username
 project: 'Fagprojekt'  # Your project name
 
-program: fagproject/src/project/Deep_PN/sweep_deep.py
+# program: fagproject/src/project/Deep_PN/sweep_deep.py  # Path to the script that will be run for each hyperparameter combination
+program: fagproject/src/project/Deep_PN/sweep_deep_test.py # optimal script for training the model with the best hyperparameters
 
 method: random  # You can also use 'grid' if you want to test all combinations of hyperparameters
 name: Sweep_phase2  # Name of the sweep
@@ -22,10 +23,10 @@ parameters:
       - 64  # Example batch size
   learning_rate:
     values:
-      - 0.00093
+      - 0.005
   epochs:
     values:
-      - 10000
+      - 500
       #- 1000
   seed:
     distribution: int_uniform
@@ -33,7 +34,7 @@ parameters:
     max: 1000
   optimizer_name:
     values:
-      - "Adam"
+      - "LBFGS"
 
   layers:
     values:
@@ -53,7 +54,7 @@ parameters:
 
   l2_lambda:
     values:
-      - 0.001
+      - 0.00001
 
 
 

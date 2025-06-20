@@ -90,7 +90,8 @@ def train_model():
 
     # Then split train_val into train and val
     X_train, X_test, y_train, y_test = train_test_split(X_train_val, y_train_val, test_size=0.25, random_state=42)  # 0.25 of 0.8 = 0.2
-    
+    X_train_np, X_test_np, y_train_np, y_test_np = X_train, X_test, y_train, y_test
+    X_val_np, y_val_np = X_val, y_val
 
     scaler_X = StandardScaler()
     X_train_np = scaler_X.fit_transform(X_train_np)
@@ -173,9 +174,9 @@ def train_model():
             wandb.log({
                 "epoch": epoch + 1,
                 "train_MSE": train_mse,
-                "validation_MSE": test_mse,
+                "test_MSE": test_mse,
             })
-            print(f"Train MSE: {train_mse:.4f}, Validation MSE: {test_mse:.4f}")
+            print(f"Train MSE: {train_mse:.4f}, test MSE: {test_mse:.4f}")
 
 
     else:
@@ -227,7 +228,7 @@ def train_model():
             wandb.log({
                 "epoch": epoch + 1,
                 "train_MSE": train_mse,
-                "validation_MSE": test_mse,
+                "test_MSE": test_mse,
             })
 
     print(test_mse)
