@@ -204,11 +204,14 @@ X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values.reshape(-1, 1)
 
 # Train Polynomial Network
-n_epochs = 1000
-learning_rate = 0.00093
+n_epochs = 500
+learning_rate = 0.005
 k = 30
+optimizer_type = "LBFGS"  # 'Adam', 'SGD', or 'LBFGS'
 layers = [3,3,3] 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+l2_lambda_val = 1e-05
+
 
 print("Training Polynomial Network...")
 criterion = nn.MSELoss()
@@ -220,7 +223,7 @@ for i in range(k):
     num_features = X_train.shape[1]
     print(f"Traning model: {i+1}")
     Polynomial_Net = Polynomial_Network(layers, in_features=num_features)
-    poly_network, train_losses, val_losses, polynomial_symbolic = train_model(Polynomial_Net, X_train, y_train, X_val, y_val, n_epochs=n_epochs, learning_rate=learning_rate, path=path)
+    poly_network, train_losses, val_losses, polynomial_symbolic = train_model(Polynomial_Net, X_train, y_train, X_val, y_val, n_epochs=n_epochs, learning_rate=learning_rate, path=path, optimizer_type=optimizer_type, l2_lambda=L2_lambda_val)
 
 
     coef = extract_single_variable_terms(polynomial_symbolic)

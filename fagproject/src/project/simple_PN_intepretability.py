@@ -124,6 +124,11 @@ def main():
     path = 'fagproject/data/train_q_n_4.pkl'
     X, y = torch.load(path)
 
+    random_seed = 42
+    np.random.seed(random_seed)
+    torch.manual_seed(random_seed)
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=random_seed)
+
     n_epochs = 1500
     learning_rate = 0.0001
     k = 30  # Number of models to train
@@ -131,11 +136,6 @@ def main():
 
     coef_list = []
     for i in range(k):
-        # Set random seed
-        random_seed = i
-        np.random.seed(random_seed)
-        torch.manual_seed(random_seed)
-        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=i)
         num_features = X_train.shape[1]
         print(f"Training model {i+1}/{k}")
         model = Polynomial_Network(layers, in_features=num_features)
