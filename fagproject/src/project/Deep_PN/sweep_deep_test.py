@@ -85,11 +85,12 @@ def train_model():
     X = data.iloc[:, :-1].values
     y = data.iloc[:, -1].values.reshape(-1, 1)
 
+    split_seed = 42  # Fixed seed for reproducibility
     # First, split into temp train and test
-    X_train_val, X_val, y_train_val, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train_val, X_val, y_train_val, y_val = train_test_split(X, y, test_size=0.2, random_state=split_seed)
 
     # Then split train_val into train and val
-    X_train, X_test, y_train, y_test = train_test_split(X_train_val, y_train_val, test_size=0.25, random_state=42)  # 0.25 of 0.8 = 0.2
+    X_train, X_test, y_train, y_test = train_test_split(X_train_val, y_train_val, test_size=0.25, random_state=split_seed)  # 0.25 of 0.8 = 0.2
     X_train_np, X_test_np, y_train_np, y_test_np = X_train, X_test, y_train, y_test
     X_val_np, y_val_np = X_val, y_val
 
@@ -114,9 +115,26 @@ def train_model():
     train_dataset = TensorDataset(X_train, y_train)
     val_dataset = TensorDataset(X_val, y_val)
     test_dataset = TensorDataset(X_test, y_test)
+    torch.manual_seed(config.seed)
+    torch.cuda.manual_seed(config.seed)
+    np.random.seed(config.seed)
+    random.seed(config.seed)
+    print(f"Using seed: {config.seed}")
 
+    loader_generator = torch.Generator()
+    loader_generator.manual_seed(config.seed)
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    def seed_worker(worker_id):
+        worker_seed = torch.initial_seed() % 2**32
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
+    train_loader = DataLoader(
+    train_dataset, batch_size=batch_size, shuffle=True,
+    worker_init_fn=seed_worker,
+    generator=loader_generator,
+    num_workers=0  # reproducibility is best with 0 workers unless needed
+    )
+    #train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
@@ -176,7 +194,7 @@ def train_model():
                 "train_MSE": train_mse,
                 "test_MSE": test_mse,
             })
-            print(f"Train MSE: {train_mse:.4f}, test MSE: {test_mse:.4f}")
+            print(f"Train MSE: {train_mse:.4f}, Test MSE: {test_mse:.4f}")
 
 
     else:
