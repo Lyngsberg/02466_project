@@ -6,9 +6,9 @@ from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
 import sympy as sp
 
-random_seed = 42
-np.random.seed(random_seed)
-torch.manual_seed(random_seed)
+# random_seed = 42
+# np.random.seed(random_seed)
+# torch.manual_seed(random_seed)
 
 class PN_Neuron(nn.Module):
     def __init__(self, in_features=2):
