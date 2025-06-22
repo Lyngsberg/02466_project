@@ -15,11 +15,12 @@ from Deep_PN.PN_model_triang_deep import Polynomial_Network, PN_Neuron
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import seaborn as sns
+import pickle
 
 # Set random seed
-random_seed = 42
-np.random.seed(random_seed)
-torch.manual_seed(random_seed)
+# random_seed = 42
+# np.random.seed(random_seed)
+# torch.manual_seed(random_seed)
 
 
 
@@ -116,13 +117,13 @@ def plot_coefficients_with_ci(summary):
     plt.xticks(x, labels, rotation=45)
     plt.ylabel("Coefficient Value")
     plt.title("Mean and Confidence Interval of Coefficients")
-    plt.ylim(-0.005, 0.01)
+    #plt.ylim(-0.005, 0.01)
     plt.grid(True, linestyle="--", alpha=0.6)
     plt.tight_layout()
     plt.savefig(f"fagproject/src/project/interpretability_plots/conf_e_{n_epochs}_k_{k}")
     plt.close()
 
-def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.01, path = None, optimizer_type='Adam', l2_lambda=1e-4):
+def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0.005, path = None, optimizer_type='Adam', l2_lambda=1e-5):
     # Scale first (while still NumPy arrays)
     scaler_X = StandardScaler()
     X_train = scaler_X.fit_transform(X_train)
@@ -169,7 +170,7 @@ def train_model(model, X_train, Y_train, X_val, Y_val, n_epochs, learning_rate=0
             base_loss = criterion(predictions,Y_train)
 
             
-            l2_norm = sum(param.pow(2.0).sum() for param in model.parameters())
+            l2_norm = sum(param.pow(1.0).sum() for param in model.parameters())
             train_loss = base_loss + l2_lambda * l2_norm
             train_loss.backward()
 
@@ -204,20 +205,21 @@ X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values.reshape(-1, 1)
 
 # Train Polynomial Network
-n_epochs = 500
+n_epochs = 1000
 learning_rate = 0.005
 k = 30
-optimizer_type = "LBFGS"  # 'Adam', 'SGD', or 'LBFGS'
+optimizer_type = "Adam"  # 'Adam', 'SGD', or 'LBFGS'
 layers = [3,3,3] 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-l2_lambda_val = 1e-05
-
+device = torch.device("cpu") #torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#L2_lambda_val = 0.00001
+L2_lambda_val = 0
 
 print("Training Polynomial Network...")
 criterion = nn.MSELoss()
 coef_list = []
 for i in range(k):
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.99, random_state=i)
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.20, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.25, random_state=42)
     X_val = torch.from_numpy(X_val).double().to(device)
     X_train = torch.from_numpy(X_train).double().to(device)
     num_features = X_train.shape[1]
@@ -233,4 +235,6 @@ for i in range(k):
 #print(coef_list)
 results = [extract_max_by_order_single_dict(d) for d in coef_list]
 summary = summarize_coefficients(results)
+with open('fagproject/src/project/optimizer_data/L0_0.pkl', 'wb') as f:
+    pickle.dump(summary, f)
 plot_coefficients_with_ci(summary)
