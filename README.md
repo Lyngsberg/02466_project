@@ -69,19 +69,18 @@ python fagproject/src/project/Deep_PN/train_deep.py
 ```
 
 ```text
-Sweep ids:
+W&B Sweep Links Sweep ids:
 ```
-```bash
-sweep_ids = {
-    "PN Train 60%": "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/6ovchhf7",
-    "PN Train 20%": "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/p8t4jjpx",
-    "PN Train 5%":  "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/leq7xwu3",
-    "PN Train 1%":  "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/98qliqix",
-    "NN Train 60%": "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/f4wmv7s5",
-    "NN Train 20%": "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/mv3wsm2t",
-    "NN Train 5%":  "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/9zgk0u7g",
-    "NN Train 1%":  "lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/4mqr7mad"
-}
+
+```markdown
+- [PN Train 60%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/6ovchhf7)
+- [PN Train 20%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/p8t4jjpx)
+- [PN Train 5%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/leq7xwu3)
+- [PN Train 1%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/98qliqix)
+- [NN Train 60%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/f4wmv7s5)
+- [NN Train 20%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/mv3wsm2t)
+- [NN Train 5%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/9zgk0u7g)
+- [NN Train 1%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/4mqr7mad)
 ```
 ```text
 Data
