@@ -1,5 +1,6 @@
 # 02466_project on Polynomial Networks
-# BY Asger Thousig Sehested, Aslan Dalhoff Behbahani and Elias Lyngsberg Rasmussen
+# Made By: Asger Thousig Sehested, Aslan Dalhoff Behbahani and Elias Lyngsberg Rasmussen
+# Supervisors: Petr Taborsky and Nicollo' Ciolli
 Project for DTU course 02466
 ```text
 02466_project/
