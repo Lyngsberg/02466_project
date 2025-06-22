@@ -6,6 +6,8 @@ Project for DTU course 02466
 ├── LICENSE
 ├── sweep_deep_NN_final_model_training.yaml
 ├── sweep_deep_PN_final_model_training.yaml
+├── sweep_deep_hyp_NN.yaml
+├── sweep_deep_hyp_PN.yaml
 ├── sweep_deep.yaml
 ├── sweep.yaml
 ├── README.md
@@ -66,6 +68,27 @@ to run the scripts for the deep models:
 ```
 ```bash
 python fagproject/src/project/Deep_PN/train_deep.py
+wandb sweep sweep_deep_hyp_NN.yaml
+```
+```text
+To find optimal hyperparameters RUN: 
+```
+```bash
+wandb sweep sweep_deep_hyp_PN.yaml
+wandb sweep sweep_deep_hyp_NN.yaml
+```
+```text
+Fill in optimal parameters and too get Test MSE for optimal parameters RUN: 
+```
+```bash
+wandb sweep sweep_deep_NN_final_model_training.yaml
+wandb sweep sweep_deep_PN_final_model_training.yaml
+```
+```text
+Too plot, fill in sweep ids and RUN: 
+```
+```bash
+python fagproject/src/project/performance_statistics.py
 ```
 
 ```text
@@ -82,6 +105,7 @@ W&B Sweep Links Sweep ids:
 - [NN Train 5%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/9zgk0u7g)
 - [NN Train 1%](https://wandb.ai/lyngsberg-danmarks-tekniske-universitet-dtu/Fagprojekt/4mqr7mad)
 ```
+
 ```text
 Data
 ```
