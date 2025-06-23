@@ -80,14 +80,14 @@ wandb sweep sweep_deep_hyp_PN.yaml
 wandb sweep sweep_deep_hyp_NN.yaml
 ```
 ```text
-Fill in optimal parameters and too get Test MSE for optimal parameters RUN: 
+Fill in optimal parameters and to get Test MSE for optimal parameters RUN: 
 ```
 ```bash
 wandb sweep sweep_deep_NN_final_model_training.yaml
 wandb sweep sweep_deep_PN_final_model_training.yaml
 ```
 ```text
-Too plot, fill in sweep ids and RUN: 
+to plot, fill in sweep ids and RUN: 
 ```
 ```bash
 python fagproject/src/project/performance_statistics.py
